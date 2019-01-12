@@ -1877,246 +1877,142 @@ I will talk more in a later section about what this means but I just want to int
 	\label{fig:rank_15}
 \end{figure}
 
-A third way to compute the rank of a matrix is to apply a decomposition called the singular value decomposition.
+A third way to compute the rank of a matrix is to apply a decomposition called the \textbf{singular value decomposition}. And then you count the number of nonzero singular values of the matrix. The rank of the matrix then corresponds to the number of nonzero singular values.
 
-And then you count the number of nonzero singular values of the matrix. The rank of the matrix then corresponds
+This is actually the way that Matlab and many other matrix-computing software programs will compute the rank of a matrix. And when you learn about the SVD, you will understand why the number of nonzero singular values corresponds to the rank.
 
-to the number of nonzero singular values.
+A complimentary procedure is to compute the eigendecomposition of the matrix. This would work for a square matrix or if it's a rectangular matrix you can compute the eigendecomposition of the matrix times its transpose, and again count the number of non-zero eigenvalues. The number of non-zero eigenvalues corresponds to the rank of the matrix.
 
-This is actually the way that Matlab and many other matrix-computing software programs will compute
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-16.png}
+	\caption{Rank}
+	\label{fig:rank_16}
+\end{figure}
 
-the rank of a matrix.
+When you are working with little toy examples in the context of learning linear algebra in a first semester linear algebra course, particularly if you're doing a lot of paper and pencil work, then the rank is unambiguous. You compute the rank. You get a number. And that's the answer. End of story.
 
-And when you learn about the SVD, you will understand why the number of nonzero singular values corresponds
+But in practice, and particularly when dealing with large matrices, the rank is not so trivial to compute. And it may depend on some characteristics of the matrix. It may depend on some arbitrary thresholding that you have to pick, and it also may depend on the specific algorithm that you decide to use to compute the rank. And this really has to do with noise and with machine rounding errors.
 
-to the rank.
+So you've seen this before, if you've taken a programming course, or if you've taken other computer-based mathematics courses. Computers often have a hard time representing exact zero. So sometimes you get an answer that you know should be zero, but in fact it's something like 10 to the minus 15 or 10 to the minus 19 depending on your computer precision. So there are just these very tiny computer rounding errors.
 
-A complimentary procedure is to compute the eigendecomposition of the matrix.
+Imagine that you have a 50 by 50 matrix and you know somehow that the true rank of the matrix is 46. It's a little bit smaller than the full size of the matrix. Now when you do an eigendecomposition of this matrix you get 50 eigenvalues.
 
-This would work for a square matrix or if it's a rectangular matrix you can compute the eigendecomposition
+Now in theory, you should have 46 non-zero eigenvalues and four eigenvalues that are exactly equal to zero. The reason why that should be the case will become clear to you in the section on eigendecomposition. But for now, you can just assume that I'm telling you the truth. Let's say because of computer rounding errors, you don't see any eigenvalues that are exactly exactly equal to zero. Instead, you see a couple of eigenvalues that are somewhere around 10 to the minus 13.
 
-of the matrix times its transpose, and again count the number of non-zero eigenvalues. The number
+So what do you do? When can you assume that such a tiny number is a real eigenvalue or a real non-zero eigenvalue that increases the rank of the matrix? Or when do you assume that this is really zero, and it's just a little bit of computer rounding error?
 
-of non-zero eigenvalues corresponds to the rank of the matrix.
+In practice, what you do is come up with some threshold, and then you would ignore any eigenvalues that are less than that threshold. But of course thresholds can be arbitrary and it's difficult to know what the appropriate or the correct threshold is.
 
-When you are working with little toy examples in the context of learning linear algebra in
+I don't want to go into a lot of the details about what I'm talking about now; again, you'll learn more about that in the section on eigendecomposition. I just want to give you an idea of where the ambiguity comes from, when determining the matrix rank.
 
-a first semester linear algebra course, particularly if you're doing a lot of paper and pencil work, then
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-17.png}
+	\caption{Rank}
+	\label{fig:rank_17}
+\end{figure}
 
-the rank is unambiguous.
+In practice, a related source of difficulty comes from noise. So let's say you have this 3 by 3 matrix of rank 2. So this is a matrix that the columns are in R3, but the rank is 2. So the information that's contained in this matrix exists on a 2D plane that's embedded in an ambient three dimensional space. So that's fine; there's nothing weird or wrong about this situation.
 
-You compute the rank.
+So here's this plane. Imagine you're looking at the edge of the plane; you're looking through the plane. So it looks flat like this, so this would be the plane going this way. So all three of these vectors, which are these columns in the matrix, are all in this plane. So when you're looking into the plane the three vectors would look something like this. But now imagine that these are empirically measured data, let's say from a satellite. And the measurement sensors on a satellite are a tiny bit noisy and not perfectly perfectly calibrated.
 
-You get a number.
+So although this is really three vectors lying in a two dimensional plane, if you have a tiny bit of noise it's possible that the vectors will point off the plane ever so slightly. An overly sensitive way of computing rank might actually call this a rank 3 matrix even though we know that is just a rank 2 matrix so the information is just in two dimensions. So again, you need to have some kind of threshold that decides when this little bit of projection off the plane should be considered an additional source of information in the matrix, which would knock up the rank to 3.
 
-And that's the answer.
+\pagebreak
 
-End of story.
+\subsubsection*{Rank of Added and Multiplied Matrices}
 
-But in practice, and particularly when dealing with large matrices, the rank is not so trivial to compute.
+In this video I'm going to tell you about the boundaries for the rank of summed matrices, and multiplied matrices. The question here is: if you know the rank of $A$, and you know the rank of $B$, what can you infer about the rank of $A + B$ and the rank of $AB$?
 
-And it may depend on some characteristics of the matrix.
+Now the thing is, you cannot know a priori exactly what the rank of $A$ plus $B$ or $A$ times $B$ will be, even if you know the ranks of $A$ and $B$, because it depends on the specific numbers, the specific elements. However, there are rules for the upper boundary of what the maximum possible rank could be in this case and in this case. In this video, you will learn what those rules are.
 
-It may depend on some arbitrary thresholding that you have to pick, and it also may depend on the specific
+Before explaining what the rule is and saying something about why it must be true, I want to start with giving a few examples. Let's start with the rank of $A$ plus $B$.
 
-algorithm that you decide to use to compute the rank.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-18.png}
+	\caption{Rank}
+	\label{fig:rank_18}
+\end{figure}
 
-And this really has to do with noise and with machine rounding errors.
+Here I have four sets of matrix equations.
 
-So you've seen this before,
+If you're up for a bit of a challenge, and some practice in computing rank, I encourage you to pause the video here and compute the rank of each of these 12 matrices. 
 
-if you've taken a programming course, or if you've taken other computer-based mathematics courses. Computers
+It seems like a lot but it's actually not so bad. I think the rank is relatively straightforward to compute by visual inspection and a little bit of guesswork in all 12 of these cases.
 
-often have a hard time representing exact zero.
+Now I go through each one of these in turn. 
 
-So sometimes you get an answer that you know should be zero,
+So here we have three matrices, all of them have rank 3. So $A$ has rank-3, matrix $B$ has rank 3, and their sum as also rank 3. So these are all full-rank matrices.
 
-but in fact it's something like 10 to the minus 15 or 10 to the minus 19 depending on your computer
+Here you have an example where this matrix has rank 2. So this is rank deficient. This matrix has rank 1, it's also rank deficient. And yet the two of these matrices added together turns out to be a full rank matrix, so rank 3 matrix. So that's a pretty interesting case. 
 
-precision.
+In this example, we have this matrix with rank 2, this matrix with rank two -- uhh, sorry, with rank zero -- and the resulting sum has rank 2.
 
-So there are just these very tiny computer rounding errors.
+Finally, we get to the fourth case that I'm illustrating here. Here we start with the matrix of rank 3.
 
-Imagine that you have a 50 by 50 matrix and you know somehow that the true rank of the matrix is 46.
+So this is a full rank matrix. This is a \textbf{reduced rank matrix} because there is one column of zeros, so this is rank 2, and the resulting matrix has a rank of 1. And that happened because basically these first two columns here are the negatives of each other for these two matrices, so you end up with a reduced rank matrix.
 
-It's a little bit smaller than the full size of the matrix.
+So I've illustrated several different possibilities of the rank: Here the rank of the summed matrix is the same as the rank of the two matrices; here, this is a funny case where the rank is actually larger -- the summed matrix has a larger rank than either of the individual matrices, and here you see reduced-rank cases.
 
-Now when you do an eigendecomposition of this matrix you get 50 eigenvalues.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-19.png}
+	\caption{Rank}
+	\label{fig:rank_19}
+\end{figure}
 
-Now in theory, you should have 46 non-zero eigenvalues and four eigenvalues that are exactly equal to
+Now let me tell you the rule about the boundary of the rank of $A$ plus $B$. The rule is that the rank of matrix $A$ plus $B$ cannot be larger than the sum of the individual ranks. So if you know the rank of $A$ and you know the rank of $B$, you add those together, and the rank of $A$ plus $B$ cannot be bigger than this.
 
-zero.
+Actually there is an additional bound on top of this, which is that the rank can also not be larger than the smaller of $M$ or $N$, so the smaller of the number of rows or the number of columns. We've already established that rule in a previous video. I didn't mention it explicitly here. 
 
-The reason why that should be the case will become clear to you
+And you can see that in this first case here. So rank 3 and rank 3 is a three by three matrix. But the sum of these two numbers is six. Obviously, a three by three Matrix cannot have a rank of six.
 
-in the section on eigendecomposition. But for now, you can just assume that I'm telling you the truth. Let's say
+One way to think about this rule is that by adding matrices, you are simply linearly pooling information element by element, and by pooling across different stores of information, the total amount of information can increase, because the pooling is linear. It's additive. You cannot create any new information out of thin air. You can only work with what you already have.
 
-because of computer rounding errors, you don't see any eigenvalues that are exactly exactly equal to
+So here I have a little bit of non-overlapping information in these two matrices: this one here and this one here. So the non-overlapping bits will increase the total information in the matrix.
 
-zero.
+But there's just no way to create new information here in this third column because we're not starting with any information in these original columns. This is the way that I like to think about this role. And needless to say I didn't say this explicitly but of course this rule makes sense only when $A$ and $B$ can be added together, which means that $A$ and $B$ are the same size.
 
-Instead, you see a couple of eigenvalues that are somewhere around 10 to the minus 13.
+The second thing I'd like to point out here is that scaling a matrix by some scalar, so scalar-matrix multiplication, doesn't change the rank of the matrix. So that means you can multiply $B$ by any arbitrary scalar. You could multiply by a scalar of $-1$ and that would turn this addition and subtraction, and that doesn't change the rule at all.
 
-So what do you do?
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-20.png}
+	\caption{Rank}
+	\label{fig:rank_20}
+\end{figure}
 
-When can you assume that such a tiny number is a real eigenvalue or a real non-zero eigenvalue
+OK so this is about the rank of $A$ plus $B$. Now let's talk about multiplication and the rank of $A$ times $B$. Again, I'll first start by showing a few examples and then I'll explain what the rule is.
 
-That increases the rank of the matrix?
+So here again we have these matrices that we are working with. But now instead of adding these matrices together, I am multiplying them together. And now the resulting rank is a little bit different in some cases, compared to what it was for the addition case.
 
-Or when do you assume that this is really zero,
+In this case, we start off with two full-rank matrices, and we happened to also end up with a full rank matrix, in this case rank 3. That's not necessarily the case, that's just how it happened to work out with these specific numbers.
 
-and it's just a little bit of computer rounding error?
+Here we have our rank 2 and rank 1 matrix. You'll remember, or you can go back a few slides, that when we added these two matrices together, the resulting matrix was full rank. So this was rank 2, this was rank 1. When we added these two matrices together, their result was actually rank 3, because all of these zeros get added with unique, new information. However, here when we do the product, we end up with a rank-1 matrix. In this case, we are multiplying by the zero matrix. The zero matrix has rank zero. And of course any matrix times the zero matrix is the zero matrix. So the product is zero. And in this case we end up with a rank 2 matrix, and one column of zeros.
 
-In practice, what you do is come up with some threshold, and then you would ignore any eigenvalues
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-21.png}
+	\caption{Rank}
+	\label{fig:rank_21}
+\end{figure}
 
-that are less than that threshold.
+So with these examples in mind, here is the rule for matrix multiplication. The rule is that the rank of the product matrix of $A$ times $B$ cannot be any greater than the smaller of the ranks of either matrix individually.
 
-But of course thresholds can be arbitrary and it's difficult to know what the appropriate or the correct
+So if you know the rank of $A$ and you know the rank of $B$, then whichever rank is smaller sets the maximum possible boundary of the rank of $A$ times $B$. The rank of $A$ times $B$ could actually be smaller than whatever is the minimum of these two, but it couldn't be larger than the minimum of these two. And this rule we can see in these different examples here.
 
-threshold is.
+So here the smallest rank is three. And the resulting product matrix happens to be three. Here the smallest rank is one and the product matrix has rank $1$. $0$ and $0$, and $2$ and $2$.
 
-I don't want to go into a lot of the details about what I'm talking about now;
+There are several proofs to this statement. I will show you one proof. This is the proof that I find intuitive. It has to do with the column space of a matrix. The column space is a concept that you will learn more about in the next section, but basically the column space is the subspace that is spanned by the columns of a matrix. So let's start by calling this product matrix $C$. So this is the rank of $C$. If you think about each column in $C$ as being the matrix-vector product of the matrix $A$ and the corresponding column of $B$, so the $j$th column in $C$ is the $j$th column in $B$, post-multiplying the matrix $A$, then basically each column of $C$ is a linear combination of the columns of $A$.
 
-again, you'll learn more about that in the section
+This means that the subspace spanned by the columns of $C$ is at most the same dimensionality as the subspace spanned by the columns of $A$. Now it could be smaller dimensionality, depending on the elements in $B$, but it certainly couldn't be larger.
 
-on eigendecomposition.
+And you'll remember I mentioned in a previous video that the dimensionality of a subspace spanned by the columns of a matrix is one of the definitions of rank. Therefore the rank of $C$ cannot be bigger than the rank of $A$. It could be smaller but it couldn't be bigger. Or, you can make the same argument for the rows of matrix C coming from the rows of matrix $A$ times matrix $B$. And there you would come to the conclusion that the rank of matrix $C$ cannot be any bigger than the rank of matrix $B$, because the rows in matrix $C$ come from the rows of $B$ weighted according to the elements in $A$. So here you see both of these rules on the same page.
 
-I just want to give you an idea of where the ambiguity comes from, when determining the matrix rank.
+Now to be honest, these are not rules that you really have to use in practice in applied linear algebra. So I don't know if you really need to worry about committing these rules to memory, except if you are taking a college course in linear algebra and you would need to recite these rules in an exam for example. Nonetheless, matrix rank is such an important property and you use the matrix rank very often in practice. So the more comfortable you are with thinking about matrix rank and working with matrix rank, the easier it will be able to learn the more advanced topics. The more general point from this video is that the rank of a summed matrix or a product matrix is not necessarily the same as the rank of either of the individual matrices.
 
-In practice, a related source of difficulty comes from noise.
-
-So let's say you have this 3 by 3 matrix of rank 2.
-
-So this is a matrix that the columns are in R3, but the rank is 2.
-
-So the information that's contained in this matrix exists on a 2D plane that's embedded in an ambient
-
-three dimensional space. So that's fine;
-
-there's nothing weird or wrong about this situation.
-
-So here's this plane. Imagine you're looking at the edge of the plane; you're looking through the plane.
-
-So it looks flat like this, so this would be the plane going this way.
-
-So all three of these vectors, which are these columns in the matrix, are all in this plane.
-
-So when you're looking into the plane the three vectors would look something like this.
-
-But now imagine that these are empirically measured data, let's say from a satellite. And the measurement
-
-sensors on a satellite are a tiny bit noisy and not perfectly perfectly calibrated.
-
-So although this is really three vectors lying in a two dimensional plane, if you have a tiny bit of
-
-noise it's possible that the vectors will point off the plane ever so slightly. An overly sensitive
-
-way of computing rank might actually call this a rank 3 matrix even though we know that is just a rank
-
-2 matrix so the information is just in two dimensions.
-
-So again, you need to have some kind of threshold that decides when this little bit of projection off
-
-the plane should be considered an additional source of information in the matrix, which would knock up
-
-the rank to 3.
-
-All right.
-
-Now we can explore some of these rank concepts in Matlab.
-
-Here I'm going to create a matrix of M by N,
-
-so in this case, 4 by 6, and then we'll compute the rank of the matrix using the Matlab function
-
-rank.
-
-It turns out that matrices of random numbers pretty much always are full rank.
-
-So in this case, it's going to be full column -- full row rank (excuse me) because the maximum possible rank
-
-is the smaller of m or n.
-
-And that's just because the probability of seeing a linearly independent set of columns or rows, given
-
-a bunch of random numbers, is generally pretty small. So random matrices pretty much always have full
-
-rank.
-
-So let's see what the rank of this matrix is.
-
-Indeed it is four, which is the theoretical maximum possible rank that this matrix could ever have.
-
-Now what I'm going to do is create a new matrix B.
-
-First I set B equal to A.
-
-And then what I'm going to do is replace the last column of B with the second to last column of B.
-
-So let's see what that looks like.
-
-So here's matrix B. It's all very nice and happy.
-
-And now you can see this column is the same thing as the second to last column.
-
-So what is the effect going to be on the rank of the matrix?
-
-I would like you to think about this question before running this line of code.
-
-So here, the rank of the matrix still turned out to be four.
-
-Even though this last column is literally a linear combination of some other columns, because it's
-
-just one times the second to last column.
-
-However I was addressing the columns and this is a full row rank matrix, which means it has a column
-
-rank deficient matrix.
-
-Now the story is going to change a little bit
-
-if we swap these numbers around.
-
-So if I set this to be a 6 by 4 matrix the rank of the original matrix is still going to be 4.
-
-However, now I rotated the matrix
-
-and now you can already see that this matrix has rank 3.
-
-And that's because this column is different from this column, which is different from this column.
-
-But this column is exactly this column repeated.
-
-So now I believe the rank should be three, which ineed it is. In this next cell,
-
-I'm going to add a little bit of noise to a rank-deficient matrix.
-
-So again I create a random matrix, and then I set the first column to be equal to the second column.
-
-So you can see what that matrix looks like: you can see the first two columns are identical.
-
-And the rest of the columns form a linearly independent set.
-
-Now I create a new matrix which is equal to A plus some random noise, just a bunch of random numbers,
-
-and that's modulated by this noise level.
-
-And then I'm going to display the rank of the matrix without noise versus adding a little bit of noise.
-
-So you can see that adding a tiny bit of noise -- this is .001 standard deviations --
-
-So it's a very small amount of noise.
-
-And that already increased the rank from five to six. In this video I introduced you to a few methods
-
-for computing the rank.
-
-As you progress in this course and through your adventures in linear algebra, you will be able to think
-
-about how to use these more advanced methods to help you compute matrix rank.
-
-I also introduced you to two sources of difficulty that introduce some ambiguity into computing
-
-the rank of real matrices in real applications.
+One final point I'd like to make here is that in the examples I shown in this video all the matrices were square matrices, but these two rules apply equally well to rectangular matrices, as long as the addition or the multiplication is valid. In the exercises for this section, you will have the opportunity to explore these rules using different sized matrices.
 
 \end{document}
