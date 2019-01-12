@@ -1542,5 +1542,204 @@ In the next lecture, what I'll discuss are some other very important building bl
 
 \subsection*{Lecture 3: Signals and systems: Part II}
 
+\section*{Linear Algebra}
+
+\subsection*{Four Ways}
+
+There are four ways to think about and to implement standard matrix multiplication.
+
+All four methods give exactly the same result, but they provide a different perspective on what matrix multiplication means and how it works. It's really useful to understand all four of these perspectives, because they provide distinct insights into matrix computations in different contexts and for different problems.
+
+\subsubsection*{Dot-Products}
+
+So first of all, you can think about matrix multiplication as an ordered collection of dot-products. I call this the "element perspective" because you think about matrix multiplication one element at a time. This is the main way and sometimes, unfortunately in my opinion, the only way that teachers introduce matrix multiplication.
+
+So, each element in this matrix is the dot product between rows of this matrix and columns of this matrix.
+
+The idea is to think about this left matrix as comprising rows and this right matrix as comprising columns. Then, each element of the dot product comes from the corresponding row and the corresponding column.
+
+Here's an example.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/multi-01.png}
+	\caption{Multiplication 01}
+	\label{fig:multi_01}
+\end{figure}
+
+So, this first element in the product matrix is defined as the dot product between this -- the first row and the first column -- and it's the first row in the first column because this is element $(1,1)$.
+
+Now we can think about this element here. This is the second row and the first column in this product matrix. So this element is defined as the dot product between the second row in the left matrix and the first column of the right matrix. Then we go here. This again is the first row and the second column of the product matrix, so this is the dot product between the first row of the left matrix and the second column of the right matrix.
+
+And finally, we get to the last element, which is second row and second column. That's the dot product between the second row and the second column of these matrices.
+
+So what I've done here is build up the product matrix one individual element at a time.
+
+That's why this is called the \textbf{element perspective}, because you are thinking about this matrix as a collection of individual elements.
+
+This is one way to conceptualize standard matrix multiplication. The second way to think about matrix multiplication is to build the product matrix one "layer" at a time.
+
+\subsubsection*{Layer Perspective}
+
+I call this the "\textbf{layer perspective}." Each layer in the matrix is the same size as the product matrix, but it's a rank-1 matrix.
+
+I'll have a separate video on rank in a later section, but for now you can think of a rank-1 matrix as containing only 1 column's worth of information. All the other columns are linearly dependent on the first column. So the idea of the layer perspective is to compute and sum a series of rank-1 matrices, and the end result is going to be the product matrix.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/multi-02.png}
+	\caption{Analogy}
+	\label{fig:multi_02}
+\end{figure}
+
+Here's an analogy that you can use to think about. Imagine someone is creating a picture in Photoshop or Inkscape by layering transparent shapes on top of each other.
+
+Each shape contains a different part of the image. And when you put them all together, when you sum all of these layers together, you get the final result. So this result is not present in any individual layer, but each of these layers provides a different
+piece. And then you put them all together and these layers are all the same size as the result. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/multi-03.png}
+	\caption{Layer Perspective}
+	\label{fig:multi_03}
+\end{figure}
+
+So the mechanism of computing the layer perspective is to think about this left matrix as comprising columns.
+
+Previously we thought about this as rows.
+
+Now we think about this as columns, and we think about the right matrix as comprising rows. Then you compute
+
+all of the corresponding outer products.
+
+In this case it's only 2,
+
+so that's going to give us two matrices, two outer products.
+
+So this first matrix here is the outer product of the first column in the last matrix and the first
+
+row in the right matrix.
+
+And you can see that the columns are linearly dependent on each other, as are the rows.
+
+So this is the outer product.
+
+And now we get to this one. This is also an outer product, but it's from the second column and the second
+
+row.
+
+And if these were larger matrices, you would continue this to have more layers.
+
+And then what you do is add these two matrices, element by element, and that gives you this result.
+
+And I encourage you to pause the video and confirm with your notes that this resulting matrix is exactly
+
+the same as the previous product matrix from the element perspective, using dot products.
+
+And now we use outer products to compute the layer perspective.
+
+Another way to think about this is that each of these rank-1 matrices is like a single color, and the
+
+matrix is the rainbow.
+
+So we put all these single colors together and then we get this beautiful rainbow.
+
+This is an important and elegant idea, and it forms the basis for the singular value decomposition, which
+
+you will learn about in a later section of this course.
+
+The third way to think about standard matrix multiplication is what I call the "column perspective."
+
+Here you think about the product matrix as being a linear weighted combination of the columns of the left
+
+matrix, where the weights -- or scalars to combine these columns -- come from this right matrix.
+
+So let's see what that would look like.
+
+The left column -- I should say, the first column of the product matrix -- is the sum of the two columns
+
+of the left matrix, so 0 2, plus the column 1 3, and those columns are not just added; they are weighted and
+
+then they're added. And the weights come from the right matrix, so a and c. And now the second column in
+
+the product matrix again it comes from exactly the same columns of the left matrix.
+
+But now we're combining them by weighting them according to the second column in the right matrix so
+
+it's b times the first column of the left matrix plus b times the second column in the right matrix.
+
+And of course this would expand for however many columns you have in these matrices.
+
+So you'll notice that in the element perspective, I was building up the product matrix one element at
+
+a time; in the layer perspective,
+
+I was building up the product matrix one layer at a time. And now I'm building up the product matrix
+
+one column at a time.
+
+This interpretation -- this column perspective --
+
+turns out to be really useful in statistics, because the columns of the left matrix will contain a set
+
+of regressors, which is a simplified model of a data set, and the right matrix will contain the coefficients.
+
+And the idea in statistics is that the coefficients encode the importance of each vector, and the goal
+
+of model fitting in statistics is to find the best coefficients, such that the weighted combination of
+
+regressors best matches the data.
+
+So you will see this column perspective coming up again in a later section of this course about linear
+
+least squares modeling and statistics.
+
+I'm sure you can guess what the fourth perspective of matrix multiplication will be: of course it's
+
+the row perspective. Again,
+
+the result will be exactly the same as the previous three methods I showed you; this is just a different
+
+way of thinking about the same operation.
+
+So now we build up the product matrix one row at a time.
+
+So let's see how this works.
+
+So the first row in the product matrix comes from a sum of both rows of the right matrix,
+
+except we're not just summing the rows of this right matrix,
+
+we are weighting them and taking the weighted combination of these rows. The weightings come from the
+
+elements of the first row in the left matrix. And same story for the second row. We take
+
+again the sum of all the rows of the second matrix,
+
+but now instead of being weighted by the first row the left matrix, they're weighted by the second row
+
+of the left matrix.
+
+OK.
+
+And of course all of these examples that I've been showing are for two by two matrices but that's really
+
+just in the interest of brevity.
+
+The same perspectives apply for any size matrices, where the matrix multiplication is valid.
+
+So let's recap.
+
+In this video I showed four different ways of thinking about, and also four different ways of implementing,
+
+matrix multiplication between two matrices.
+
+I know it's a lot to take in, and matrix multiplication is a bit of a weird thing at first, but it
+
+is very important. I like to teach these four ways to think about the same operation, because this
+
+increases your understanding in the flexibility of this really fundamental operation. And the more comfortable
+
+you are with matrix multiplication, the easier it will be to learn more advanced topics in linear algebra.
 
 \end{document}

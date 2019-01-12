@@ -1,0 +1,179 @@
+The following content is provided under a Creative Commons license. Your support will help MIT OpenCourseWare continue to offer high-quality educational resources for free.
+
+To make a donation, or view additional materials from hundreds of MIT courses, visit MIT OpenCourseWare at ocw.mit.edu.
+
+[MUSIC PLAYING]
+
+PROFESSOR: Over the last several lectures, we developed the Fourier representation for continuous-time signals. What I'd now like to do is develop a similar representation for discrete-time. And let me begin the discussion by reminding you of what our basic motivation was.
+
+The idea is that what we wanted to do was exploit the properties of linearity and time invariance for linear time-invariant systems. So in the case of linear time-invariant systems, the basic idea was to consider decomposing the input as a linear combination of basic inputs. And then, because of linearity, the output could be expressed as a linear combination of corresponding outputs where psi sub i is the output due to phi sub i.
+
+So basically, what we attempted to do was decompose the input, and then reconstruct the output through a linear combination of the outputs to those basic inputs. We then focused on the notion of choosing the basic inputs with two criteria in mind. One was to choose them so that a broad class of signals could be constructed out of those basic inputs. And the second was to choose the basic inputs, so that the response to those was easy to compute. And as you recall, one representation that we ended up with, with those basic criteria in mind, was the representation through convolution. And then in beginning the discussion of the Fourier representation of continuous-time signals, we chose as another set of basic inputs complex exponentials.
+
+So for continuous-time, we chose a set of basic inputs which were complex exponentials. The motivation there was the fact that the complex exponentials have what we refer to as the eigenfunction property. Namely, if we put complex exponentials into our continuous-time systems, then the output is a complex exponential of the same form with only a change in complex amplitude. And that change in complex amplitude is what we referred to as the frequency response of the system.
+
+And also, by the way, as it developed later, that frequency response, as you should now recognize from this expression, is in fact the Fourier transform, the continuous-time Fourier transform of the system impulse response. And the notion of decomposing a signal as a linear combination of these complex exponentials is what, first the Fourier series representation, and then later the Fourier transform representation corresponded to.
+
+And finally, to remind you of one additional point, the fact is that because of the eigenfunction property, the response-- once we have decomposed the input as a linear combination of complex exponentials, the response to that linear combination is straightforward to compute once we know the frequency response because of the eigenfunction property.
+
+Now, basically the same strategy and many of the same ideas work in discrete-time, paralleling almost exactly what happened in continuous-time. So the similarities between discrete-time and continuous-time are very strong. Although as we'll see, there are a number of differences. And it's important as we go through the discussion to illuminate not only the similarities, but obviously also the differences.
+
+Well, let's begin with the eigenfunction property, and let me just state that just as in continuous-time, if we consider a set of basic signals, which are complex exponential rules, then discrete-time linear time-m invariant systems have the eigenfunction property. Namely, if we put a complex exponential into the system, the response is a complex exponential at the same complex frequency, and simply multiplied by an appropriate complex factor, or constant. And just as we did in continuous-time, we will be referring to this complex constant, which is a function, of course, the frequency of the complex exponential input. We'll be referring to this as the frequency response.
+
+And although it's not particularly evident at this point, as the discussion develops through this lecture, what in fact will happen is very much paralleling continuous-time. This particular expression, in fact, will correspond to what we'll refer to as the Fourier transform, the discrete-time Fourier transform of the system impulse response. So there, of course, there's a very strong parallel between continuous time and discrete time.
+
+Now, just as we did in continuous-time, let's begin the discussion by first concentrating on periodic-- the representation through complex exponentials of periodic sequences, and then we'll generalize that discussion to the representation of aperiodic signals.
+
+So let's consider first a periodic signal, or in general, signals which are periodic. Period denoted by capital N. And then, of course, the fundamental frequency is 2 pi divided by capital N.
+
+Now, we can consider exponentials which have this as a fundamental frequency, or which are harmonics of that, and that would correspond to the class of complex exponentials of the form e to the jk omega 0 n. So these complex exponentials then, as k varies, are complex exponentials that are harmonically related, all of which are periodic with the same period capital N. Although the fundamental period is different for each of these. Each of them being related by an integer amount.
+
+Now, again, just as we did in continuous time, we can consider attempting to build our periodic signal out of a linear combination of these. And so we consider a periodic signal, which is a weighted sum of these complex exponentials. And, of course, this periodic signal-- this is a periodic signal. This can be verified, more or less, in a straightforward way by substitution.
+
+And, of course, one of the things that we'll want to address shortly is how broad a class of signals, again, can be represented by this sum? And another question obviously will be, how do we determine the coefficients a sub k?
+
+However, before we do that, let me focus on an important distinction between continuous-time and discrete-time in the context of these complex exponentials and this representation.
+
+When we talked about complex exponentials and sinusoids early in the course, one of the differences that we saw between continuous-time and discrete-time is that in continuous-time, as we vary the frequency variable, we see different complex exponentials as omega varies. Whereas, in discrete-time, we saw, in fact, that there was a periodicity. Or said another way, it's straightforward to verify that if we think of this class of complex exponentials. That, in fact, if we consider varying k by adding to it capital N, where capital N is the period of the fundamental complex exponential. Then in fact, if we replace k by k plus capital N, we'll see exactly the same complex exponentials over again.
+
+Now, what does that say? What it says is that if I consider this class of complex exponentials, as k varies from 0 through capital N minus 1, we will see all of the ones that there are to see. There aren't anymore. And so, in fact, if we can build x of n out of this linear combination, then we better be able to do it as k varies from 0 up to N minus 1. Because beyond that, we'll simply see the same complex exponentials over again.
+
+So, for example, if k takes on the value capital N, that will be exactly the same complex exponential as if k is equal to 0. So in fact, this sum ranges only over capital N of the distinct complex exponentials. Let's say, for example, from 0 to capital N minus 1 . Although, in fact, since these complex exponentials repeat in k, I could actually consider instead of from 0 to N minus 1, I could consider from 1 to N, or from 2 to N plus 1, or whatever.
+
+Or said another way, in this representation, I could alternatively choose k outside this range, thinking of these coefficients simply as periodically repeating in k because of the fact that these complex exponentials periodically repeat in k. So, in fact, in place of this expression, it will be common in writing the Fourier series expression to write it as I've indicated here, where the implication is that these Fourier coefficients periodically repeat as k continues to repeat outside the interval from 0 to N minus 1. And so this notation, in fact, says that what we're going to use is k ranging over one period of this periodic sequence, which is the Fourier series coefficients.
+
+So the expression that we have then for the Fourier series I've repeated here. And the implication now is that the a sub k's are periodic. They periodically repeat because, of course, these exponentials periodically repeat. This indicates that we only use them over one period. And now we can inquire as to how we determine the coefficients a sub k.
+
+Well, we can formally go through this much as we did in the continuous-time case. And we do, in fact, do that in the text, which involves substituting some sums and interchanging the orders of summation, et cetera. But let me draw your attention to the fact that this, in fact, can be thought of as capital N equations and capital N unknowns.
+
+In other words, we know x of n over a period, and so we know what the left-hand side of this is for capital N values. And we'd like to determine these constants a sub k. Well, it turns out that there is a nice convenient closed-form expression for that. And, in fact, if we evaluate the closed-form expression through any of a variety of algebraic manipulations, we end up then with the analysis equation. And the analysis equation, which tells us how to get the coefficients a sub k from x of n is what I've indicated here. And so this tells us how from x of n to get the a sub k's.
+
+And, of course, the first equation tells us how x of n is built up out of the a sub k. Notice incidentally that there is a strong duality between these two equations. And that's a duality that we'll return to, actually toward the end of the next lecture.
+
+Now, there is a real difference between the way those equations look and the way the continuous-time Fourier series looked. In the continuous-time case, let me remind you that it required an infinite number of coefficients to build up this continuous-time function. And so this was not simply a matter of identifying how to invert capital N or a finite number of equations and a finite number of unknowns. And the analysis equation was an integration as opposed to the synthesis equation, which is a summation. So there is a real difference there between the continuous-time and discrete-time cases.
+
+And the difference arises, to a large extent, because of this notion that in discrete-time, the complex exponentials are periodic in their frequency. So we have then to summarize the synthesis equation and the analysis equation for the discrete-time Fourier series.
+
+Again, x of n, our original signal is periodic. And, of course, the complex exponentials involved are periodic. They're periodic obviously in n. But in contrast to continuous-time, these repeat in k. In other words, as k omega 0 goes outside a range that covers a 2 pi interval. And because of that, we're imposing, in a sense, the interpretation that the a sub k's are likewise a periodic sequence. And in fact, if we look at the analysis equation, as we let k vary outside the range from 0 to N minus 1, what you can easily verify by substitution in here is that this sequence will, in fact, periodically repeat.
+
+So to underscore the difference between the continuous-time and discrete-time cases, we have this periodicity in the time domain, and that's a periodicity that is, of course, true in discrete-time and it's also true in continuous-time if we replace the integer variable by the discrete-time time variable.
+
+And we also, in discrete-time, have this periodicity in k, or in k omega 0. And correspondingly, a periodicity in the Fourier coefficients. And that is a set of properties that does not happen in continuous-time. And it is that that essentially leads to all of the important differences between discrete-time Fourier representations and continuous-time Fourier representations.
+
+Now, just quickly, let me draw your attention to the issue of convergence and when a sequence can and can't be represented, et cetera. And recall that in the continuous-time case, we focused on convergence in the context either of conditions, which I referred to as square integrability, or another set of conditions, which were the Dirichlet conditions. And there was this issue about when the signal does and doesn't converge at discontinuities, et cetera.
+
+Let me just simply draw your attention to the fact that in the discrete-time case, what we have is the representation of the periodic signal as a sum of a finite number of terms. This represents capital N equations and capital N unknowns. If we consider earth the partial sum, namely taking a smaller number of terms, then simply what happens is as the number of terms increases to the finite number required to represent x of n, we simply end up with the partial sum representing the finite [? length ?] sequence.
+
+What all that boils down to is the statement that in discrete-time there really are no convergence issues as there were in continuous-time.
+
+OK, well let's look at an example of the Fourier series representation for a particular signal. And the one that I've picked here is a simple one. Namely, a constant, a sine term, and a cosine term.
+
+Now, for this particular example, we can expand this out directly in terms of complex exponentials and essentially recognize this as a sum of complex exponentials. It's examined in more detail in Example 5.2 in the text.
+
+And if we look at the Fourier series coefficients, we can either look at it in terms of real and imaginary parts or magnitude and angle. On the left side here, I have the real part of the Fourier coefficients. And let me draw your attention to the fact that I've drawn this to specifically illuminate the periodicity of the Fourier series coefficients with a period of capital N.
+
+So here are the Fourier coefficients. And, in fact, it's this line that represents the DC, or constant term, and these two lines that represent the cosine term. And of course, these are the three terms that are required. Or equivalently, this one, this one, and this one. And then because of the periodicity of the Fourier series coefficients, this simply periodically repeats.
+
+So here is the real part and below it I show the imaginary part. And in the imaginary part, incidentally let me draw your attention to the fact that it's this term and this term in the imaginary part that represent the sinusoid. Whereas it's the symmetric terms in the real part the represent the cosine.
+
+OK, let's look at another example. This is another example from the text, and one that we'll be making frequent reference to in this particular lecture. And what it is, is a square wave. And I've expressed the Fourier series coefficients, which are algebraically developed in the text. I've expressed the Fourier series coefficients as samples of an envelope function. And so I've expressed it as samples of this particular function, which is referred to as a sin nx over sin x function.
+
+And let me just compare it to a continuous-time example, which is the continuous-time square wave, where with the continuous-times square wave the form of the Fourier series coefficients was as samples of what we refer to as a sin x over x function.
+
+Now, the sin nx over sin x function, which is the envelope of the Fourier series coefficients for the discrete-time periodic square wave plays the role-- and we'll see it very often in discrete-time-- that sin x over x does in continuous-time.
+
+And, in fact, we should understand right from the beginning that the sin x over x envelope couldn't possibly be the envelope of the discrete-time Fourier series coefficients. And one obvious reason is that it is not periodic. What we require, of course, from the discussion that I've just gone through is periodicity of the coefficients. And then consequently, also periodicity of the envelope in the discrete-time case.
+
+So once again, if we look back at the algebraic expression that I have, it's samples of the sin nx over sine x function that represent the Fourier series coefficients of this periodic square wave.
+
+Now, in the representation in the continuous-time case, we essentially had used the concept of an envelope to represent the Fourier series coefficients, and the notion that the Fourier series coefficients were samples of an envelope. And that is the same notion that we'll be using in discrete-time.
+
+So again for this square wave example, then what we have is an envelope function, the sin nx over sin x envelope function for a particular value of the period. Here indicated with a period of 10 samples. These samples of this envelope function would then represent the Fourier series coefficients.
+
+If we increased the period, then we would simply have a finer spacing on the samples of the envelope function to get the Fourier series coefficients. And likewise, if we increase the period still further, what we would have is an even finer spacing.
+
+So actually, as the period increases, and recall we used this in continuous-time also. As the period increases, we can view the Fourier series coefficients as samples of an envelope. And as the period increases, the sample spacing gets finer and finer. And in fact, as the period goes off essentially to infinity, the samples of the envelope, in effect, become the envelope.
+
+And recall also that this was essentially the trick that we used in continuous-time to allow us to develop or utilize the Fourier series to provide a representation of aperiodic signals as a linear combination of complex exponentials. In particular, what we did in the continuous-time case when we had an aperiodic signal was to consider constructing a periodic signal for which the aperiodic signal was one period.
+
+And then we developed the notion that since the periodic signal has a Fourier series, and since as the period of the periodic signal increases and goes to infinity, the periodic signal represents the aperiodic signal. Then, essentially, the Fourier series provides us with a representation.
+
+Now, we can do exactly the same thing in the discrete-time case. The statement is exactly the same, except that in the discrete-time case, instead of t as the independent variable, we simply make exactly the same statement, but with our discrete-time variable n.
+
+So the basic notion then in representing a discrete-time aperiodic signal is to first construct a periodic signal. Here we have the aperiodic signal. We construct a periodic signal by simply periodically replicating the aperiodic signal. The periodic signal and the aperiodic signal are identical for one period. And as the period goes off to infinity, it's the Fourier series representation of the periodic signal that provides a representation of the aperiodic signal.
+
+Again, to return to the example that we have been kind of working through this lecture. Namely, the periodic square wave. If we have an aperiodic signal, which is a rectangle, and we construct a periodic signal. And now we consider letting this period increase to infinity. We would first have this set of samples of the envelope. As the period increases, we would decrease the sample spacing to this set of samples. As the period increases further, it would be this set of samples. And as the period goes off to infinity, it's every point on the envelope. In fact, what the representation of the aperiodic signal is, is the envelope.
+
+OK, well, so that's the basic notion. It's no different than what we did in the continuous-time case. And mathematically, it develops in very much the same way as in the continuous-time case. Specifically, here is our representation through the Fourier series of the-- here is a representation through the envelope function. And this is the Fourier series synthesis equation where the equation below tells us how we get these Fourier coefficients or the envelope from x of n.
+
+Now, x tilde of n is the periodic signal. And we know that over one period, which is the only interval over which we use it, in fact, this is identical to the aperiodic signal. And so, in fact, we can rewrite this equation simply by substituting in instead of x tilde, the original aperiodic signal. And now we can use infinite limits on this sum. And what we would want to examine, mathematically, is what happens to the top equation as we let the period go off to infinity?
+
+And what happens is exactly identical, mathematically, to continuous-time. I won't belabor the details. Essentially it's this sum that goes to an integral. Omega 0, which is the fundamental frequency, is going towards 0. In fact, becomes the differential in the integral. And in the second equation, of course, this then becomes x of omega. And as N goes to infinity then, what the Fourier series becomes is the Fourier transform as summarized by the bottom two equations.
+
+So although there is a little bit of mathematical trickery. Or let's not call it trickery, but subtlety, to be tracked through in detail. The important conceptual thing to think about is this notion that we take the aperiodic signal, form a periodic signal, let the period go off to infinity. In which case, the Fourier series coefficients become these envelopes functions. And incidentally, mathematically, one of the sums ends up going to an integral.
+
+So what we have then is the discrete-time Fourier transform, which is a representation of an aperiodic signal. And we have the synthesis equation, which I show as the top equation on this transparency. And this is the integral that the Fourier series synthesis equation went to as the period went off to infinity.
+
+And we have the corresponding analysis equation, which is shown below, where this tells us the Fourier transform. In effect, the envelope or the Fourier series coefficients of that periodic signal. And here represented in terms of the aperiodic signal.
+
+So we have the analysis equation and synthesis equation. There are a number of things to focus on as you look at this. And we'll talk about some of its properties actually in the next lecture. But some of the points that I'd like you to think about and focus on is the fact that now there is somewhat of an imbalance or lack of duality between the time domain and frequency domain. x of n, which is our aperiodic signal, is of course, discrete. It's Fourier transform, x of omega, is a function of a continuous variable. Omega is a continuous variable. That is essentially what represents the envelope.
+
+Also, in the time domain x of n is aperiodic. It's not a periodic function. However, in the frequency domain, remember that the Fourier series coefficients were always periodic. Well, this envelope function then is also periodic with a period in omega of 2 pi.
+
+Once again, the reason for the periodicity, it all stems back to the fact that when we talk about complex exponentials-- and recall back to the early lectures. In discrete-time, as the frequency variable covers a range of 2 pi, when you proceed past that range, you simply see the same complex exponentials over and over again. And so obviously, anything that we do with them would have to be periodic in that frequency variable.
+
+All right, notationally, we'll, again, represent the discrete-time Fourier transform pair as I indicated here. And since it's a complex function of frequency may, on occasion, want to either represent it in rectangular form as I indicate in this equation, or in polar form as I indicate in this equation.
+
+Let's look at an example. And, of course, one example that we can look at is the one that has kind of been tracking us through this lecture, which is the example of a rectangle.
+
+Now, the rectangle, if we refer back to our argument of how we get a Fourier representation for an aperiodic signal, we would form a periodic signal where this is repeated. And that's our square wave example. As the period goes to infinity, the Fourier transform of this is represented by the envelope of those Fourier series coefficients, and that was our sin nx over sin x function, which in this particular case, for these particular numbers, is sin 5 omega over 2 divided by sin omega over 2.
+
+And notice, of course, as we would expect-- notice that this is a periodic function of the frequency variable omega repeating, of course, with a period of 2 pi. Whereas, in the time domain, the function was not a periodic function, it's aperiodic.
+
+Now, let's look at another example. Let's look at an example which is another signal that has kind of popped its head up from time to time as the lectures have gone along. A signal which is another aperiodic signal, which is a decaying exponential of this form with the factor a chosen between 0 and 1. And you can work out the algebra at your leisure.
+
+Basically, if we substitute into the Fourier transform analysis equation, it's this sum that we evaluate. Because we have a unit step here which shuts this off for n less than 0, we can change the limits on the sum. This then corresponds to the sum over an infinite number of terms of a geometric series. And that, as we've seen before, is 1 divided by 1 minus a e to the minus j omega.
+
+So let's look at what that looks like. Here then we have, again, the expression in the time domain and the expression in the frequency domain. And let's, in particular, focus on what the magnitude of the Fourier transform looks like. It's as we show here.
+
+And for the particular values of a that I pick, namely between 0 and 1, it's larger at the origin than it is at pi. And then, of course, it is periodic. And the periodicity is inherent in the Fourier transform in discrete-time, so we really might only need to look at this either from minus pi to pi, or from 0 to 2 pi. The periodicity, of course, would imply what the rest of this is for other values of omega.
+
+Let me also draw your attention while we're on it to the fact that-- observe that if a were, in fact, negative, then this value would be less than this value. And in fact, for a negative, the magnitude of the frequency response would look like this except shifted by an amount in omega equal to pi.
+
+And this example will come up and play an important role in our discussion next time, so try to keep it in mind. And in fact, work it out more carefully between now and next time. And also, if you have a chance, focus on this issue of how it looks with a positive as compared with a negative.
+
+Now, we developed the Fourier transform by beginning with the Fourier series. We did that in continuous-time also. What I'd like to do now, just as we did in continuous-time, is now absorb the Fourier series within the broader framework of the Fourier transform. And there are two relationships between the Fourier series and the Fourier transform, which are identical to relationships that we had in the continuous-time case.
+
+Let me remind you that in continuous-time we had the statement that if we have a periodic signal, that in fact the Fourier series coefficients of that periodic signal is proportional to samples of the Fourier transform of one period.
+
+Well, in fact, let me remind you flows easily from all the things that we built up so far, because of the fact that the Fourier transform essentially, by definition, of the way we developed it, is what we get as the Fourier series coefficients, as we focus on one period, and then let the period go off to infinity.
+
+Well, looking at one period, the Fourier transform of that then is the envelope of the Fourier series coefficients. And so in continuous-time, we have this relationship. And in discrete-time, we have precisely the same relationship, except that here we're talking about an integer variable as opposed to the continuous variable, and a period of capital N as opposed to a period of t0.
+
+OK, so once again, if we return to our example, or if we return to a periodic signal. If we have a periodic signal and we consider the Fourier transform of one period, the Fourier series coefficients of this periodic signal are, in fact, samples-- as stated mathematically in the bottom equation, samples of the Fourier transform of one period. So x of omega is the Fourier transform of one period. a sub k's are the Fourier series coefficients of the periodic signal. And this relationship simply says they're related except for scale factor through samples along the frequency axis.
+
+And, of course, we saw this in the context of our square wave example. In the square wave example, we have a periodic signal, which is a periodic square wave. And the Fourier transform of one period, in fact, represents the envelope. And here we have the envelope function. Represents the envelope of the Fourier series coefficients. And the Fourier series coefficients are samples.
+
+So what we have then is a relationship back to the Fourier series coefficients from the Fourier transform that tells us that for a periodic signal now, the periodic signal-- the Fourier series coefficients are related, are samples of the Fourier transform of one period.
+
+Now, finally, to kind of bring things back in a circle and exactly identical to what we did in the continuous-time case, we can finally absorb the Fourier series in discrete-time. We can absorb it into the framework of the Fourier transform.
+
+Now, remember or recall how we did that when we tried to do a similar sort of thing in continuous-time.
+
+In continuous-time, what we essentially did is to develop that, more or less, by definition. We have a periodic signal. The periodic signal is represented through a Fourier series and Fourier series coefficients. Essentially what I pointed out at that time was that if we define-- take it as a definition, the Fourier transform of the periodic signal as an impulse train where the amplitudes of the impulses are proportional to the Fourier series coefficients. If we take that impulse train representation and simply plug it into the Fourier transform synthesis equation, what we end up with is the Fourier series synthesis equation.
+
+So in continuous-time, we had used this definition of the continuous-time Fourier transform of a periodic signal. And again, in discrete-time, it's simply a matter of using exactly the same expression. And using, instead, the appropriate variables related to discrete-time rather than the variables related to continuous-time. So in discrete-time, if we have a periodic signal, the Fourier transform of that periodic signal is defined as an impulse train where the amplitudes of the impulses are proportional to the Fourier series coefficients.
+
+If this expression is substituted into the synthesis equation for the Fourier transform, that will simply then reduce to the synthesis equation for the Fourier series.
+
+So once more returning to our example, which is the square wave example that we've carried through these lectures, or through this lecture, we can see that really what we're talking about really is a notational change. Here is the periodic signal and below it are the Fourier series coefficients, where I've removed the envelope function and just indicate the amplitudes of the coefficients indexed, of course, on the coefficient number. And so this represents a bar graph.
+
+And if instead of talking about the Fourier series coefficients, what I want to talk about is the Fourier transform, the Fourier transform, in essence, corresponds to simply redrawing that using impulses and using an axis that is essentially indexed on the fundamental frequency omega 0, rather than on the Fourier series coefficient number k.
+
+OK, so to summarize, what we've done is to pretty much parallel-- somewhat more quickly, the kind of development that we went through for continuous-time representation through complex exponentials, paralleled that for the discrete-time case. And pretty much the conceptual underpinnings of the development are identical in discrete-time and in continuous-time.
+
+We saw that there are some major differences, or important differences between continuous-time and discrete-time. And the difference, essentially relates to two aspects. One aspect is the fact that in discrete-time, we have a discrete representation in the time domain, whereas the independent variable in the frequency domain is a continuous variable. Whereas in continuous-time for the Fourier transform, we had a duality between the time domain and frequency domain.
+
+The other very important difference tied back to the difference between complex exponentials, continuous-time and discrete-time. In continuous-time, complex exponentials, as you vary the frequency, generate distinct time functions. In discrete-time, as you vary the frequency, once you've covered a frequency interval of 2 pi, then you've seen all the ones there are to see. There are no more. And this, in effect, imposes a periodicity on the Fourier domain representation of discrete-time signals. And some of those differences and, of course, lots of the similarities will surface, both as we use this representation and as we develop further properties.
+
+In the next lecture, what we'll do is to focus in, again, on the Fourier transform, the discrete-time Fourier transform, develop or illuminate some of the properties of the Fourier transform, and then see how these properties can be used for a number of things. For example, how the properties as they were in continuous-time can be used to efficiently generate the solution and analyze linear constant coefficient difference equations. And then beyond that, the concepts of filtering and modulation. And both the properties and interpretation, which will very strongly parallel the kinds of developments along those lines that we did in the last lecture. Thank you.
