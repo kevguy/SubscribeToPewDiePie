@@ -1542,9 +1542,11 @@ In the next lecture, what I'll discuss are some other very important building bl
 
 \subsection*{Lecture 3: Signals and systems: Part II}
 
+\pagebreak
+
 \section*{Linear Algebra}
 
-\subsection*{Four Ways}
+\subsection*{Four Ways to Think About Matrix Multiplication}
 
 There are four ways to think about and to implement standard matrix multiplication.
 
@@ -1552,9 +1554,9 @@ All four methods give exactly the same result, but they provide a different pers
 
 \subsubsection*{Dot-Products}
 
-So first of all, you can think about matrix multiplication as an ordered collection of dot-products. I call this the "element perspective" because you think about matrix multiplication one element at a time. This is the main way and sometimes, unfortunately in my opinion, the only way that teachers introduce matrix multiplication.
+So first of all, you can think about matrix multiplication as an ordered collection of dot-products. I call this the "\textbf{element perspective}" because you think about matrix multiplication one element at a time. This is the main way and sometimes, unfortunately in my opinion, the only way that teachers introduce matrix multiplication.
 
-So, each element in this matrix is the dot product between rows of this matrix and columns of this matrix.
+So, \textbf{each element in this matrix is the dot product between rows of this matrix and columns of this matrix}.
 
 The idea is to think about this left matrix as comprising rows and this right matrix as comprising columns. Then, each element of the dot product comes from the corresponding row and the corresponding column.
 
@@ -1604,142 +1606,517 @@ piece. And then you put them all together and these layers are all the same size
 	\label{fig:multi_03}
 \end{figure}
 
-So the mechanism of computing the layer perspective is to think about this left matrix as comprising columns.
+So the mechanism of computing the layer perspective is to think about this \textbf{left matrix} as \textbf{comprising columns}. Previously we thought about this as rows. Now we think about this as columns, and we think about the \textbf{right matrix} as \textbf{comprising rows}. Then you compute all of the corresponding outer products. In this case it's only 2, so that's going to give us two matrices, two \textbf{outer products}.
 
-Previously we thought about this as rows.
+So this first matrix here is the outer product of the first column in the last matrix and the first row in the right matrix. And you can see that the columns are linearly dependent on each other, as are the rows. So this is the outer product.
 
-Now we think about this as columns, and we think about the right matrix as comprising rows. Then you compute
+And now we get to this one. This is also an outer product, but it's from the second column and the second row. And if these were larger matrices, you would continue this to have more layers. And then what you do is add these two matrices, element by element, and that gives you this result.
 
-all of the corresponding outer products.
+And I encourage you to pause the video and confirm with your notes that this resulting matrix is exactly the same as the previous product matrix from the element perspective, using dot products.
 
-In this case it's only 2,
+And now we use outer products to compute the \textbf{layer perspective}.
 
-so that's going to give us two matrices, two outer products.
+Another way to think about this is that each of these rank-1 matrices is like a single color, and the matrix is the rainbow. So we put all these single colors together and then we get this beautiful rainbow.
 
-So this first matrix here is the outer product of the first column in the last matrix and the first
+This is an important and elegant idea, and it forms the basis for the \textbf{singular value decomposition}, which you will learn about in a later section of this course.
 
-row in the right matrix.
+\subsubsection*{Column Perspective}
 
-And you can see that the columns are linearly dependent on each other, as are the rows.
+The third way to think about standard matrix multiplication is what I call the "\textbf{column perspective}."
 
-So this is the outer product.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/multi-04.png}
+	\caption{Column Perspective}
+	\label{fig:multi_04}
+\end{figure}
 
-And now we get to this one. This is also an outer product, but it's from the second column and the second
+Here you think about the product matrix as being a \textbf{linear weighted combination of the columns of the left matrix}, where the weights -- or scalars to combine these columns -- come from this right matrix.
 
-row.
+So let's see what that would look like. The left column -- I should say, the first column of the product matrix -- is the sum of the two columns of the left matrix, so $[0, 2]^T$, plus the column $[1, 3]^T$, and those columns are not just added; they are weighted and then they're added. And the weights come from the right matrix, so $[a, c]^T$. And now the second column in the product matrix again it comes from exactly the same columns of the left matrix.
 
-And if these were larger matrices, you would continue this to have more layers.
+But now we're combining them by weighting them according to the second column in the right matrix so it's $b$ times the first column of the left matrix plus $b$ times the second column in the right matrix. And of course this would expand for however many columns you have in these matrices.
 
-And then what you do is add these two matrices, element by element, and that gives you this result.
+So you'll notice that in the element perspective, I was building up the product matrix one element at a time; in the layer perspective, I was building up the product matrix one layer at a time. And now I'm building up the product matrix one column at a time.
 
-And I encourage you to pause the video and confirm with your notes that this resulting matrix is exactly
+This interpretation -- this column perspective -- turns out to be really useful in statistics, because the columns of the left matrix will contain a set of regressors, which is a simplified model of a data set, and the right matrix will contain the coefficients. And the idea in statistics is that the coefficients encode the importance of each vector, and the goal of model fitting in statistics is to find the best coefficients, such that the weighted combination of regressors best matches the data.
 
-the same as the previous product matrix from the element perspective, using dot products.
+So you will see this column perspective coming up again in a later section of this course about linear least squares modeling and statistics.
 
-And now we use outer products to compute the layer perspective.
+\subsubsection*{Row Perspective}
 
-Another way to think about this is that each of these rank-1 matrices is like a single color, and the
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/multi-05.png}
+	\caption{Row Perspective}
+	\label{fig:multi_05}
+\end{figure}
 
-matrix is the rainbow.
+I'm sure you can guess what the fourth perspective of matrix multiplication will be: of course it's the \textbf{row perspective}. Again, the result will be exactly the same as the previous three methods I showed you; this is just a different way of thinking about the same operation. So now we build up the product matrix one row at a time.
 
-So we put all these single colors together and then we get this beautiful rainbow.
+So let's see how this works. So the first row in the product matrix comes from a sum of both rows of the right matrix, except we're not just summing the rows of this right matrix, we are weighting them and taking the weighted combination of these rows. The weightings come from the elements of the first row in the left matrix. And same story for the second row. We take again the sum of all the rows of the second matrix, but now instead of being weighted by the first row the left matrix, they're weighted by the second row of the left matrix.
 
-This is an important and elegant idea, and it forms the basis for the singular value decomposition, which
+OK. And of course all of these examples that I've been showing are for two by two matrices but that's really just in the interest of brevity. The same perspectives apply for any size matrices, where the matrix multiplication is valid.
 
-you will learn about in a later section of this course.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/multi-06.png}
+	\caption{Summary}
+	\label{fig:multi_06}
+\end{figure}
 
-The third way to think about standard matrix multiplication is what I call the "column perspective."
+So let's recap. In this video I showed four different ways of thinking about, and also four different ways of implementing, matrix multiplication between two matrices.
 
-Here you think about the product matrix as being a linear weighted combination of the columns of the left
+I know it's a lot to take in, and matrix multiplication is a bit of a weird thing at first, but it is very important. I like to teach these four ways to think about the same operation, because this increases your understanding in the flexibility of this really fundamental operation. And the more comfortable you are with matrix multiplication, the easier it will be to learn more advanced topics in linear algebra.
 
-matrix, where the weights -- or scalars to combine these columns -- come from this right matrix.
+\pagebreak
 
-So let's see what that would look like.
+\subsection*{Matrix Rank}
 
-The left column -- I should say, the first column of the product matrix -- is the sum of the two columns
+\subsubsection*{Rank: Concepts, Terms and Applications}
 
-of the left matrix, so 0 2, plus the column 1 3, and those columns are not just added; they are weighted and
+The rank of a matrix is a single number that provides insight into the amount of information that is contained in the matrix. That's different from the dimensionality of the matrix. And in this video I'm going to discuss the ideas and the uses of matrix rank, so you can have a sense of why it's such an important number in linear algebra.
 
-then they're added. And the weights come from the right matrix, so a and c. And now the second column in
+Indeed, the rank of a matrix is something that comes up all the time in applied linear algebra. So this is not just some esoteric, abstract concept that you have to learn in class and never use again. So let's get started.
 
-the product matrix again it comes from exactly the same columns of the left matrix.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.3\linewidth]{images/rank-01.png}
+	\caption{Rank}
+	\label{fig:rank_01}
+\end{figure}
 
-But now we're combining them by weighting them according to the second column in the right matrix so
+We'll start with terminology. The rank of a matrix is typically indicated by the lowercase letter $r$. Or sometimes by the word \textbf{rank }and then the matrix in parentheses. The \textbf{rank }is a single number that characterizes the entire matrix. It applies to matrix of any size; the matrix can be square or rectangular.
 
-it's b times the first column of the left matrix plus b times the second column in the right matrix.
+Even vectors have a rank. Rank is a non-negative integer meaning it can be $0$, $1$, $2$, $3$, and so on. There is no such thing as negative rank, and there is no such thing as a rank of $1.3$. That's because rank is related to the dimensionality of a matrix and in linear algebra we work only with integer dimensions.
 
-And of course this would expand for however many columns you have in these matrices.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/rank-02.png}
+	\caption{Rank}
+	\label{fig:rank_02}
+\end{figure}
 
-So you'll notice that in the element perspective, I was building up the product matrix one element at
+Second, the rank of a matrix indicates the number of dimensions of information that are coded inside the matrix. That's not the same thing as the total number of columns or the total number of rows.
 
-a time; in the layer perspective,
+Consider this matrix for example. We can interpret this algebraically or geometrically. Algebraically, it's clear that the columns of this matrix form a linearly dependent set. The subspace that is spanned by the columns, which include all of $\mathbb{R}^2$ with only two independent vectors.
 
-I was building up the product matrix one layer at a time. And now I'm building up the product matrix
+And you can certainly find at least two columns in this matrix that are linearly independent -- that would form a linearly independent set. The rest of the columns don't provide any new information that cannot be obtained by combining the other columns in some way.
 
-one column at a time.
+You can also think of this matrix geometrically. You can think of each column being the endpoint of a vector from the origin. And when plotting these vectors, you can see that they all lie in a plane it's all in $\mathbb{R}^2$.
 
-This interpretation -- this column perspective --
+So again, any two vectors that are distinct can provide unique geometric information but one vector is a line and the second vector makes a plane, and additional vectors in that plane don't provide any new geometric dimensions. So the rank of this matrix is two.
 
-turns out to be really useful in statistics, because the columns of the left matrix will contain a set
+Here's another example.
 
-of regressors, which is a simplified model of a data set, and the right matrix will contain the coefficients.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/rank-03.png}
+	\caption{Rank}
+	\label{fig:rank_03}
+\end{figure}
 
-And the idea in statistics is that the coefficients encode the importance of each vector, and the goal
+This is a two by three matrix. And here are the three vectors that are created by the columns.
 
-of model fitting in statistics is to find the best coefficients, such that the weighted combination of
+So again geometrically, this makes us think that we have a rank 2 matrix because we have two independent vectors that span all of $\mathbb{R}^2$. And then there's a third vector that provides no new geometric dimensional information.
 
-regressors best matches the data.
+But I'm just talking about the columns. Maybe you are looking at the rows and you say, well the rows are actually in $\mathbb{R}^3$, So maybe the rank of the rows is three. But by plotting these vectors -- the rows -- you can see that this is only two vectors in $\mathbb{R}^3$, and two vectors in $\mathbb{R}^3$ that are linearly distinct can create a plane, which is a two dimensional subspace.
 
-So you will see this column perspective coming up again in a later section of this course about linear
+So in fact, the rank of this matrix is still two, regardless of whether you think about the columns or you think about the rows.
 
-least squares modeling and statistics.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.4\linewidth]{images/rank-04.png}
+	\caption{Rank}
+	\label{fig:rank_04}
+\end{figure}
 
-I'm sure you can guess what the fourth perspective of matrix multiplication will be: of course it's
+And in fact this is not just a unique property of this particular matrix; rank is a property of the matrix. It doesn't matter whether you're looking at the columns of the matrix or whether you're looking at the rows of the matrix. There is no such thing as the rank of a column space or the rank of the row space. There is just the rank of the matrix. And that is the third important thing that you need to know about rank.
 
-the row perspective. Again,
+The idea is that the rank of the matrix tells you about the number of dimensions of information that are contained in the matrix, which might be a subspace of the total dimensionality of the matrix.
 
-the result will be exactly the same as the previous three methods I showed you; this is just a different
+So a 3 by 3 matrix lives in $\mathbb{R}^3$. It's three dimensional. But it might have rank-2 if all the information in the matrix is contained inside a plane, which is a subspace of $\mathbb{R}^3$. Again, here with rank you see the concept of the distinction between the dimensionality of a subspace versus the ambient dimensionality. This is a concept that I introduced in the section on vectors.
 
-way of thinking about the same operation.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-05.png}
+	\caption{Rank}
+	\label{fig:rank_05}
+\end{figure}
 
-So now we build up the product matrix one row at a time.
+So here's a list so far of important things to know about rank. It's indicated with $r$ sometimes the word \textbf{rank}.
 
-So let's see how this works.
+It corresponds to the number of dimensions of information in the matrix, and it's a property of the matrix, it doesn't matter whether you're looking at columns or rows.
 
-So the first row in the product matrix comes from a sum of both rows of the right matrix,
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.3\linewidth]{images/rank-06.png}
+	\caption{Rank}
+	\label{fig:rank_06}
+\end{figure}
 
-except we're not just summing the rows of this right matrix,
+Now let's move on to point four. The fourth important thing to know about the rank of a matrix is that the maximum possible rank for each matrix is the smaller of the number of rows or the number of columns.
 
-we are weighting them and taking the weighted combination of these rows. The weightings come from the
+So if you have the size of matrix $A$ as $M$ by $N$. Then the rank cannot be bigger than the smaller, the minimum, and $m$ and $n$. Keep in mind that this number -- whatever is the minimum of M or N -- that is a theoretical maximum. You don't necessarily have to get a rank that is this high.
 
-elements of the first row in the left matrix. And same story for the second row. We take
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.25\linewidth]{images/rank-07.png}
+	\caption{Rank}
+	\label{fig:rank_07}
+\end{figure}
 
-again the sum of all the rows of the second matrix,
+Consider this matrix (Figure ~\ref{fig:rank_07}), for example.
 
-but now instead of being weighted by the first row the left matrix, they're weighted by the second row
+It's a 10 by 12 matrix, meaning the maximum possible rank is 10. But if you look carefully, you see that all the rows are repeated. So every row in this matrix is a scaled version of a different row in the matrix. So really, all of the information in this entire matrix is just a line, geometrically speaking. I have no idea what that line looks like, but it's still just a line. So the rank of this matrix is one.
 
-of the left matrix.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.25\linewidth]{images/rank-08.png}
+	\caption{Rank}
+	\label{fig:rank_08}
+\end{figure}
 
-OK.
+Now consider this matrix (Figure ~\ref{fig:rank_08}). I changed a few numbers here but still if you look carefully you will see that there isn't a whole lot of information. So most of these rows are still linear combinations of other rows. So the rank of this matrix is still well below 10 or 12. 
 
-And of course all of these examples that I've been showing are for two by two matrices but that's really
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-09.png}
+	\caption{Rank}
+	\label{fig:rank_09}
+\end{figure}
 
-just in the interest of brevity.
+So here's a little bit more about terminology and rank. If a matrix is square and it has the maximum possible rank -- so the matrix is $M$ by $M$ and the rank is $M$, then we call this a full-rank matrix.
 
-The same perspectives apply for any size matrices, where the matrix multiplication is valid.
+If the matrix is rectangular, and the rank is equal to the number of columns, so the matrix is $M$ by $N$, where $M$ is greater than N, so there's more rows and columns, but the rank of the matrix is equal to the number of columns in the matrix, then this is called \textbf{full column rank}.
 
-So let's recap.
+And you can probably guess that the converse -- if the rank is equal to the number of rows for a rectangular matrix -- then it's called a \textbf{full row rank matrix}.
 
-In this video I showed four different ways of thinking about, and also four different ways of implementing,
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-10.png}
+	\caption{Rank}
+	\label{fig:rank_10}
+\end{figure}
 
-matrix multiplication between two matrices.
+If the matrix rank is less than the maximum possible rank, it's given a bunch different names. You can call it \textbf{reduced-rank} or \textbf{rank-deficient} or sometimes called \textbf{degenerate} or \textbf{low rank}.
 
-I know it's a lot to take in, and matrix multiplication is a bit of a weird thing at first, but it
+If it's a square matrix then you can also call it a singular or a non-invertible matrix.
 
-is very important. I like to teach these four ways to think about the same operation, because this
+You'll learn in the section on computing the matrix inverse why it's called a singular or a non-invertible
 
-increases your understanding in the flexibility of this really fundamental operation. And the more comfortable
+matrix.
 
-you are with matrix multiplication, the easier it will be to learn more advanced topics in linear algebra.
+And if you're having a bad day and you're not really in a good mood, you can also call a reduced rank matrices a \textbf{loser matrix}, or a \textbf{dummy matrix}, or something like that. But these are the more accepted terms.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-11.png}
+	\caption{Rank}
+	\label{fig:rank_11}
+\end{figure}
+
+Now this leads me to the fifth thing to know about matrix rank, which you might have already guessed by now. The rank of a matrix corresponds to the number of linearly independent columns, and that turns out to be exactly the same as the number of linearly independent rows.
+
+And in fact this is one definition of matrix rank. I'd like to stress here that I said "one" definition not "the" definition. There are actually several ways of defining and computing the rank of the matrix. I'll more to say about this issue in a separate video. But for now, at this point in the course, you can think about the rank as a measure of the number of linearly independent columns, or rows, in a matrix.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-12.png}
+	\caption{Rank}
+	\label{fig:rank_12}
+\end{figure}
+
+So there you go. There are the 5 important things to know about the rank of a matrix. Matrix rank has several applications:
+
+It's used to test whether a matrix has an inverse, because only full-rank matrices are invertible; rank is used in multivariate data analyses such as principal components analysis or factor analysis, because you start with a big data set and you want to know how much information, or what is the dimensionality
+not of the matrix, but the important information that's contained in the matrix. And that corresponds to rank. Rank is also used in compression, because you can create a so-called low-rank representation of a matrix or of a data set. And I'll talk more about this on the section on eigendecompetition and singular value decomposition. I use rank often in my own research on multivariate brain activity dynamics, because the rank of the data tells me how much noise I'm able to project out of the data, and I use the rank to inform my decisions about the best ways to analyze multivariate data sets.
+
+\pagebreak
+
+\subsubsection*{Computing Rank: Theory and Practive}
+
+One of the things that I find so compelling and so insightful about mathematics is when you arrive at the same answer from very different starting points.
+
+Matrix rank is an example of this phenomenon. I mentioned in the previous video that there are several ways to compute the rank of a matrix.
+
+Most of the ways to compute the rank of the matrix rely on linear algebra concepts and procedures that you haven't yet learned in this course, although I will cover them in later sections. In this video, I want to introduce you to the concept of different ways of computing the rank of a matrix.
+
+Actually, they might seem like very different methods at first, but you will learn by the end of this course that these different methods are actually quite related to each other.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-13.png}
+	\caption{Rank}
+	\label{fig:rank_13}
+\end{figure}
+
+So I'll start with the definition of rank that I gave in the previous video, which is that the rank of a matrix corresponds to the number of linearly independent columns.
+
+So one way to determine the rank of a matrix is by \textbf{figuring out how many linearly independent columns there are}, or sometimes it's easier to do it row-wise, because of course the rank is a property of the matrix, it doesn't matter whether you're looking at the columns or the rows. That, of course, leads to the natural question of how do you figure out the number of linearly independent columns are in a matrix. 
+
+Well, for now, at this point in the course, you just have to look at the matrix, do a little bit of arithmetic and a bit of insight and guesswork. That works fine for small matrices with relatively simple entries, like integers or maybe a few simple fractions, but of course this is not really a scalable method. 
+
+Certainly, this is not a technique you would use in practice. Soon in this course, you will learn about solving simultaneous equations using linear methods, and at that point you will learn a more algorithmic approach to determining the number of linearly independent columns.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-14.png}
+	\caption{Rank}
+	\label{fig:rank_14}
+\end{figure}
+
+Another way to compute the rank of a matrix is to apply something called \textbf{row-reduction} to get the matrix into its so-called \textbf{echelon form}. Then you just count the number of \textbf{pivots}.
+
+I will talk more in a later section about what this means but I just want to introduce you now to the ideas so you can keep it in mind. The problem is that applying a row reduction and in particular reduced row reduction is quite tedious and time consuming. It's basically impossible to do for large matrices or matrices with more difficult entries.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-15.png}
+	\caption{Rank}
+	\label{fig:rank_15}
+\end{figure}
+
+A third way to compute the rank of a matrix is to apply a decomposition called the singular value decomposition.
+
+And then you count the number of nonzero singular values of the matrix. The rank of the matrix then corresponds
+
+to the number of nonzero singular values.
+
+This is actually the way that Matlab and many other matrix-computing software programs will compute
+
+the rank of a matrix.
+
+And when you learn about the SVD, you will understand why the number of nonzero singular values corresponds
+
+to the rank.
+
+A complimentary procedure is to compute the eigendecomposition of the matrix.
+
+This would work for a square matrix or if it's a rectangular matrix you can compute the eigendecomposition
+
+of the matrix times its transpose, and again count the number of non-zero eigenvalues. The number
+
+of non-zero eigenvalues corresponds to the rank of the matrix.
+
+When you are working with little toy examples in the context of learning linear algebra in
+
+a first semester linear algebra course, particularly if you're doing a lot of paper and pencil work, then
+
+the rank is unambiguous.
+
+You compute the rank.
+
+You get a number.
+
+And that's the answer.
+
+End of story.
+
+But in practice, and particularly when dealing with large matrices, the rank is not so trivial to compute.
+
+And it may depend on some characteristics of the matrix.
+
+It may depend on some arbitrary thresholding that you have to pick, and it also may depend on the specific
+
+algorithm that you decide to use to compute the rank.
+
+And this really has to do with noise and with machine rounding errors.
+
+So you've seen this before,
+
+if you've taken a programming course, or if you've taken other computer-based mathematics courses. Computers
+
+often have a hard time representing exact zero.
+
+So sometimes you get an answer that you know should be zero,
+
+but in fact it's something like 10 to the minus 15 or 10 to the minus 19 depending on your computer
+
+precision.
+
+So there are just these very tiny computer rounding errors.
+
+Imagine that you have a 50 by 50 matrix and you know somehow that the true rank of the matrix is 46.
+
+It's a little bit smaller than the full size of the matrix.
+
+Now when you do an eigendecomposition of this matrix you get 50 eigenvalues.
+
+Now in theory, you should have 46 non-zero eigenvalues and four eigenvalues that are exactly equal to
+
+zero.
+
+The reason why that should be the case will become clear to you
+
+in the section on eigendecomposition. But for now, you can just assume that I'm telling you the truth. Let's say
+
+because of computer rounding errors, you don't see any eigenvalues that are exactly exactly equal to
+
+zero.
+
+Instead, you see a couple of eigenvalues that are somewhere around 10 to the minus 13.
+
+So what do you do?
+
+When can you assume that such a tiny number is a real eigenvalue or a real non-zero eigenvalue
+
+That increases the rank of the matrix?
+
+Or when do you assume that this is really zero,
+
+and it's just a little bit of computer rounding error?
+
+In practice, what you do is come up with some threshold, and then you would ignore any eigenvalues
+
+that are less than that threshold.
+
+But of course thresholds can be arbitrary and it's difficult to know what the appropriate or the correct
+
+threshold is.
+
+I don't want to go into a lot of the details about what I'm talking about now;
+
+again, you'll learn more about that in the section
+
+on eigendecomposition.
+
+I just want to give you an idea of where the ambiguity comes from, when determining the matrix rank.
+
+In practice, a related source of difficulty comes from noise.
+
+So let's say you have this 3 by 3 matrix of rank 2.
+
+So this is a matrix that the columns are in R3, but the rank is 2.
+
+So the information that's contained in this matrix exists on a 2D plane that's embedded in an ambient
+
+three dimensional space. So that's fine;
+
+there's nothing weird or wrong about this situation.
+
+So here's this plane. Imagine you're looking at the edge of the plane; you're looking through the plane.
+
+So it looks flat like this, so this would be the plane going this way.
+
+So all three of these vectors, which are these columns in the matrix, are all in this plane.
+
+So when you're looking into the plane the three vectors would look something like this.
+
+But now imagine that these are empirically measured data, let's say from a satellite. And the measurement
+
+sensors on a satellite are a tiny bit noisy and not perfectly perfectly calibrated.
+
+So although this is really three vectors lying in a two dimensional plane, if you have a tiny bit of
+
+noise it's possible that the vectors will point off the plane ever so slightly. An overly sensitive
+
+way of computing rank might actually call this a rank 3 matrix even though we know that is just a rank
+
+2 matrix so the information is just in two dimensions.
+
+So again, you need to have some kind of threshold that decides when this little bit of projection off
+
+the plane should be considered an additional source of information in the matrix, which would knock up
+
+the rank to 3.
+
+All right.
+
+Now we can explore some of these rank concepts in Matlab.
+
+Here I'm going to create a matrix of M by N,
+
+so in this case, 4 by 6, and then we'll compute the rank of the matrix using the Matlab function
+
+rank.
+
+It turns out that matrices of random numbers pretty much always are full rank.
+
+So in this case, it's going to be full column -- full row rank (excuse me) because the maximum possible rank
+
+is the smaller of m or n.
+
+And that's just because the probability of seeing a linearly independent set of columns or rows, given
+
+a bunch of random numbers, is generally pretty small. So random matrices pretty much always have full
+
+rank.
+
+So let's see what the rank of this matrix is.
+
+Indeed it is four, which is the theoretical maximum possible rank that this matrix could ever have.
+
+Now what I'm going to do is create a new matrix B.
+
+First I set B equal to A.
+
+And then what I'm going to do is replace the last column of B with the second to last column of B.
+
+So let's see what that looks like.
+
+So here's matrix B. It's all very nice and happy.
+
+And now you can see this column is the same thing as the second to last column.
+
+So what is the effect going to be on the rank of the matrix?
+
+I would like you to think about this question before running this line of code.
+
+So here, the rank of the matrix still turned out to be four.
+
+Even though this last column is literally a linear combination of some other columns, because it's
+
+just one times the second to last column.
+
+However I was addressing the columns and this is a full row rank matrix, which means it has a column
+
+rank deficient matrix.
+
+Now the story is going to change a little bit
+
+if we swap these numbers around.
+
+So if I set this to be a 6 by 4 matrix the rank of the original matrix is still going to be 4.
+
+However, now I rotated the matrix
+
+and now you can already see that this matrix has rank 3.
+
+And that's because this column is different from this column, which is different from this column.
+
+But this column is exactly this column repeated.
+
+So now I believe the rank should be three, which ineed it is. In this next cell,
+
+I'm going to add a little bit of noise to a rank-deficient matrix.
+
+So again I create a random matrix, and then I set the first column to be equal to the second column.
+
+So you can see what that matrix looks like: you can see the first two columns are identical.
+
+And the rest of the columns form a linearly independent set.
+
+Now I create a new matrix which is equal to A plus some random noise, just a bunch of random numbers,
+
+and that's modulated by this noise level.
+
+And then I'm going to display the rank of the matrix without noise versus adding a little bit of noise.
+
+So you can see that adding a tiny bit of noise -- this is .001 standard deviations --
+
+So it's a very small amount of noise.
+
+And that already increased the rank from five to six. In this video I introduced you to a few methods
+
+for computing the rank.
+
+As you progress in this course and through your adventures in linear algebra, you will be able to think
+
+about how to use these more advanced methods to help you compute matrix rank.
+
+I also introduced you to two sources of difficulty that introduce some ambiguity into computing
+
+the rank of real matrices in real applications.
 
 \end{document}
