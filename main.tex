@@ -2312,12 +2312,14 @@ I will get into the details of this later in the section. But I just want to int
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.5\linewidth]{images/matrix-space-13.png}
+	\includegraphics[width=0.2\linewidth]{images/matrix-space-13.png}
 	\caption{Matrix Space}
 	\label{fig:matrix_space_13}
 \end{figure}
 
-Once you understand the concept of the column space of a matrix, the row space is pretty straightforward. I'm sure you've already guessed by now that the row space of a matrix is the subspace spanned by the rows in the matrix. So this really isn't so different from the material that I covered in the previous video. Mostly, in this video I'm just going to point out the differences. Some of those differences are in terms of notation and terminology. So the column space, you learned, was indicated by C. So C and in parentheses indicates the column space. So here this is the row space of the matrix, and it's indicated by the capital letter R. And if you think about this for a minute, you will realize that the row space of matrix A is exactly the same thing as the column space of A-transpose. That's because when you transpose the matrix, you swap the rows and the columns, and so the row space of A is the same thing as the column space of A-transpose.
+Once you understand the concept of the column space of a matrix, the row space is pretty straightforward. I'm sure you've already guessed by now that the row space of a matrix is the subspace spanned by the rows in the matrix. So this really isn't so different from the material that I covered in the previous video. 
+
+Mostly, in this video I'm just going to point out the differences. Some of those differences are in terms of notation and terminology. So the column space, you learned, was indicated by $C$. So $C$ and in parentheses indicates the column space. So here this is the row space of the matrix, and it's indicated by the capital letter $R$. And if you think about this for a minute, you will realize that the row space of matrix $A$ is exactly the same thing as the column space of $A^T$. That's because when you transpose the matrix, you swap the rows and the columns, and so the row space of $A$ is the same thing as the column space of $A^T$.
 
 \begin{figure}[ht]
 	\centering
@@ -2326,7 +2328,7 @@ Once you understand the concept of the column space of a matrix, the row space i
 	\label{fig:matrix_space_14}
 \end{figure}
 
-The primary difference between the row space and the column space, is in the way that you ask the question of whether a given vector is in the row space of the matrix. That changes how you multiply the matrix by the vector, and it changes the way that the coefficients are interpreted.
+The \textbf{primary difference} between the row space and the column space, is in the way that you ask the question of \textbf{whether a given vector is in the row space of the matrix}. That changes how you multiply the matrix by the vector, and it changes the way that the coefficients are interpreted.
 
 So when asking a question of whether some vector is in the column space of some matrix, the coefficients vector is post-multiplied by the matrix and everything is a column vector. When you ask the question whether a vector is in the row space of the matrix, then that vector is a row vector and the weighting vector, or the coefficients vector, is also row vector and that has to pre-multiply the matrix.
 
@@ -2339,15 +2341,140 @@ You can also see that the sizes of these vectors are different: The column space
 	\label{fig:matrix_space_15}
 \end{figure}
 
-For example, imagine that your matrix contained time series data from a collection of different sensors, or measuring devices. Each column in this matrix is a different sensor, and each row in this matrix is a different time point. And all these sensors are measured simultaneously. So in this example, the column space, as well as any vectors that multiply on the right side of the matrix, correspond to combinations of different sensors. In contrast, the row space, and any appropriately size vectors on the left of the matrix, correspond to linear combinations of time points. Therefore, if these vectors that are multiplying this data matrix correspond to filter coefficients, then right-multiplication by a column vector corresponds to spatial filtering these data, whereas left multiplying by a row vector corresponds to temporally filtering these data. So this is a major difference between your linear algebra course, where matrices are just random objects filled with random numbers, versus a real-world application, where the matrix looks totally different from the perspective of rows versus the perspective of columns.
+For example (Figure ~\ref{fig:matrix_space_15}), imagine that your matrix contained time series data from a collection of different sensors, or measuring devices. Each column in this matrix is a different sensor, and each row in this matrix is a different time point. And all these sensors are measured simultaneously. 
+
+So in this example, the column space, as well as any vectors that multiply on the right side of the matrix, correspond to combinations of different sensors. In contrast, the row space, and any appropriately size vectors on the left of the matrix, correspond to linear combinations of time points. Therefore, if these vectors that are multiplying this data matrix correspond to filter coefficients, then right-multiplication by a column vector corresponds to spatial filtering these data, whereas left multiplying by a row vector corresponds to temporally filtering these data. So this is a major difference between your linear algebra course, where matrices are just random objects filled with random numbers, versus a real-world application, where the matrix looks totally different from the perspective of rows versus the perspective of columns.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.5\linewidth]{images/matrix-space-16.png}
+	\includegraphics[width=0.9\linewidth]{images/matrix-space-16.png}
 	\caption{Matrix Space}
 	\label{fig:matrix_space_16}
 \end{figure}
 
 But this real world example aside, in terms of the more abstract theory of linear algebra, everything you learned about column space can also be applied to the row space, with appropriate modifications for left-versus right-multiplying columns versus row vectors. I know it can be a little bit confusing, particularly in the beginning, to go back and forth between the column space and the row space. If you're ever uncertain or you're unclear whether you're doing it the right way, my recommendation is to write out all the matrix sizes underneath the matrices. That should clarify things.
+
+\pagebreak
+
+\subsubsection*{Null Space and Left Null Space of a Matrix}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/matrix-space-17.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_17}
+\end{figure}
+
+In this video I'm going to tell you about the \textbf{null space} of a matrix. It sounds like a funny term. You might be wondering what "\textbf{null}" means. You know what the columns of the matrix are, and you know what the rows of a matrix are; but what is the "\textbf{null}" of a matrix?
+
+In the video about the column space of the matrix, I showed an example like this, in which a matrix times some vector gave a vector of all zeros. In this case, the coefficients that multiplied this matrix were both zero. So this is kind of a trivial equation, because 0 times anything plus 0 times anything is going to give you zero.
+
+But what if we could find some coefficients here, some numbers in here, that would equal the 0 vector in a non trivial way? Let's think about this starting with scalars. So for scalars, imagine you saw an equation like this. So alpha times 2 plus beta times 2 equals zero. So the question is: what could you set alpha and beta to be in order to make this equation equal zero -- so for this equation to be true -- without setting alpha and beta to be zero? Well here it's pretty obvious that the coefficients of 1 and -1 would work: +1 times 2 plus -1 times 2 certainly equals zero. This example is slightly less obvious, but after a bit of thought, you could come up with several possibilities. You could use +1 -1 and 0; you could use 3 and 3 and -4. And there's many other possible coefficients that will make this equation true. In fact, this is an over-parameterized model, so there are many many possible correct answers. But the point is we are searching for non-trivial solutions to this equation, where the trivial solution is this: where you just set all of the coefficients to be equal to zero.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/matrix-space-18.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_18}
+\end{figure}
+
+When you're working with matrices, things get more complicated, as they always do with matrices. The question now is: how can I come up with a vector of coefficients, such that the linear weighted combination of this column and this column will give me a column of all zeros? And with these vector components not all being equal to zero. Now you might already see the answer: In this case, the answer could be 1 and -1. So -1 times this column plus 1 times this column gives us the zero vector. This is a non-trivial solution because these two coefficients are not equal to zero. So 1 and -1, or maybe you could have said -1 and +1.
+
+Here's another example. For this matrix, you can try as hard as you like for as long as you like, but unfortunately you are not going to be able to find a solution to this problem. There is no vector that can multiply this matrix to produce the zero vector except for the zero vector itself, which is a trivial solution. So this vector is contained in the null space of this matrix. This matrix doesn't actually have a null space. There is no vector in the space.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.3\linewidth]{images/matrix-space-19.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_19}
+\end{figure}
+
+Here is a formal definition of the null space: The null space of a matrix which is indicated using the capital and then in parentheses the matrix, the null space is the set of all vectors that you can multiply by a matrix to produce the zero vector.
+
+In other words, all the vectors $v$ such that $Av=0$. And we exclude the trivial case of $v=0$. So you can see that the null space is specific to a particular matrix. A vector that's in the null space of matrix $A$ is not necessarily going to be in the null space of some other matrix.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.4\linewidth]{images/matrix-space-20.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_20}
+\end{figure}
+
+I'd like to talk a little bit more about this example that I just showed. I said that the vector 1 and -1 is in the null space of this matrix, because it's a non-trivial combination of columns that will give the zero vector. But is 1 and -1 the only vector? No. You can think about this for a minute: 2 and -2 would work, or 10 and -10 would work, because 10 times this column plus -10 times this column also gives 0 0. So the null space here is not a single vector. It's not even a collection of a few vectors. You can probably guess where this is going -- It's an entire one dimensional subspace. And this vector or any one of these vectors can be used as a basis for that subspace.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.4\linewidth]{images/matrix-space-21.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_21}
+\end{figure}
+
+Therefore, a more appropriate way to write the null space of this matrix $A$ is to say that it is $\lambda$, or some coefficient, some scalar, times any one vector in the matrix's null space. So it can be 1 -1, it can be -1 1, it can be 1 trillion and minus 1 trillion. Any individual vector in the matrix space and then all scaled versions of that. And this is the definition of the null space of this particular matrix.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.4\linewidth]{images/matrix-space-22.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_22}
+\end{figure}
+
+You may have noticed in the last two examples that the matrix that contained a null space had columns that formed a linearly dependent set, while the matrix with no null space -- that's this one -- had columns that formed a linearly independent set.
+
+Now that was not just some weird quirk of that particular example. This is a general principle. If a matrix has no null space, then it has linearly independent columns. And the inference goes the other way around as well:
+
+If you see that a matrix has a linearly independent set of columns, then you can assume -- it's correct to assume -- that the matrix has no null space.
+
+Actually, the way that I just phrased that is not entirely correct: All matrices have a null space, but if the matrix has linearly independent set of columns then you say that the null space is just the empty set.
+
+So there's nothing in the null space. So this matrix has linearly independent columns and has a rank of two, and the null space is just the empty set.
+
+Here we see that this matrix contains columns that form a linearly dependent set. The rank of this matrix is 1 and the null space of this matrix is the set of all vectors that are spanned by this vector 1 -1.
+
+Here's another interesting case. This is a matrix with a rank of 0, so it's the 0 matrix. The null space of this matrix is the set of all vectors that are spanned by these two basis vectors.
+
+And you can test this out yourself that one time zero -- so using these coefficients -- will give you the zero vector. This is a non-trivial solution, and using these coefficients of this vector times this matrix is also a non-trivial solution. that will produce the zero vector. Therefore, any combination -- any weighted -- combination of these two vectors will give the zero vector. And this is not the only basis for the space of the zeros matrix. This just happens to be a convenient basis.
+
+You could pick any set of linearly independent vectors in R2, and that would be a basis for the null space of the zeros matrix, the two by two zeroes matrix. So far, I've only been talking about the null space in terms of columns.
+
+So: find the column vector that right-multiplies a matrix to produce the column zero vector. That's the way that people generally think about the null space and talk about the null space.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.3\linewidth]{images/matrix-space-23.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_23}
+\end{figure}
+
+But there is a complimentary space which is called the left null space. The idea is exactly the same but we flip the orientation, so the left null space, which is sometimes written as the null space of A-transpose, that's the set of all vectors v such that v-transpose A gives the zero vector, and also that the trivial solution of the zeros vector is not permitted. So you can see that this is really just the normal null space of the transpose of the matrix.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/matrix-space-24.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_24}
+\end{figure}
+
+The null space has an interesting interpretation, and I like to spend some time discussing how to interpret the null space of a matrix. One interesting interpretation of the non-space is that it's the subspace of the ambient space that the column space lives in, such that any vector that gets sent into the null space is being sent into the void. It's the place of no return. Imagine you are an astronaut zooming around through the galaxy. You have your jetpack and you can travel left down up right; any direction you want. But now think about what happens if you see a black hole and you head towards the black hole. Once you get past the event horizon you get sucked into that black hole and compressed into a singularity of nothingness. You're done. There is no more movement and there's no way to escape. So in this analogy, the galaxy is like the column space of the matrix. And while you're in the column space of the matrix everything is fine and dandy. You can move around and of course you can go back to where you came from. But the black hole is the null space of the galaxy. Once you're inside the null space, there is no return. You cannot escape.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/matrix-space-25.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_25}
+\end{figure}
+
+Now I'd like to explain this again in a different way, using slightly less dramatic terms. A bit more of a geometric perspective. So here we have a vector. And here is some matrix A. I'm keeping everything in R2 so it's easy to visualize, but of course this principle will generalize to any number of dimensions.
+
+So basically there're two possibilities: This vector v is in the null space of A or it isn't. So let's take the case where v is not in the null space of A. If the vector is not in the null space of A, then I can multiply v by A. And that will give me some other vector and some other orientation. So here is the original vector v. Now, A is like a transformation matrix and I can multiply v by A. And that gives me some other vector. It might be longer, it might be shorter, it might point off in some other direction. But we still get a vector. And then I can apply another transformation of this different matrix, and another transformation by this matrix C. And so on. And each time I multiply v by a new matrix -- assuming I'm not getting into the null space of any of these matrices -- the result is going to be some other vector with some non-zero length.
+
+In contrast, if the vector is in the null space of A, then multiplying that vector v by A sends it to the origin. This is the zero vector here. And now because Av is the zero vector, it doesn't matter what other matrices multiply the vector. v already got sent to the null space by A. And there is no coming out of it, because any other matrix -- it doesn't matter what values are contained in these other matrices -- when they multiply v, nothing happens to the vector; it stays in the origin; it stays as the zero vector.
+
+I hope you found those analogies useful, or at least a little bit entertaining. In this video, I told you about the null space of a matrix and how to interpret it. As with the column space and the row space, finding vectors that form a basis for the null space right now, at this junction of the course, involves a bit of guesswork and a bit of arithmetic. The algorithms for finding these bases will be presented in later sections. But I hope for now that you have a decent intuition of what these concepts mean. The null space has several applications. Perhaps the most important application of the null space is in eigendecomposition. In eigendecomposition, first you find the eigenvalues of a matrix. And once you've identified the matrices' eigenvalues, you shift the matrix according to each eigenvalue. And then you have to find the vector that is in the null space of that shifted matrix. That vector that's in the null space of the shifted matrix is the eigenvector. You will learn more about this in the section on eigendecomposition. I just want to give you a sense now of how important the null space is for linear algebra.
+
+\pagebreak
+
+\subsubsection*{Column/Left-null and Row/Null Spaces are Orthogonal}
+
+
 
 \end{document}
