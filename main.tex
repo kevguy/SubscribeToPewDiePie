@@ -2475,6 +2475,66 @@ I hope you found those analogies useful, or at least a little bit entertaining. 
 
 \subsubsection*{Column/Left-null and Row/Null Spaces are Orthogonal}
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/matrix-space-26.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_26}
+\end{figure}
 
+The four subspaces of a matrix: the column space, the row space, the null space, and the left null space; come in two pairs of orthogonal complements. In this video, I'm going to show you how those pairs fit together.
+
+First, I want to remind you what orthogonal means. This material is modified from a slide that I showed in the video about dot products and orthogonality. So this is the geometric definition of the dot product.
+
+The idea was that two vectors are orthogonal when they meet at a right angle -- at a 90 degree angle -- they're perpendicular and there is no projection of one vector onto the other vector. Absolutely nothing in common. This is often used as the sign for perpendicularity.
+
+And so this statement reads: vector $a$ is perpendicular to vector $b$. Numerically, orthogonal means that the dot product is zero.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/matrix-space-27.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_27}
+\end{figure}
+
+
+So with this in mind, let's think about the \textbf{column space}. What would it mean for a vector to be orthogonal to the column space? It would mean that the dot product of the vector with a column in the matrix is zero. But that's just for one column. The question was what would it mean if a vector were orthogonal to the entire column space of the matrix $A$, not just one column?
+
+This would mean that the dot product of the vector with any possible linear combination of all the columns in matrix $A$, scaled by any number of arbitrary scalars in the real domain, that dot product is equal to zero. And so if vector $v$ is orthogonal to every possible combination of every column in $A$, then this statement is true: vector v is orthogonal to the entire column space of $A$. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/matrix-space-28.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_28}
+\end{figure}
+
+It turns out, this happens to also be the definition of the left null space. Here's the equation again for the \textbf{left null space}. In a previous video, I showed $v^T$ times A. But here I'm just transposing both sides of this equation. So we have $v^T$ times $A$, and that transposed, and that ends up being $A^T$ times $V$. So now notice what happens in this matrix-vector multiplication: we multiply each element in the first row by each element in the vector. And that gives us a zero value. And then each element in the second row is multiplied by each element of the vector. And that also gives us an answer of zero, and so on.
+
+So what this equation is really saying is that vector $v$ is orthogonal to each and every column in matrix $A$, or row in $A^T$. And if $v$ is orthogonal to every column individually, then of course it's also orthogonal to any combination of the columns and linear combinations of the columns. Therefore, the \textbf{left null space} is orthogonal to the \textbf{column space}. One implication of this is that if the column space of the matrix spans all of $\mathbb{R}^M$, then the left null space must be empty because only the zero vector can be orthogonal to an entire space.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/matrix-space-29.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_29}
+\end{figure}
+
+Let me provide a geometric picture for this. So here is a rank-1 matrix. The column space of this matrix spans a one dimensional subspace, which is a line. So that means the left null space must also be a line, and that line is orthogonal to the column space of $A$. And the way to find that line is to find a basis for the left null space of $A$. And looking at this matrix, the rows of $A^T$, which are the columns of $A$, So the rows of $A^T$ are 1 2. So the basis vector would be -2 1 and you can also see algebraically, because the dot product of the null space vector with the column of A is also 0.
+
+That's no surprise -- that's how I defined this vector in the first place, except I called it the rows of $A^T$ as opposed to the columns of $A$. In contrast, if the column space spans all of $\mathbb{R}^2$, like it does here, then how can you find a line that is orthogonal to all of $\mathbb{R}^2$? Well, the answer is you can't. It doesn't exist. There is no line that's orthogonal to all of $\mathbb{R}^2$ like this. It's only the origin -- the trivial solution -- because anything times the vector is 0 0 0 0. But otherwise there is no non-zero vector that can be orthogonal to all of R2.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/matrix-space-30.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_30}
+\end{figure}
+
+So the left null space is the empty set. Of course, if this were a 2D plane embedded in R3, then there would be an orthogonal vector, and that vector would just pop out, perpendicular to the screen, like in this movie the ring. But this is not R3. We're just in R2 now.
+
+So the conclusion is that the column space of the matrix and the left null space of the matrix are orthogonal subspaces. The story is exactly the same for the row space and the null space, because the row space is just the transpose of this, and the null space is the transpose of this, which is A times v equals zero. And I encourage you to pause the video and go back through the previous few slides, work through the same logic, the same geometry, and the same algebra, but with the row space and the null space, instead of the column space on the left null space.
+
+In this video, I introduced the idea that the column space is orthogonal to the left null space and the row space is orthogonal to the null space. These properties are actually right there in the definitions of the spaces. But you don't necessarily notice the relationship right away. So it's important to see it mentioned explicitly. I know that these ideas can be a little weird when you approach them the first time. So I encourage you to meditate on these relationships for a little bit. And in the next few videos I will follow up on this concept by talking more about how the dimensions of the subspaces fit together and showing several examples.
 
 \end{document}
