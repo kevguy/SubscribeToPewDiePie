@@ -2537,4 +2537,63 @@ So the conclusion is that the column space of the matrix and the left null space
 
 In this video, I introduced the idea that the column space is orthogonal to the left null space and the row space is orthogonal to the null space. These properties are actually right there in the definitions of the spaces. But you don't necessarily notice the relationship right away. So it's important to see it mentioned explicitly. I know that these ideas can be a little weird when you approach them the first time. So I encourage you to meditate on these relationships for a little bit. And in the next few videos I will follow up on this concept by talking more about how the dimensions of the subspaces fit together and showing several examples.
 
+\pagebreak
+
+\subsubsection*{Dimensions of Columns/Row/Null Spaces}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/matrix-space-31.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_31}
+\end{figure}
+
+The dimensionalities of the column space and row space, and the two null spaces, are all interconnected. In this video you will learn about those connections. You already know that a matrix with $N$ columns lives in an ambient $M$-dimensional space, and the subspace spanned by the columns of that matrix might live in a subspace of that ambient space.
+
+First I want to make sure to clarify that dimension is not the same thing as rank. Rank is a property of a matrix, and it's the same regardless of whether you are thinking about the rows or the columns or the null spaces. The dimensionality, on the other hand, can change for the rows versus the columns versus the two null spaces.
+
+So let's work through a simple example: Here's a three by three full-rank square matrix. So the rank of this matrix is three. There are three linearly independent columns, or three rows -- those comprise a set of three linearly independent vectors. The null space is the empty set, which means it has a dimensionality of zero. The column space and also the row space span all of R3, so the dimensionality of the column space, and the dimensionality of the row space are both equal to three.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/matrix-space-32.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_32}
+\end{figure}
+
+Let's look at another example. Here is a two by two matrix. This is a rank-1 matrix. The ambient dimensionality is two dimensional, but these two columns span R1 -- just a line. So the column space is one dimensional, even though the ambient dimensionality is two. So what happens to this other dimension here?
+
+Well, one nice basis for this other dimension would be the null space of the rows, which is also called the left null space. So that matrix is 1 2, 1 2. This is the transpose of the matrix. And that allows us to conveniently think about the row space as the column space of the matrix transpose. You can see that the basis for this matrix's null space, which is the left null space of this matrix, is -2 1. That line, that looks like this. That is perpendicular, or orthogonal, to the column space of the matrix.
+
+Now, you already know about the orthogonality of the column space and the left null space. Here I want to focus more on the dimensionality of these spaces. So, if this entire matrix lives in an ambient 2D space, and the column space is a 1D subspace, then somehow the rest of this space needs to be filled. And if it's filled by the left null space, then the column space and the left null space together must span the entire ambient dimensionality. So the dimensionality of a column space plus the dimensionality of the left null space, together must add up to the ambient dimensionality.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/matrix-space-33.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_33}
+\end{figure}
+
+Here's another example. I changed this element from a 2 to a 3. And that means that now the column space of a spans all of R2 -- the entire dimensionality of the matrix column space. So the span of the column space of A is all of R2. And that means that the left null space is orthogonal to this, and the only vector that is orthogonal to all of R2 is the two-dimensional zero vector, which is just a dot at the origin, and which we call "the empty set." So that left null space is the empty set.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/matrix-space-34.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_34}
+\end{figure}
+
+Or you can imagine a matrix like this, where the column space is the empty set. And in this case the null space must complement the column space by filling in the rest of R2. So that means that the left null space has to span all of R2, and you can pick any basis you want. But the identity matrix turns out to be a pretty convenient basis set for the null space of this matrix. The left null space.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/matrix-space-35.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_35}
+\end{figure}
+
+So here's the story altogether. If you have a matrix with M rows and N columns, then the column space and the left space are complementary. They are orthogonal to each other, and they're both in $\mathbb{R}^M$. Therefore their dimensionalities must sum to M. So if you know the dimensionality of the column space of A, and you know M, then the dimensionality of the left null space is whatever is the difference between this dimension of the column space and M. It's exactly the same idea for the row space, which is in $\mathbb{R}^N$, except now we're talking about the row space of A, which is the column space of A-transpose, and the null space of A, which you can kind of also think about as the left null space of A-transpose, although that gets a little bit confusing. So the dimensionality of the row space plus the dimensionality of the null space must equal N. 
+
+I know this stuff can get really confusing. If you're unsure, then I find the best way to clarify it is to draw out a matrix like this, with M rows and N columns. What's confusing -- or, one of the things that makes this confusing -- is that you have N columns, but those columns live in $\mathbb{R}^M$ and vice versa for the rows. Of course a great way to understand this point conceptually is to work through a bunch of examples. I will have more videos with examples of these concepts. And of course, in the course reader you can find many more examples and the answers to work through.
+
 \end{document}
