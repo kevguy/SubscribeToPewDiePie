@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.10)  12 JAN 2019 18:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.10)  12 JAN 2019 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1723,30 +1723,109 @@ File: images/rank-17.png Graphic file (type png)
 <use images/rank-17.png>
 Package pdftex.def Info: images/rank-17.png  used on input line 1911.
 (pdftex.def)             Requested size: 207.56285pt x 108.07904pt.
-<images/rank-18.png, id=819, 1282.7925pt x 655.44875pt>
+ [67 <./images/rank-17.png>]
+<images/rank-18.png, id=827, 1282.7925pt x 655.44875pt>
 File: images/rank-18.png Graphic file (type png)
 <use images/rank-18.png>
-Package pdftex.def Info: images/rank-18.png  used on input line 1932.
+Package pdftex.def Info: images/rank-18.png  used on input line 1934.
 (pdftex.def)             Requested size: 207.56285pt x 106.0541pt.
- [67 <./images/rank-17.png>] [68 <./images/rank-18.png>] [69] [70] 
+<images/rank-19.png, id=828, 801.99625pt x 648.4225pt>
+File: images/rank-19.png Graphic file (type png)
+<use images/rank-19.png>
+Package pdftex.def Info: images/rank-19.png  used on input line 1961.
+(pdftex.def)             Requested size: 166.04774pt x 134.24338pt.
+ [68 <./images/rank-18.png>]
+<images/rank-20.png, id=836, 1284.8pt x 676.5275pt>
+File: images/rank-20.png Graphic file (type png)
+<use images/rank-20.png>
+Package pdftex.def Info: images/rank-20.png  used on input line 1982.
+(pdftex.def)             Requested size: 207.56285pt x 109.28922pt.
+ [69 <./images/rank-19.png> <./images/rank-20.png>]
+<images/rank-21.png, id=846, 1001.7425pt x 643.40375pt>
+File: images/rank-21.png Graphic file (type png)
+<use images/rank-21.png>
+Package pdftex.def Info: images/rank-21.png  used on input line 1997.
+(pdftex.def)             Requested size: 207.56285pt x 133.31235pt.
+ [70 <./images/rank-21.png>] [71]
+<images/rank-22.png, id=859, 1317.92375pt x 463.7325pt>
+File: images/rank-22.png Graphic file (type png)
+<use images/rank-22.png>
+Package pdftex.def Info: images/rank-22.png  used on input line 2024.
+(pdftex.def)             Requested size: 249.07796pt x 87.63599pt.
+<images/rank-23.png, id=860, 1040.88875pt x 745.78625pt>
+File: images/rank-23.png Graphic file (type png)
+<use images/rank-23.png>
+Package pdftex.def Info: images/rank-23.png  used on input line 2041.
+(pdftex.def)             Requested size: 207.56285pt x 148.7108pt.
+<images/rank-24.png, id=861, 995.72pt x 706.64pt>
+File: images/rank-24.png Graphic file (type png)
+<use images/rank-24.png>
+Package pdftex.def Info: images/rank-24.png  used on input line 2056.
+(pdftex.def)             Requested size: 207.56285pt x 147.29897pt.
+ [72 <./images/rank-22.png> <./images/rank-23.png>]
+<images/rank-25.png, id=871, 978.65625pt x 667.49374pt>
+File: images/rank-25.png Graphic file (type png)
+<use images/rank-25.png>
+Package pdftex.def Info: images/rank-25.png  used on input line 2067.
+(pdftex.def)             Requested size: 207.56285pt x 141.563pt.
+ [73 <./images/rank-24.png> <./images/rank-25.png>]
+<images/rank-26.png, id=882, 1228.59pt x 596.2275pt>
+File: images/rank-26.png Graphic file (type png)
+<use images/rank-26.png>
+Package pdftex.def Info: images/rank-26.png  used on input line 2078.
+(pdftex.def)             Requested size: 207.56285pt x 100.72958pt.
+<images/rank-27.png, id=883, 886.31125pt x 726.715pt>
+File: images/rank-27.png Graphic file (type png)
+<use images/rank-27.png>
+Package pdftex.def Info: images/rank-27.png  used on input line 2087.
+(pdftex.def)             Requested size: 207.56285pt x 170.17924pt.
+ [74 <./images/rank-26.png> <./images/rank-27.png>]
+<images/rank-28.png, id=893, 1278.7775pt x 414.54875pt>
+File: images/rank-28.png Graphic file (type png)
+<use images/rank-28.png>
+Package pdftex.def Info: images/rank-28.png  used on input line 2104.
+(pdftex.def)             Requested size: 207.56285pt x 67.2843pt.
+<images/rank-29.png, id=894, 719.68875pt x 455.7025pt>
+File: images/rank-29.png Graphic file (type png)
+<use images/rank-29.png>
+Package pdftex.def Info: images/rank-29.png  used on input line 2117.
+(pdftex.def)             Requested size: 124.53897pt x 78.85213pt.
+<images/rank-30.png, id=895, 990.70125pt x 608.2725pt>
+File: images/rank-30.png Graphic file (type png)
+<use images/rank-30.png>
+Package pdftex.def Info: images/rank-30.png  used on input line 2142.
+(pdftex.def)             Requested size: 124.53897pt x 76.46082pt.
+ [75 <./images/rank-28.png> <./images/rank-29.png>]
+<images/rank-31.png, id=905, 1324.95pt x 592.2125pt>
+File: images/rank-31.png Graphic file (type png)
+<use images/rank-31.png>
+Package pdftex.def Info: images/rank-31.png  used on input line 2167.
+(pdftex.def)             Requested size: 207.56285pt x 92.76791pt.
+ [76 <./images/rank-30.png> <./images/rank-31.png>]
+<images/rank-32.png, id=915, 1324.95pt x 589.20125pt>
+File: images/rank-32.png Graphic file (type png)
+<use images/rank-32.png>
+Package pdftex.def Info: images/rank-32.png  used on input line 2214.
+(pdftex.def)             Requested size: 207.56285pt x 92.29622pt.
+ 
 AED: lastpage setting LastPage
-[71]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2191.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2191.
+[77 <./images/rank-32.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2259.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2259.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2191.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2191.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2259.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2259.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 09F7C0A78086A3412234572E58B53F4F;42.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2191.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2259.
  ) 
 Here is how much of TeX's memory you used:
- 15243 strings out of 492982
- 226383 string characters out of 6134895
- 638799 words of memory out of 5000000
- 17942 multiletter control sequences out of 15000+600000
- 70708 words of font info for 248 fonts, out of 8000000 for 9000
+ 15353 strings out of 492982
+ 228323 string characters out of 6134895
+ 639359 words of memory out of 5000000
+ 18012 multiletter control sequences out of 15000+600000
+ 74436 words of font info for 254 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,12n,45p,1438b,1931s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1766,10 +1845,10 @@ rw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (71 pages, 18645142 bytes).
+Output written on main.pdf (77 pages, 21083372 bytes).
 PDF statistics:
- 977 PDF objects out of 1000 (max. 8388607)
- 688 compressed objects within 7 object streams
- 315 named destinations out of 1000 (max. 500000)
- 48130 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1056 PDF objects out of 1200 (max. 8388607)
+ 732 compressed objects within 8 object streams
+ 335 named destinations out of 1000 (max. 500000)
+ 48200 words of extra memory for PDF output out of 51595 (max. 10000000)
 

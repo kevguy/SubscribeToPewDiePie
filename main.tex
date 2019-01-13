@@ -1834,7 +1834,7 @@ not of the matrix, but the important information that's contained in the matrix.
 
 \pagebreak
 
-\subsubsection*{Computing Rank: Theory and Practive}
+\subsubsection*{Computing Rank: Theory and Practice}
 
 One of the things that I find so compelling and so insightful about mathematics is when you arrive at the same answer from very different starting points.
 
@@ -1958,7 +1958,7 @@ So I've illustrated several different possibilities of the rank: Here the rank o
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.5\linewidth]{images/rank-19.png}
+	\includegraphics[width=0.4\linewidth]{images/rank-19.png}
 	\caption{Rank}
 	\label{fig:rank_19}
 \end{figure}
@@ -2014,5 +2014,246 @@ And you'll remember I mentioned in a previous video that the dimensionality of a
 Now to be honest, these are not rules that you really have to use in practice in applied linear algebra. So I don't know if you really need to worry about committing these rules to memory, except if you are taking a college course in linear algebra and you would need to recite these rules in an exam for example. Nonetheless, matrix rank is such an important property and you use the matrix rank very often in practice. So the more comfortable you are with thinking about matrix rank and working with matrix rank, the easier it will be able to learn the more advanced topics. The more general point from this video is that the rank of a summed matrix or a product matrix is not necessarily the same as the rank of either of the individual matrices.
 
 One final point I'd like to make here is that in the examples I shown in this video all the matrices were square matrices, but these two rules apply equally well to rectangular matrices, as long as the addition or the multiplication is valid. In the exercises for this section, you will have the opportunity to explore these rules using different sized matrices.
+
+\pagebreak
+
+\subsubsection*{Rank of $A^TA$ and $AA^T$}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/rank-22.png}
+	\caption{Rank}
+	\label{fig:rank_22}
+\end{figure}
+
+This video follows directly from the previous video, because it involves the rank of a product between two matrices. But the matrices that I'll talk about in this video are special. They are really important in statistics and in data analysis, so I think it's worth having a dedicated video on this topic.
+
+The main take-home message of this video is that the rank of matrix A is the same thing as the rank of matrix $A^TA$, which is the same as the rank of $A^T$, which is the same as the rank of $AA^T$. So all of these ranks are identical.
+
+This is a key property that underlies several important proofs in advanced linear algebra, including least squares model fitting and orthogonal eigenvectors. I encourage you to pause the video here and try and figure out why this statement is true based on what you learned in the previous video.
+
+In this video I'm going to provide three explanations of why these equivalences are true. Now, some of these explanations rely on material that I teach later in the course. So if you don't understand everything in this video, don't be concerned. You should just watch the video, try to follow, and you can come back to this video later in the course when you've learned topics including column space, null space, and singular value decomposition.
+
+The first explanation that I'll give is based on the material that you've already learned: matrix-matrix multiplication and matrix-vector multiplication.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-23.png}
+	\caption{Rank}
+	\label{fig:rank_23}
+\end{figure}
+
+So let's start by calling this product matrix, matrix $C$. So we have $A^TA = c$.
+
+Now, if you think about building up matrix $C$ one column at a time, then you can rewrite this equation as $A^T$ times the $j$th column in matrix $A$ gives you the $j$th column of matrix $C$.
+
+So now it is clear that each column of matrix $C$ is some linear weighted combination of the columns of $A^TA$ and that's the same thing as the rows of matrix $A$, so matrix $C$ is formed by combining the rows of $A$, which means that every column in $C$ can be expressed as some linear combination of the columns of $A^T$.
+
+So that means that the dimensionality of the subspace spanned by the columns of $C$ is the same as the dimensionality of the subspace spanned by the columns of $A^T$. In a later section, I will start calling this the column space of $A$. And if column space of two matrices is equal, then their ranks must be equal.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-24.png}
+	\caption{Rank}
+	\label{fig:rank_24}
+\end{figure}
+
+The second explanation that I'll give has to do with something called the null space and the dimensionality of the null space. So imagine that vector $x$ is in the null space of matrix $A$. You'll learn more about null spaces in the next section of this course, but basically the null space is exactly this: Some vector subspace such that a vector times the matrix gives the zero vector. So if this statement is true for some vector $x$, then this vector is in the null space of this matrix. So what I'm going to do now is left-multiply both sides of this equation by $A^T$, and that gives us A-transpose A times x equals -- this is A-transpose times 0 but anything times the zero vector is going to be the zero vector. So this is still a valid equation.
+
+Now I've shown that any vector that is in the null space of A is also in the null space of A-transpose A, meaning the null space of A and the null space of A-transpose A are the same. And if these two matrices have the same null space, then the dimensionality of the null space is the same. And if the dimensionality of the null space of two matrices is the same, then the dimensionality of the column space is also the same. Therefore, matrix A and Matrix A-transpose A have the same matrix rank.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-25.png}
+	\caption{Rank}
+	\label{fig:rank_25}
+\end{figure}
+
+The third explanation relies on the singular value decomposition. This is a matrix decomposition that breaks down a matrix into the multiplication of three different matrices. The middle matrix is a diagonal matrix of singular values. And as I mentioned in one of the previous videos, one of the ways of computing matrix rank is to count the number of nonzero singular values. So here is the singular value decomposition, or SVD, of matrix $A$. Then the SVD of matrix A-transpose A is these three matrices transposed. And then these three matrices again. Now I can expand out this first matrix set like this. As you've already learned. So this is V transpose transpose, that goes in the beginning. This is sigma transpose but this is a diagonal matrix so it equals its transpose. And here we have U transpose. Now the U's cancel because their product is the identity matrix. You learn about that in the section on singular value decomposition.
+
+And now to compute the rank of A-transpose A. I just count the number of non-zero elements in Sigma squared. But the number of non-zero elements and sigma squared is the same as the number of non-zero elements in Sigma and therefore the rank of A-transpose A is the same as the rank of A.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-26.png}
+	\caption{Rank}
+	\label{fig:rank_26}
+\end{figure}
+
+So there you go: three explanations for why the rank of A-transpose A is the same as the rank of A. Of course, all these arguments are equally valid for A times A transpose. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-27.png}
+	\caption{Rank}
+	\label{fig:rank_27}
+\end{figure}
+
+In a previous video you learned that a matrix times its transpose is always square. So let's combine that with what you learned in this video. If you have a tall matrix A and it has full column rank, then you can compute A-transpose A to get a square, full rank matrix. Square, symmetric, full-rank matrices have many great properties that you will learn about throughout your time in linear algebra.
+
+They are crucial for statistical modeling, dimensionally reduction, and a lot of other really neat algebraic applications. In contrast, if you start with a long matrix like this, that is full row rank, then this matrix times its transpose will again be a square symmetric matrix, and it will also have full rank. So this means if you start with a matrix that has full column rank or full row rank, you can produce a square symmetric matrix that is guaranteed to have full matrix rank.
+
+\pagebreak
+
+\subsubsection*{Making a Matrix Full-rank by "shifting"}
+
+You will learn later in this course, and you will experience in your career as an applied linear algebratician, that full-rank matrices have many great properties that make them really nice to work with. But very often in real data, you end up working with reduced rank matrices. The rank could be reduced because something went wrong with the data collection, or maybe the system that you're measuring is itself low rank. Or maybe you use some kind of subspace projection technique to remove noise from the data, or to separate multiple sources of signal. And this subspace projection technique will leave you with a reduced rank matrix. In this video, you will learn how to transform a reduced-rank matrix into a full-rank matrix through a procedure called "shifting." This is not a trivial technique, but it is an important technique. It's use all the time in machine learning and data classification, in dimensionality reduction and several other multivariate data analysis methods.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-28.png}
+	\caption{Rank}
+	\label{fig:rank_28}
+\end{figure}
+
+And it all starts with this rather frustrating statement: full rank matrices are great to work with but rank deficient matrices occur very often in real data.
+
+So what we would like to be able to do is transform a rank-deficient matrix into a full-rank matrix
+
+without changing the data in the matrix too much.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.3\linewidth]{images/rank-29.png}
+	\caption{Rank}
+	\label{fig:rank_29}
+\end{figure}
+
+So in general, the way to transform a reduced rank matrix into a full rank matrix is to "shift" it
+
+by some amount.
+
+And I've discussed this procedure in the video on matrix addition, because here we're just adding two
+
+matrices together.
+
+So this is a bit of a trick.
+
+The idea is that if matrix A is a square matrix, and it's reduced rank, then to convert this reduced-rank
+
+square matrix into a full-rank square matrix, you shift this matrix by adding some fraction of the identity
+
+matrix, so the identity matrix times some scalar lambda.
+
+And of course this lambda here is a key parameter and it's not trivial to select this parameter. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.3\linewidth]{images/rank-30.png}
+	\caption{Rank}
+	\label{fig:rank_30}
+\end{figure}
+
+So let's
+
+start with an extreme example here.
+
+I have the zero matrix, which has a rank of zero of course.
+
+And now I'm going to add to this the identity matrix, which has a rank of 3. It's a three by three
+
+identity matrix and the resulting matrix of these two matrices summed together has a rank of three.
+
+So now we've gone from a reduced rank matrix to a full rank matrix by adding some scalar times the identity
+
+matrix.
+
+Now in this case the scalar is 1 so it's 1 times the identity matrix.
+
+Now this is not a shocking example, but it does illustrate the concept.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-31.png}
+	\caption{Rank}
+	\label{fig:rank_31}
+\end{figure}
+
+Let me give you another example.
+
+Here is a reduced rank matrix.
+
+It turns out that the rank of this matrix is two.
+
+That's difficult to see visually but you can test this by putting these numbers into a matrix in Matlab
+
+and testing for the rank.
+
+It turns out that this third column here is two times the first column minus seven times the second
+
+column.
+
+So now you know these numbers you can compute the arithmetic and confirm that this is indeed a rank
+
+2 matrix.
+
+Now what I'm going to do is add .01 times the identity matrix, which has a rank of three,
+
+to this matrix.
+
+And here is the resulting matrix.
+
+And again you can confirm that this is now a rank 3 matrix.
+
+So this matrix is technically different from the original matrix.
+
+I've changed some of the numbers.
+
+So they are no longer the same matrix.
+
+However, I think you will agree that this matrix added only very very little additional information to
+
+the contents of the matrix as it was already.
+
+So I've changed the matrix only a little bit.
+
+And yet now I have a full rank matrix.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/rank-32.png}
+	\caption{Rank}
+	\label{fig:rank_32}
+\end{figure}
+
+Here's a somewhat more extreme example. Imagine the same matrix.
+
+This is still the identity matrix but now the lambda, the scalar, is 1000.
+
+So again I have a rank 3 matrix, but this is too much shifting because now the matrix really changed
+
+so now the information in this matrix is really quite different from this matrix.
+
+In fact, this matrix itself is approaching the identity matrix.
+
+And at this scale of thousands some of these numbers can basically just be seen as noise.
+
+So you could actually imagine that dividing this matrix by a thousand would give you something close
+
+to the identity matrix plus a little bit of noise.
+
+So this is a bit extreme.
+
+So how do you know how much of the identity matrix to add to this other reduced rank matrix?
+
+Unfortunately this is a really difficult question to answer.
+
+In general, you want to add as little as possible. You want this scaling factor to be as small as possible
+
+because the goal of shifting a matrix like this is to make the matrix full rank without changing the
+
+information of the matrix.
+
+There are guidelines for knowing how much to shift the matrix.
+
+That's not something I'm going to get into in more depth in this lecture.
+
+And also not in this course. I will talk about it more in other courses on dimension reduction and source separation
+
+but it's important for you to have that concept in mind already.
+
+In the context of multivariate statistics and machine learning, this kind of shifting is called sometimes
+
+regularization, or matrix smoothing, or sometimes it's called inflation.
 
 \end{document}
