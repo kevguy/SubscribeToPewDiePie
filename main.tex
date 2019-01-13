@@ -2043,7 +2043,7 @@ The first explanation that I'll give is based on the material that you've alread
 	\label{fig:rank_23}
 \end{figure}
 
-So let's start by calling this product matrix, matrix $C$. So we have $A^TA = c$.
+So let's start by calling this product matrix, matrix $C$. So we have $A^TA = Cc$.
 
 Now, if you think about building up matrix $C$ one column at a time, then you can rewrite this equation as $A^T$ times the $j$th column in matrix $A$ gives you the $j$th column of matrix $C$.
 
@@ -2058,9 +2058,11 @@ So that means that the dimensionality of the subspace spanned by the columns of 
 	\label{fig:rank_24}
 \end{figure}
 
-The second explanation that I'll give has to do with something called the \textbf{null space} and the dimensionality of the \textbf{null space}. So imagine that vector $x$ is in the null space of matrix $A$. You'll learn more about null spaces in the next section of this course, but basically the null space is exactly this: Some vector subspace such that a vector times the matrix gives the zero vector. So if this statement is true for some vector $x$, then this vector is in the null space of this matrix. So what I'm going to do now is left-multiply both sides of this equation by $A^T$, and that gives us A-transpose A times x equals -- this is A-transpose times 0 but anything times the zero vector is going to be the zero vector. So this is still a valid equation.
+The second explanation that I'll give has to do with something called the \textbf{null space} and the dimensionality of the \textbf{null space}. So imagine that vector $x$ is in the null space of matrix $A$. You'll learn more about \textbf{null spaces} in the next section of this course, but basically the \textbf{null space} is exactly this: Some vector subspace such that a vector times the matrix gives the zero vector. So if this statement is true for some vector $x$, then this vector is in the \textbf{null space} of this matrix. 
 
-Now I've shown that any vector that is in the null space of A is also in the null space of A-transpose A, meaning the null space of A and the null space of A-transpose A are the same. And if these two matrices have the same null space, then the dimensionality of the null space is the same. And if the dimensionality of the null space of two matrices is the same, then the dimensionality of the column space is also the same. Therefore, matrix A and Matrix A-transpose A have the same matrix rank.
+So what I'm going to do now is left-multiply both sides of this equation by $A^T$, and that gives us $A^TAx = A^T0$, but anything times the zero vector is going to be the zero vector. So this is still a valid equation.
+
+Now I've shown that any vector that is in the \textbf{null space} of $A$ is also in the \textbf{null space} of $A^TA$, meaning the \textbf{null space} of $A$ and the \textbf{null space} of $A^TA$ are the same. And if these two matrices have the same null space, then the dimensionality of the null space is the same. And if the dimensionality of the null space of two matrices is the same, then the dimensionality of the column space is also the same. Therefore, $A$ and $A^TA$ have the same matrix rank.
 
 \begin{figure}[ht]
 	\centering
@@ -2097,7 +2099,7 @@ They are crucial for statistical modeling, dimensionally reduction, and a lot of
 
 \subsubsection*{Making a Matrix Full-rank by "shifting"}
 
-You will learn later in this course, and you will experience in your career as an applied linear algebratician, that full-rank matrices have many great properties that make them really nice to work with. But very often in real data, you end up working with reduced rank matrices. The rank could be reduced because something went wrong with the data collection, or maybe the system that you're measuring is itself low rank. Or maybe you use some kind of subspace projection technique to remove noise from the data, or to separate multiple sources of signal. And this subspace projection technique will leave you with a reduced rank matrix. In this video, you will learn how to transform a reduced-rank matrix into a full-rank matrix through a procedure called "shifting." This is not a trivial technique, but it is an important technique. It's use all the time in machine learning and data classification, in dimensionality reduction and several other multivariate data analysis methods.
+You will learn later in this course, and you will experience in your career as an applied linear algebra, that \textbf{full-rank matrices} have many great properties that make them really nice to work with. But very often in real data, you end up working with reduced rank matrices. The rank could be reduced because something went wrong with the data collection, or maybe the system that you're measuring is itself low rank. Or maybe you use some kind of subspace projection technique to remove noise from the data, or to separate multiple sources of signal. And this subspace projection technique will leave you with a reduced rank matrix. In this video, you will learn how to transform a reduced-rank matrix into a full-rank matrix through a procedure called "shifting." This is not a trivial technique, but it is an important technique. It's use all the time in machine learning and data classification, in dimensionality reduction and several other multivariate data analysis methods.
 
 \begin{figure}[ht]
 	\centering
@@ -2106,11 +2108,7 @@ You will learn later in this course, and you will experience in your career as a
 	\label{fig:rank_28}
 \end{figure}
 
-And it all starts with this rather frustrating statement: full rank matrices are great to work with but rank deficient matrices occur very often in real data.
-
-So what we would like to be able to do is transform a rank-deficient matrix into a full-rank matrix
-
-without changing the data in the matrix too much.
+And it all starts with this rather frustrating statement: full rank matrices are great to work with but rank deficient matrices occur very often in real data. So what we would like to be able to do is transform a \textbf{rank-deficient matrix} into a \textbf{full-rank matrix} without changing the data in the matrix too much.
 
 \begin{figure}[ht]
 	\centering
@@ -2119,23 +2117,9 @@ without changing the data in the matrix too much.
 	\label{fig:rank_29}
 \end{figure}
 
-So in general, the way to transform a reduced rank matrix into a full rank matrix is to "shift" it
+So in general, the way to transform a \textbf{reduced rank matrix} into a \textbf{full rank matrix} is to "shift" it by some amount. And I've discussed this procedure in the video on matrix addition, because here we're just adding two matrices together. So this is a bit of a trick.
 
-by some amount.
-
-And I've discussed this procedure in the video on matrix addition, because here we're just adding two
-
-matrices together.
-
-So this is a bit of a trick.
-
-The idea is that if matrix A is a square matrix, and it's reduced rank, then to convert this reduced-rank
-
-square matrix into a full-rank square matrix, you shift this matrix by adding some fraction of the identity
-
-matrix, so the identity matrix times some scalar lambda.
-
-And of course this lambda here is a key parameter and it's not trivial to select this parameter. 
+The idea is that if matrix $A$ is a square matrix, and it's \textbf{reduced rank}, then to convert this \textbf{reduced-rank square matrix} into a \textbf{full-rank square matrix}, you shift this matrix by adding some fraction of the identity matrix, so the identity matrix times some scalar $\lambda$. And of course this $\lambda$ here is a key parameter and it's not trivial to select this parameter. 
 
 \begin{figure}[ht]
 	\centering
@@ -2144,23 +2128,7 @@ And of course this lambda here is a key parameter and it's not trivial to select
 	\label{fig:rank_30}
 \end{figure}
 
-So let's
-
-start with an extreme example here.
-
-I have the zero matrix, which has a rank of zero of course.
-
-And now I'm going to add to this the identity matrix, which has a rank of 3. It's a three by three
-
-identity matrix and the resulting matrix of these two matrices summed together has a rank of three.
-
-So now we've gone from a reduced rank matrix to a full rank matrix by adding some scalar times the identity
-
-matrix.
-
-Now in this case the scalar is 1 so it's 1 times the identity matrix.
-
-Now this is not a shocking example, but it does illustrate the concept.
+So let's start with an extreme example here. I have the zero matrix, which has a rank of zero of course. And now I'm going to add to this the identity matrix, which has a rank of 3. It's a three by three identity matrix and the resulting matrix of these two matrices summed together has a rank of three. So now we've gone from a \textbf{reduced rank matrix} to a \textbf{full rank matrix} by adding some scalar times the identity matrix. Now in this case the scalar is 1, so it's 1 times the identity matrix. Now this is not a shocking example, but it does illustrate the concept.
 
 \begin{figure}[ht]
 	\centering
@@ -2169,45 +2137,13 @@ Now this is not a shocking example, but it does illustrate the concept.
 	\label{fig:rank_31}
 \end{figure}
 
-Let me give you another example.
+Let me give you another example. Here is a \textbf{reduced rank matrix}. It turns out that the rank of this matrix is two. That's difficult to see visually but you can test this by putting these numbers into a matrix in Matlab and testing for the rank.
 
-Here is a reduced rank matrix.
+It turns out that this third column here is two times the first column minus seven times the second column. So now you know these numbers you can compute the arithmetic and confirm that this is indeed a rank 2 matrix.
 
-It turns out that the rank of this matrix is two.
+Now what I'm going to do is add .01 times the identity matrix, which has a rank of three, to this matrix. And here is the resulting matrix. And again you can confirm that this is now a rank 3 matrix.
 
-That's difficult to see visually but you can test this by putting these numbers into a matrix in Matlab
-
-and testing for the rank.
-
-It turns out that this third column here is two times the first column minus seven times the second
-
-column.
-
-So now you know these numbers you can compute the arithmetic and confirm that this is indeed a rank
-
-2 matrix.
-
-Now what I'm going to do is add .01 times the identity matrix, which has a rank of three,
-
-to this matrix.
-
-And here is the resulting matrix.
-
-And again you can confirm that this is now a rank 3 matrix.
-
-So this matrix is technically different from the original matrix.
-
-I've changed some of the numbers.
-
-So they are no longer the same matrix.
-
-However, I think you will agree that this matrix added only very very little additional information to
-
-the contents of the matrix as it was already.
-
-So I've changed the matrix only a little bit.
-
-And yet now I have a full rank matrix.
+So this matrix is technically different from the original matrix. I've changed some of the numbers. So they are no longer the same matrix. However, I think you will agree that this matrix added only very very little additional information to the contents of the matrix as it was already. So I've changed the matrix only a little bit. And yet now I have a full rank matrix.
 
 \begin{figure}[ht]
 	\centering
@@ -2216,44 +2152,311 @@ And yet now I have a full rank matrix.
 	\label{fig:rank_32}
 \end{figure}
 
-Here's a somewhat more extreme example. Imagine the same matrix.
+Here's a somewhat more extreme example. Imagine the same matrix. This is still the identity matrix but now the $\lambda$, the scalar, is 1000. So again I have a rank 3 matrix, but this is too much shifting because now the matrix really changed so now the information in this matrix is really quite different from this matrix. In fact, this matrix itself is approaching the identity matrix. And at this scale of thousands, some of these numbers can basically just be seen as noise. So you could actually imagine that dividing this matrix by a thousand would give you something close to the identity matrix plus a little bit of noise. So this is a bit extreme.
 
-This is still the identity matrix but now the lambda, the scalar, is 1000.
+So how do you know how much of the identity matrix to add to this other reduced rank matrix? Unfortunately this is a really difficult question to answer. In general, you want to add as little as possible. You want this scaling factor to be as small as possible because the goal of shifting a matrix like this is to make the matrix full rank without changing the information of the matrix. There are guidelines for knowing how much to shift the matrix. That's not something I'm going to get into in more depth in this lecture. And also not in this course. I will talk about it more in other courses on dimension reduction and source separation but it's important for you to have that concept in mind already.
 
-So again I have a rank 3 matrix, but this is too much shifting because now the matrix really changed
+In the context of multivariate statistics and machine learning, this kind of shifting is called sometimes \textbf{regularization}, or \textbf{matrix smoothing}, or sometimes it's called \textbf{inflation}.
 
-so now the information in this matrix is really quite different from this matrix.
+\pagebreak
 
-In fact, this matrix itself is approaching the identity matrix.
+\subsection*{Matrix Spaces}
 
-And at this scale of thousands some of these numbers can basically just be seen as noise.
+\subsubsection*{Column Space of a Matrix}
 
-So you could actually imagine that dividing this matrix by a thousand would give you something close
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/matrix-space-01.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_01}
+\end{figure}
 
-to the identity matrix plus a little bit of noise.
+The major goal of this section of the course is introduce you to the concepts of vector spaces embedded in matrices. In particular, in this video I will talk about the column space, and later videos I'll talk about the \textbf{row space} and the \textbf{null space} of the matrix, how to interpret these spaces, how to work with them, and why they're important in the theoretical and more importantly in applied linear algebra.
 
-So this is a bit extreme.
+The important prerequisites for this section are \textbf{vector subspaces, basis, linear dependence, and span}. If you're not comfortable with those concepts you might want to go back and re-watch some of the relevant videos in the section on vectors. So let's get started.
 
-So how do you know how much of the identity matrix to add to this other reduced rank matrix?
+The \textbf{column space} of a matrix is often indicated using this notation, where $C$ stands for column. So this is the \textbf{column space} of matrix $A$. The \textbf{column space} of matrix $A$ is the vector space that is spanned by all of the columns in a matrix. It doesn't actually matter if the columns form a linearly dependent set or a linearly independent set. We just want the subspace that is spanned by all the columns in the matrix. So these columns don't necessarily need to be a basis. You can see that this isn't really a new concept. It's just a translation of what you already learned into the context of matrices. Previously, we talked about the span of a set of individual vectors. And now you just think of a matrix as comprising these individual vectors. So the primary difference is more about the organization as opposed to the fundamental concept.
 
-Unfortunately this is a really difficult question to answer.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/matrix-space-02.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_02}
+\end{figure}
 
-In general, you want to add as little as possible. You want this scaling factor to be as small as possible
+Here is a formal definition of the column space of a matrix: The \textbf{column space} of a matrix is the set of all vectors that can be obtained by any weighted linear combination of all the columns in the matrix. Any scalar multiples these $\beta$'s are different scalars in the real numbers. And for all of the columns in matrix $A$. And I see now that this starts with $i$, but that's a typo -- this should be one. So $beta_1$, so some scalar times the first column plus some other scalar times the second column plus blah blah another scalar times the last column of matrix $A$. Another way to express the column space is to say that it's the span of all of the columns in matrix $A$. Again this is supposed to be one, not $i$; my apologies.
 
-because the goal of shifting a matrix like this is to make the matrix full rank without changing the
+Sometimes this is also referred to as the "range" of the columns in matrix A. Again, you can see that this is not a new concept compared to what you learn in the section on vectors about vector spaces. This is really just bringing the same concept into matrices.
 
-information of the matrix.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/matrix-space-03.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_03}
+\end{figure}
 
-There are guidelines for knowing how much to shift the matrix.
+One of the important questions that often comes up in abstract and in applied linear algebra is whether a certain vector is in the column space of a matrix. So here's an example. Here is a vector -- it's a column vector and we might ask -- this is the membership or the "set of" notation -- we might ask, Is this column vector a member of or contained inside the column space of this matrix? In other words, is this vector inside the span of these two vectors? In this case, the answer is yes and a bit of guesswork and a bit of arithmetic will reveal that this vector is -1 times the first column plus 3 times the second column. And that's what gives you this vector: $[-3, 1, 5]^T$. So in this case the answer is that this vector is contained in the column space and the weightings, or the loadings you might call them, of the column vectors in matrix $A$ to get to this vector are $[-1, 3]^T$.
 
-That's not something I'm going to get into in more depth in this lecture.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/matrix-space-04.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_04}
+\end{figure}
 
-And also not in this course. I will talk about it more in other courses on dimension reduction and source separation
+Here's another example: here we have the zero vector and we can ask, Is the zero vector contained in the column space of this matrix? And the answer is definitely yes because 0 of times the first column plus 0 times the second column will give us the zero vector.
 
-but it's important for you to have that concept in mind already.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/matrix-space-05.png}
+	\caption{Matrix Space}
+	\label{fig:matrix_space_05}
+\end{figure}
 
-In the context of multivariate statistics and machine learning, this kind of shifting is called sometimes
+Here's another example. Is this vector in the column space of this matrix? The answer is no, this vector is not in the column space of this matrix. In this case it's pretty easy to see that the answer is No, because both of these columns have the first element as 0.
 
-regularization, or matrix smoothing, or sometimes it's called inflation.
+And this has a nonzero element. There is no way to linearly combine these two vectors in order to get a value of 1 in the first element here. So this vector is not in the column space of this matrix. In this example, because we're working with $\mathbb{R}^3$, I can actually draw a picture of what this looks like.
+
+OK so there's the answer. I can draw a picture of what this looks like. And here are these two black lines that show the vectors from these two columns of this matrix and this green plane is the plane that is spanned by these two vectors. In other words, this visualizes the column space of this matrix. Now this vector is the red one, and this is not in the plane. This vector is not sitting in the plane somewhere. So that means that this vector is not in the column space of this matrix.
+
+
+
+
+
+Here's a third example. Is this vector in the column space of this matrix?
+
+In this case, it's not even a valid question to ask.
+
+This vector is in R6 and this matrix has this column space in R4.
+
+So it doesn't even make sense. It's not possible for this vector to be in the column space or not in
+
+the column space of this matrix. The dimensionalities are totally different.
+
+So the question isn't even valid in this case.
+
+Now let's do something a little bit more abstract.
+
+We can assume that the dimensionalities match.
+
+So obviously the answer to the question of whether a vector is in the column space is going to be yes
+
+or no.
+
+If the answer is yes, then the natural next question is: What are the coefficients of the matrix of the
+
+columns of the matrix that will put this vector v into the column space of A.
+
+So let me go back to these few examples here.
+
+In this example, the answer is yes, the vectors in the column space, and the coefficients are
+
+zero and zero.
+
+So these are the scalars that are multiplying each column in the matrix.
+
+And in this first example I gave, the coefficients were -1 and +3.
+
+All right.
+
+So, if the vector is in the column space, the answer is yes, then we want to know what are the coefficients?
+
+What are the scalers? What are the loadings? We have many different terms... or the weightings.
+
+And if the answer is No then a natural next question is to ask:
+
+How close can we get to the column space of A?
+
+So let's go back to this case, where this vector was not in the column space of this matrix, and we might
+
+want to know how close is this vector away from the column space of this matrix? So, what is the distance
+
+from this point here to any point on the plane, in the column space, that is as close as possible to this
+
+point.
+
+This vector, and the answer to this question, turns out to be really important for statistics and linear
+
+least squares modeling, like general linear models and multiple regressions and so forth.
+
+So here is an example that we discussed earlier.
+
+This vector is in the column space of this matrix. The weightings are -1 and +3.
+
+And it turns out that we can actually convert this into an equation.
+
+So that's going to look something like this.
+
+Here we have the matrix.
+
+It's a three by two matrix.
+
+Here we have the vector, it was a three by one vector.
+
+And now the two coefficients, or the two weightings, or the two scalars, for these two columns,
+
+they go into a vector here. And now we can say that this matrix times this vector equals this vector.
+
+And when you see an equation in linear algebra, of course the first thing you should do is check all
+
+the sizes and make sure that they match.
+
+So these two matrices can be validly multiplied because their inner dimensions match and the outer dimensions
+
+are three and one.
+
+And that defines the resulting product vector.
+
+So far everything looks good.
+
+And now what we should do is test this equality. These are there pretty simple matrices, so we can just do the
+
+arithmetic in our head.
+
+So for this first component -- that's 3 times -1 plus 0 times 3 and that's -3.
+
+And here we have -5 + 6.
+
+So that's one.
+
+And here we get -1 plus 6.
+
+And that is indeed 5.
+
+So this equation is valid. By the way,
+
+I can also move this vector to the left hand side of the equation and then I'm saying that this matrix
+
+times this vector minus this other vector v equals the zero vector. This is just another way of writing
+
+the same equation.
+
+And now I'd like to revisit the example where the vector was not in the column space of the matrix.
+
+So what should the equation look like? When we write down the equation for this example,
+
+Of course I'm not allowed to use an equals sign because there is no set of coefficients here that will
+
+make this matrix times the set of coefficients equal that vector.
+
+So I could put a not equal sign here, but that's kind of trivial, and it's not really interesting because
+
+it is true that this matrix times the vector 1 1 is not equal to this, but that's true for literally
+
+every possible vector we could come up with here.
+
+So this is not very interesting and it's not very informative. Maybe an interesting idea is to move this
+
+vector to the left side of the equation.
+
+So it looks something like this. So now I have this matrix,
+
+this vector V.
+
+And I don't know what these coefficients are, but I can say that this matrix time some weights -- some coefficients
+
+some vector, minus this vector v equals some other vector.
+
+Now this is not going to equal zero.
+
+We know that this is not equal to the product of these two matrices so this is not zero.
+
+This is going to be some nonzero vector and we can find a set of W's and a set of v's that will make
+
+this equation correct.
+
+And now we're going to do something interesting. Rather than just thinking about vectors,
+
+let's think about the magnitudes of vectors.
+
+So we take the magnitudes of both sides of this equation and we say that whatever this ends up being
+
+for some W's, that magnitude -- that length, that distance -- is equal to the magnitude or the length of this
+
+other vector.
+
+Now I know for sure that the magnitude of this side of the equation -- this left out of the equation --
+
+is going to be greater than zero.
+
+And I know that this has to be greater than zero because the magnitudes have to be positive or non-negative.
+
+They cannot be negative.
+
+And I know that these two quantities are not equal to each other.
+
+So this is going to be somehow greater than zero.
+
+And that gives us a way to reinterpret the magnitude of this vector on the right side of the equation.
+
+The magnitude of this vector basically tells us how far away this vector is from this vector of this
+
+matrix product, which is a vector. And now an interesting question is whether I can find some coefficients
+
+for this vector here, w1 and w2, that will make this side of the equation -- the magnitude of the left side
+
+of the equation -- as small as it can possibly be.
+
+In other words, I want to minimize this side of the equation,
+
+so that this side of the equation is as close to zero as it can possibly get.
+
+This is exactly the problem that linear least squares algorithm is designed to solve. And the solution
+
+to this problem -- how to find these W's to get these v's to be as close as possible to zero -- is one of
+
+the most important and frequently used algorithms in statistics,
+
+machine learning, and applied mathematics.
+
+I will get into the details of this later in the section.
+
+But I just want to introduce it to you now so you can see that a huge part of applied linear algebra
+
+comes from this very simple question: Is some vector contained in the column space of some matrix?
+
+Now I'm going to switch to Matlab, mainly just to show you how to implement some of these concepts in
+
+code so you can start exploring graphically and geometrically these ideas yourself.
+
+So here I find some matrix let's call it S. You can see it contains two columns.
+
+It's in R3, which is convenient because that allows us to do some interesting plotting.
+
+And here I define some vector 1 7 3 and this is a column vector.
+
+So first what I do is plot all three of these vectors using the plot3 command. This is all code you've seen
+
+before.
+
+This is also code you've seen before and the main point here is to explore this concept that a vector
+
+can be inside or not inside the column space of a matrix.
+
+So I encourage you to take some time and play around with this code, change the elements of matrix S,
+
+change the vector V and see what happens geometrically when the vector is inside or not inside the column
+
+space of matrix S.
+
+So here I showed you the concept of the column space of a matrix.
+
+Again, this is just a different way of saying the span of a set of vectors where the vectors are now
+
+in a column of a matrix instead of being just in a set.
+
+I also introduced you to the idea of determining whether a vector is in a column space of a matrix.
+
+In the examples that I showed so far, and also in the exercises for this section, you have to use a little
+
+bit of guesswork and a little bit of insight and arithmetic to solve this problem. In later sections,
+
+I will show you some different computational algorithms for determining algorithmically whether a vector
+
+really is in the column space, how to find the coefficients vector. Or, if the vector is not in a column
+
+space,
+
+how to get as close as possible to that column space.
 
 \end{document}
