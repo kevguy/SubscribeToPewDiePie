@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.10)  14 JAN 2019 01:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.10)  16 JAN 2019 10:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1633,392 +1633,393 @@ Package pdftex.def Info: images/multi-06.png  used on input line 1663.
 <images/rank-01.png, id=730, 1143.27126pt x 579.16376pt>
 File: images/rank-01.png Graphic file (type png)
 <use images/rank-01.png>
-Package pdftex.def Info: images/rank-01.png  used on input line 1684.
-(pdftex.def)             Requested size: 124.53897pt x 63.08958pt.
+Package pdftex.def Info: images/rank-01.png  used on input line 1682.
+(pdftex.def)             Requested size: 83.02386pt x 42.05678pt.
 <images/rank-02.png, id=731, 1332.98pt x 692.5875pt>
 File: images/rank-02.png Graphic file (type png)
 <use images/rank-02.png>
-Package pdftex.def Info: images/rank-02.png  used on input line 1695.
-(pdftex.def)             Requested size: 249.07796pt x 129.41597pt.
- [60 <./images/rank-01.png> <./images/rank-02.png>]
-<images/rank-03.png, id=742, 1366.10374pt x 656.4525pt>
+Package pdftex.def Info: images/rank-02.png  used on input line 1691.
+(pdftex.def)             Requested size: 166.04774pt x 86.26674pt.
+<images/rank-03.png, id=732, 1366.10374pt x 656.4525pt>
 File: images/rank-03.png Graphic file (type png)
 <use images/rank-03.png>
-Package pdftex.def Info: images/rank-03.png  used on input line 1714.
-(pdftex.def)             Requested size: 290.58673pt x 139.63203pt.
-<images/rank-04.png, id=743, 1198.4775pt x 666.49pt>
+Package pdftex.def Info: images/rank-03.png  used on input line 1704.
+(pdftex.def)             Requested size: 207.56285pt x 99.73573pt.
+<images/rank-04.png, id=733, 1198.4775pt x 666.49pt>
 File: images/rank-04.png Graphic file (type png)
 <use images/rank-04.png>
-Package pdftex.def Info: images/rank-04.png  used on input line 1729.
-(pdftex.def)             Requested size: 166.04774pt x 92.34183pt.
+Package pdftex.def Info: images/rank-04.png  used on input line 1715.
+(pdftex.def)             Requested size: 124.53897pt x 69.25636pt.
+ [60 <./images/rank-01.png> <./images/rank-02.png>]
 <images/rank-05.png, id=744, 1262.7175pt x 463.7325pt>
 File: images/rank-05.png Graphic file (type png)
 <use images/rank-05.png>
-Package pdftex.def Info: images/rank-05.png  used on input line 1742.
-(pdftex.def)             Requested size: 207.56285pt x 76.22244pt.
+Package pdftex.def Info: images/rank-05.png  used on input line 1726.
+(pdftex.def)             Requested size: 124.53897pt x 45.73204pt.
 <images/rank-06.png, id=745, 998.73125pt x 561.09625pt>
 File: images/rank-06.png Graphic file (type png)
 <use images/rank-06.png>
-Package pdftex.def Info: images/rank-06.png  used on input line 1753.
-(pdftex.def)             Requested size: 124.53897pt x 69.96562pt.
-
-[61 <./images/rank-03.png> <./images/rank-04.png>]
-<images/rank-07.png, id=756, 781.92125pt x 741.77126pt>
+Package pdftex.def Info: images/rank-06.png  used on input line 1735.
+(pdftex.def)             Requested size: 103.78142pt x 58.30469pt.
+<images/rank-07.png, id=746, 781.92125pt x 741.77126pt>
 File: images/rank-07.png Graphic file (type png)
 <use images/rank-07.png>
-Package pdftex.def Info: images/rank-07.png  used on input line 1764.
+Package pdftex.def Info: images/rank-07.png  used on input line 1744.
 (pdftex.def)             Requested size: 103.78142pt x 98.44833pt.
-<images/rank-08.png, id=758, 774.895pt x 754.82pt>
+<images/rank-08.png, id=748, 774.895pt x 754.82pt>
 File: images/rank-08.png Graphic file (type png)
 <use images/rank-08.png>
-Package pdftex.def Info: images/rank-08.png  used on input line 1775.
+Package pdftex.def Info: images/rank-08.png  used on input line 1753.
 (pdftex.def)             Requested size: 103.78142pt x 101.09007pt.
-<images/rank-09.png, id=760, 1298.8525pt x 708.6475pt>
+
+[61 <./images/rank-03.png> <./images/rank-04.png> <./images/rank-05.png>]
+[62 <./images/rank-06.png> <./images/rank-07.png>]
+<images/rank-09.png, id=773, 1298.8525pt x 708.6475pt>
 File: images/rank-09.png Graphic file (type png)
 <use images/rank-09.png>
-Package pdftex.def Info: images/rank-09.png  used on input line 1784.
-(pdftex.def)             Requested size: 207.56285pt x 113.24535pt.
-<images/rank-10.png, id=761, 1312.905pt x 698.61pt>
+Package pdftex.def Info: images/rank-09.png  used on input line 1764.
+(pdftex.def)             Requested size: 166.04774pt x 90.59195pt.
+<images/rank-10.png, id=774, 1312.905pt x 698.61pt>
 File: images/rank-10.png Graphic file (type png)
 <use images/rank-10.png>
-Package pdftex.def Info: images/rank-10.png  used on input line 1797.
-(pdftex.def)             Requested size: 207.56285pt x 110.43672pt.
- [62 <./images/rank-05.png> <./images/rank-06.png> <./images/rank-07.png>]
+Package pdftex.def Info: images/rank-10.png  used on input line 1773.
+(pdftex.def)             Requested size: 124.53897pt x 66.26204pt.
 <images/rank-11.png, id=775, 1262.7175pt x 530.98375pt>
 File: images/rank-11.png Graphic file (type png)
 <use images/rank-11.png>
-Package pdftex.def Info: images/rank-11.png  used on input line 1814.
-(pdftex.def)             Requested size: 207.56285pt x 87.27634pt.
- [63 <./images/rank-08.png> <./images/rank-09.png> <./images/rank-10.png>]
-<images/rank-12.png, id=786, 1294.8375pt x 622.325pt>
+Package pdftex.def Info: images/rank-11.png  used on input line 1782.
+(pdftex.def)             Requested size: 124.53897pt x 52.36418pt.
+<images/rank-12.png, id=776, 1294.8375pt x 622.325pt>
 File: images/rank-12.png Graphic file (type png)
 <use images/rank-12.png>
-Package pdftex.def Info: images/rank-12.png  used on input line 1825.
-(pdftex.def)             Requested size: 207.56285pt x 99.75446pt.
- [64 <./images/rank-11.png> <./images/rank-12.png>]
+Package pdftex.def Info: images/rank-12.png  used on input line 1791.
+(pdftex.def)             Requested size: 166.04774pt x 79.80356pt.
+ [63 <./images/rank-08.png> <./images/rank-09.png> <./images/rank-10.png>] [64 
+<./images/rank-11.png> <./images/rank-12.png>]
 <images/rank-13.png, id=796, 1076.02pt x 446.66875pt>
 File: images/rank-13.png Graphic file (type png)
 <use images/rank-13.png>
-Package pdftex.def Info: images/rank-13.png  used on input line 1849.
-(pdftex.def)             Requested size: 207.56285pt x 86.15608pt.
+Package pdftex.def Info: images/rank-13.png  used on input line 1808.
+(pdftex.def)             Requested size: 166.04774pt x 68.92622pt.
 <images/rank-14.png, id=797, 1291.82625pt x 486.81876pt>
 File: images/rank-14.png Graphic file (type png)
 <use images/rank-14.png>
-Package pdftex.def Info: images/rank-14.png  used on input line 1864.
-(pdftex.def)             Requested size: 207.56285pt x 78.21942pt.
+Package pdftex.def Info: images/rank-14.png  used on input line 1819.
+(pdftex.def)             Requested size: 166.04774pt x 62.56812pt.
 <images/rank-15.png, id=798, 1225.57875pt x 619.31375pt>
 File: images/rank-15.png Graphic file (type png)
 <use images/rank-15.png>
-Package pdftex.def Info: images/rank-15.png  used on input line 1875.
+Package pdftex.def Info: images/rank-15.png  used on input line 1828.
 (pdftex.def)             Requested size: 207.56285pt x 104.88504pt.
- [65 <./images/rank-13.png> <./images/rank-14.png>]
-<images/rank-16.png, id=808, 1302.8675pt x 332.24126pt>
+<images/rank-16.png, id=799, 1302.8675pt x 332.24126pt>
 File: images/rank-16.png Graphic file (type png)
 <use images/rank-16.png>
-Package pdftex.def Info: images/rank-16.png  used on input line 1888.
-(pdftex.def)             Requested size: 207.56285pt x 52.92648pt.
- [66 <./images/rank-15.png> <./images/rank-16.png>]
-<images/rank-17.png, id=818, 1306.8825pt x 680.5425pt>
+Package pdftex.def Info: images/rank-16.png  used on input line 1839.
+(pdftex.def)             Requested size: 166.04774pt x 42.34119pt.
+ [65 <./images/rank-13.png> <./images/rank-14.png>]
+<images/rank-17.png, id=809, 1306.8825pt x 680.5425pt>
 File: images/rank-17.png Graphic file (type png)
 <use images/rank-17.png>
-Package pdftex.def Info: images/rank-17.png  used on input line 1911.
+Package pdftex.def Info: images/rank-17.png  used on input line 1862.
 (pdftex.def)             Requested size: 207.56285pt x 108.07904pt.
- [67 <./images/rank-17.png>]
+ [66 <./images/rank-15.png> <./images/rank-16.png>] [67 <./images/rank-17.png>]
 <images/rank-18.png, id=827, 1282.7925pt x 655.44875pt>
 File: images/rank-18.png Graphic file (type png)
 <use images/rank-18.png>
-Package pdftex.def Info: images/rank-18.png  used on input line 1934.
+Package pdftex.def Info: images/rank-18.png  used on input line 1885.
 (pdftex.def)             Requested size: 207.56285pt x 106.0541pt.
 <images/rank-19.png, id=828, 801.99625pt x 648.4225pt>
 File: images/rank-19.png Graphic file (type png)
 <use images/rank-19.png>
-Package pdftex.def Info: images/rank-19.png  used on input line 1961.
-(pdftex.def)             Requested size: 166.04774pt x 134.24338pt.
+Package pdftex.def Info: images/rank-19.png  used on input line 1912.
+(pdftex.def)             Requested size: 124.53897pt x 100.68254pt.
  [68 <./images/rank-18.png>]
-<images/rank-20.png, id=836, 1284.8pt x 676.5275pt>
+<images/rank-20.png, id=840, 1284.8pt x 676.5275pt>
 File: images/rank-20.png Graphic file (type png)
 <use images/rank-20.png>
-Package pdftex.def Info: images/rank-20.png  used on input line 1982.
+Package pdftex.def Info: images/rank-20.png  used on input line 1931.
 (pdftex.def)             Requested size: 207.56285pt x 109.28922pt.
  [69 <./images/rank-19.png> <./images/rank-20.png>]
-<images/rank-21.png, id=846, 1001.7425pt x 643.40375pt>
+<images/rank-21.png, id=851, 1001.7425pt x 643.40375pt>
 File: images/rank-21.png Graphic file (type png)
 <use images/rank-21.png>
-Package pdftex.def Info: images/rank-21.png  used on input line 1997.
+Package pdftex.def Info: images/rank-21.png  used on input line 1956.
 (pdftex.def)             Requested size: 207.56285pt x 133.31235pt.
  [70 <./images/rank-21.png>] [71]
-<images/rank-22.png, id=859, 1317.92375pt x 463.7325pt>
+<images/rank-22.png, id=867, 1317.92375pt x 463.7325pt>
 File: images/rank-22.png Graphic file (type png)
 <use images/rank-22.png>
-Package pdftex.def Info: images/rank-22.png  used on input line 2024.
+Package pdftex.def Info: images/rank-22.png  used on input line 1983.
 (pdftex.def)             Requested size: 249.07796pt x 87.63599pt.
-<images/rank-23.png, id=860, 1040.88875pt x 745.78625pt>
+<images/rank-23.png, id=868, 1040.88875pt x 745.78625pt>
 File: images/rank-23.png Graphic file (type png)
 <use images/rank-23.png>
-Package pdftex.def Info: images/rank-23.png  used on input line 2041.
+Package pdftex.def Info: images/rank-23.png  used on input line 2000.
 (pdftex.def)             Requested size: 207.56285pt x 148.7108pt.
-<images/rank-24.png, id=861, 995.72pt x 706.64pt>
+<images/rank-24.png, id=869, 995.72pt x 706.64pt>
 File: images/rank-24.png Graphic file (type png)
 <use images/rank-24.png>
-Package pdftex.def Info: images/rank-24.png  used on input line 2056.
+Package pdftex.def Info: images/rank-24.png  used on input line 2015.
 (pdftex.def)             Requested size: 207.56285pt x 147.29897pt.
  [72 <./images/rank-22.png> <./images/rank-23.png>]
-<images/rank-25.png, id=871, 978.65625pt x 667.49374pt>
+<images/rank-25.png, id=879, 978.65625pt x 667.49374pt>
 File: images/rank-25.png Graphic file (type png)
 <use images/rank-25.png>
-Package pdftex.def Info: images/rank-25.png  used on input line 2069.
+Package pdftex.def Info: images/rank-25.png  used on input line 2028.
 (pdftex.def)             Requested size: 207.56285pt x 141.563pt.
- [73 <./images/rank-24.png> <./images/rank-25.png>]
-<images/rank-26.png, id=882, 1228.59pt x 596.2275pt>
+
+[73 <./images/rank-24.png> <./images/rank-25.png>]
+<images/rank-26.png, id=890, 1228.59pt x 596.2275pt>
 File: images/rank-26.png Graphic file (type png)
 <use images/rank-26.png>
-Package pdftex.def Info: images/rank-26.png  used on input line 2080.
+Package pdftex.def Info: images/rank-26.png  used on input line 2039.
 (pdftex.def)             Requested size: 207.56285pt x 100.72958pt.
-<images/rank-27.png, id=883, 886.31125pt x 726.715pt>
+<images/rank-27.png, id=891, 886.31125pt x 726.715pt>
 File: images/rank-27.png Graphic file (type png)
 <use images/rank-27.png>
-Package pdftex.def Info: images/rank-27.png  used on input line 2089.
+Package pdftex.def Info: images/rank-27.png  used on input line 2048.
 (pdftex.def)             Requested size: 207.56285pt x 170.17924pt.
  [74 <./images/rank-26.png> <./images/rank-27.png>]
-<images/rank-28.png, id=893, 1278.7775pt x 414.54875pt>
+<images/rank-28.png, id=901, 1278.7775pt x 414.54875pt>
 File: images/rank-28.png Graphic file (type png)
 <use images/rank-28.png>
-Package pdftex.def Info: images/rank-28.png  used on input line 2106.
+Package pdftex.def Info: images/rank-28.png  used on input line 2065.
 (pdftex.def)             Requested size: 207.56285pt x 67.2843pt.
-<images/rank-29.png, id=894, 719.68875pt x 455.7025pt>
+<images/rank-29.png, id=902, 719.68875pt x 455.7025pt>
 File: images/rank-29.png Graphic file (type png)
 <use images/rank-29.png>
-Package pdftex.def Info: images/rank-29.png  used on input line 2115.
+Package pdftex.def Info: images/rank-29.png  used on input line 2074.
 (pdftex.def)             Requested size: 124.53897pt x 78.85213pt.
-<images/rank-30.png, id=895, 990.70125pt x 608.2725pt>
+<images/rank-30.png, id=903, 990.70125pt x 608.2725pt>
 File: images/rank-30.png Graphic file (type png)
 <use images/rank-30.png>
-Package pdftex.def Info: images/rank-30.png  used on input line 2126.
+Package pdftex.def Info: images/rank-30.png  used on input line 2085.
 (pdftex.def)             Requested size: 124.53897pt x 76.46082pt.
  [75 <./images/rank-28.png> <./images/rank-29.png> <./images/rank-30.png>]
-<images/rank-31.png, id=907, 1324.95pt x 592.2125pt>
+<images/rank-31.png, id=915, 1324.95pt x 592.2125pt>
 File: images/rank-31.png Graphic file (type png)
 <use images/rank-31.png>
-Package pdftex.def Info: images/rank-31.png  used on input line 2135.
+Package pdftex.def Info: images/rank-31.png  used on input line 2094.
 (pdftex.def)             Requested size: 207.56285pt x 92.76791pt.
-<images/rank-32.png, id=908, 1324.95pt x 589.20125pt>
+<images/rank-32.png, id=916, 1324.95pt x 589.20125pt>
 File: images/rank-32.png Graphic file (type png)
 <use images/rank-32.png>
-Package pdftex.def Info: images/rank-32.png  used on input line 2150.
+Package pdftex.def Info: images/rank-32.png  used on input line 2109.
 (pdftex.def)             Requested size: 207.56285pt x 92.29622pt.
  [76 <./images/rank-31.png> <./images/rank-32.png>]
-<images/matrix-space-01.png, id=918, 910.40125pt x 744.7825pt>
+<images/matrix-space-01.png, id=926, 910.40125pt x 744.7825pt>
 File: images/matrix-space-01.png Graphic file (type png)
 <use images/matrix-space-01.png>
-Package pdftex.def Info: images/matrix-space-01.png  used on input line 2169.
+Package pdftex.def Info: images/matrix-space-01.png  used on input line 2128.
 (pdftex.def)             Requested size: 207.56285pt x 169.79626pt.
-<images/matrix-space-02.png, id=919, 1232.605pt x 623.32875pt>
+<images/matrix-space-02.png, id=927, 1232.605pt x 623.32875pt>
 File: images/matrix-space-02.png Graphic file (type png)
 <use images/matrix-space-02.png>
-Package pdftex.def Info: images/matrix-space-02.png  used on input line 2182.
+Package pdftex.def Info: images/matrix-space-02.png  used on input line 2141.
 (pdftex.def)             Requested size: 207.56285pt x 104.95628pt.
  [77 <./images/matrix-space-01.png> <./images/matrix-space-02.png>]
-<images/matrix-space-03.png, id=929, 1301.86375pt x 604.2575pt>
+<images/matrix-space-03.png, id=937, 1301.86375pt x 604.2575pt>
 File: images/matrix-space-03.png Graphic file (type png)
 <use images/matrix-space-03.png>
-Package pdftex.def Info: images/matrix-space-03.png  used on input line 2193.
+Package pdftex.def Info: images/matrix-space-03.png  used on input line 2152.
 (pdftex.def)             Requested size: 207.56285pt x 96.3328pt.
-<images/matrix-space-04.png, id=930, 1310.8975pt x 603.25375pt>
+<images/matrix-space-04.png, id=938, 1310.8975pt x 603.25375pt>
 File: images/matrix-space-04.png Graphic file (type png)
 <use images/matrix-space-04.png>
-Package pdftex.def Info: images/matrix-space-04.png  used on input line 2202.
+Package pdftex.def Info: images/matrix-space-04.png  used on input line 2161.
 (pdftex.def)             Requested size: 207.56285pt x 95.51003pt.
-<images/matrix-space-05.png, id=931, 1332.98pt x 770.88pt>
+<images/matrix-space-05.png, id=939, 1332.98pt x 770.88pt>
 File: images/matrix-space-05.png Graphic file (type png)
 <use images/matrix-space-05.png>
-Package pdftex.def Info: images/matrix-space-05.png  used on input line 2211.
+Package pdftex.def Info: images/matrix-space-05.png  used on input line 2170.
 (pdftex.def)             Requested size: 207.56285pt x 120.02625pt.
  [78 <./images/matrix-space-03.png> <./images/matrix-space-04.png> <./images/ma
 trix-space-05.png>]
-<images/matrix-space-06.png, id=943, 1320.935pt x 630.355pt>
+<images/matrix-space-06.png, id=952, 1320.935pt x 630.355pt>
 File: images/matrix-space-06.png Graphic file (type png)
 <use images/matrix-space-06.png>
-Package pdftex.def Info: images/matrix-space-06.png  used on input line 2222.
+Package pdftex.def Info: images/matrix-space-06.png  used on input line 2181.
 (pdftex.def)             Requested size: 207.56285pt x 99.04097pt.
-<images/matrix-space-07.png, id=944, 1403.2425pt x 671.50874pt>
+<images/matrix-space-07.png, id=953, 1403.2425pt x 671.50874pt>
 File: images/matrix-space-07.png Graphic file (type png)
 <use images/matrix-space-07.png>
-Package pdftex.def Info: images/matrix-space-07.png  used on input line 2231.
+Package pdftex.def Info: images/matrix-space-07.png  used on input line 2190.
 (pdftex.def)             Requested size: 207.56285pt x 99.3182pt.
-<images/matrix-space-08.png, id=945, 1369.115pt x 780.9175pt>
+<images/matrix-space-08.png, id=954, 1369.115pt x 780.9175pt>
 File: images/matrix-space-08.png Graphic file (type png)
 <use images/matrix-space-08.png>
-Package pdftex.def Info: images/matrix-space-08.png  used on input line 2250.
+Package pdftex.def Info: images/matrix-space-08.png  used on input line 2209.
 (pdftex.def)             Requested size: 207.56285pt x 118.38373pt.
- [79 <./images/matrix-space-06.png> <./images/matrix-space-07.png>]
-<images/matrix-space-09.png, id=957, 1404.24625pt x 557.08125pt>
+
+[79 <./images/matrix-space-06.png> <./images/matrix-space-07.png>]
+<images/matrix-space-09.png, id=965, 1404.24625pt x 557.08125pt>
 File: images/matrix-space-09.png Graphic file (type png)
 <use images/matrix-space-09.png>
-Package pdftex.def Info: images/matrix-space-09.png  used on input line 2265.
+Package pdftex.def Info: images/matrix-space-09.png  used on input line 2224.
 (pdftex.def)             Requested size: 207.56285pt x 82.34302pt.
-<images/matrix-space-10.png, id=958, 1369.115pt x 563.10374pt>
+<images/matrix-space-10.png, id=966, 1369.115pt x 563.10374pt>
 File: images/matrix-space-10.png Graphic file (type png)
 <use images/matrix-space-10.png>
-Package pdftex.def Info: images/matrix-space-10.png  used on input line 2274.
+Package pdftex.def Info: images/matrix-space-10.png  used on input line 2233.
 (pdftex.def)             Requested size: 207.56285pt x 85.3641pt.
  [80 <./images/matrix-space-08.png> <./images/matrix-space-09.png> <./images/ma
 trix-space-10.png>]
-<images/matrix-space-11.png, id=970, 1394.20876pt x 624.3325pt>
+<images/matrix-space-11.png, id=978, 1394.20876pt x 624.3325pt>
 File: images/matrix-space-11.png Graphic file (type png)
 <use images/matrix-space-11.png>
-Package pdftex.def Info: images/matrix-space-11.png  used on input line 2285.
+Package pdftex.def Info: images/matrix-space-11.png  used on input line 2244.
 (pdftex.def)             Requested size: 207.56285pt x 92.94087pt.
-<images/matrix-space-12.png, id=971, 1423.3175pt x 631.35875pt>
+<images/matrix-space-12.png, id=979, 1423.3175pt x 631.35875pt>
 File: images/matrix-space-12.png Graphic file (type png)
 <use images/matrix-space-12.png>
-Package pdftex.def Info: images/matrix-space-12.png  used on input line 2294.
+Package pdftex.def Info: images/matrix-space-12.png  used on input line 2253.
 (pdftex.def)             Requested size: 207.56285pt x 92.0697pt.
-
-[81 <./images/matrix-space-11.png> <./images/matrix-space-12.png>]
-<images/matrix-space-13.png, id=981, 684.5575pt x 530.98375pt>
+ [81 <./images/matrix-space-11.png> <./images/matrix-space-12.png>]
+<images/matrix-space-13.png, id=989, 684.5575pt x 530.98375pt>
 File: images/matrix-space-13.png Graphic file (type png)
 <use images/matrix-space-13.png>
-Package pdftex.def Info: images/matrix-space-13.png  used on input line 2315.
+Package pdftex.def Info: images/matrix-space-13.png  used on input line 2274.
 (pdftex.def)             Requested size: 83.02386pt x 64.39587pt.
-<images/matrix-space-14.png, id=982, 1410.26875pt x 556.0775pt>
+<images/matrix-space-14.png, id=990, 1410.26875pt x 556.0775pt>
 File: images/matrix-space-14.png Graphic file (type png)
 <use images/matrix-space-14.png>
-Package pdftex.def Info: images/matrix-space-14.png  used on input line 2326.
+Package pdftex.def Info: images/matrix-space-14.png  used on input line 2285.
 (pdftex.def)             Requested size: 207.56285pt x 81.83829pt.
-<images/matrix-space-15.png, id=983, 1345.025pt x 826.08624pt>
+<images/matrix-space-15.png, id=991, 1345.025pt x 826.08624pt>
 File: images/matrix-space-15.png Graphic file (type png)
 <use images/matrix-space-15.png>
-Package pdftex.def Info: images/matrix-space-15.png  used on input line 2339.
+Package pdftex.def Info: images/matrix-space-15.png  used on input line 2298.
 (pdftex.def)             Requested size: 207.56285pt x 127.47481pt.
-<images/matrix-space-16.png, id=985, 1418.29875pt x 561.09625pt>
+<images/matrix-space-16.png, id=993, 1418.29875pt x 561.09625pt>
 File: images/matrix-space-16.png Graphic file (type png)
 <use images/matrix-space-16.png>
-Package pdftex.def Info: images/matrix-space-16.png  used on input line 2350.
+Package pdftex.def Info: images/matrix-space-16.png  used on input line 2309.
 (pdftex.def)             Requested size: 373.61061pt x 147.79938pt.
- [82 <./images/matrix-space-13.png> <./images/matrix-space-14.png>] [83 <./imag
-es/matrix-space-15.png> <./images/matrix-space-16.png>]
-<images/matrix-space-17.png, id=1004, 1240.635pt x 542.025pt>
+
+[82 <./images/matrix-space-13.png> <./images/matrix-space-14.png>] [83 <./image
+s/matrix-space-15.png> <./images/matrix-space-16.png>]
+<images/matrix-space-17.png, id=1012, 1240.635pt x 542.025pt>
 File: images/matrix-space-17.png Graphic file (type png)
 <use images/matrix-space-17.png>
-Package pdftex.def Info: images/matrix-space-17.png  used on input line 2363.
+Package pdftex.def Info: images/matrix-space-17.png  used on input line 2322.
 (pdftex.def)             Requested size: 207.56285pt x 90.67912pt.
-<images/matrix-space-18.png, id=1005, 1245.65375pt x 702.625pt>
+<images/matrix-space-18.png, id=1013, 1245.65375pt x 702.625pt>
 File: images/matrix-space-18.png Graphic file (type png)
 <use images/matrix-space-18.png>
-Package pdftex.def Info: images/matrix-space-18.png  used on input line 2376.
+Package pdftex.def Info: images/matrix-space-18.png  used on input line 2335.
 (pdftex.def)             Requested size: 207.56285pt x 117.07529pt.
  [84 <./images/matrix-space-17.png> <./images/matrix-space-18.png>]
-<images/matrix-space-19.png, id=1015, 1119.18124pt x 565.11125pt>
+<images/matrix-space-19.png, id=1023, 1119.18124pt x 565.11125pt>
 File: images/matrix-space-19.png Graphic file (type png)
 <use images/matrix-space-19.png>
-Package pdftex.def Info: images/matrix-space-19.png  used on input line 2387.
+Package pdftex.def Info: images/matrix-space-19.png  used on input line 2346.
 (pdftex.def)             Requested size: 124.53897pt x 62.87813pt.
-<images/matrix-space-20.png, id=1016, 1166.3575pt x 710.655pt>
+<images/matrix-space-20.png, id=1024, 1166.3575pt x 710.655pt>
 File: images/matrix-space-20.png Graphic file (type png)
 <use images/matrix-space-20.png>
-Package pdftex.def Info: images/matrix-space-20.png  used on input line 2398.
+Package pdftex.def Info: images/matrix-space-20.png  used on input line 2357.
 (pdftex.def)             Requested size: 166.04774pt x 101.17178pt.
-<images/matrix-space-21.png, id=1017, 1081.03876pt x 503.8825pt>
+<images/matrix-space-21.png, id=1025, 1081.03876pt x 503.8825pt>
 File: images/matrix-space-21.png Graphic file (type png)
 <use images/matrix-space-21.png>
-Package pdftex.def Info: images/matrix-space-21.png  used on input line 2407.
+Package pdftex.def Info: images/matrix-space-21.png  used on input line 2366.
 (pdftex.def)             Requested size: 166.04774pt x 77.39362pt.
-<images/matrix-space-22.png, id=1018, 1401.235pt x 730.73pt>
+<images/matrix-space-22.png, id=1026, 1401.235pt x 730.73pt>
 File: images/matrix-space-22.png Graphic file (type png)
 <use images/matrix-space-22.png>
-Package pdftex.def Info: images/matrix-space-22.png  used on input line 2416.
+Package pdftex.def Info: images/matrix-space-22.png  used on input line 2375.
 (pdftex.def)             Requested size: 166.04774pt x 86.59111pt.
  [85 <./images/matrix-space-19.png> <./images/matrix-space-20.png> <./images/ma
 trix-space-21.png>]
-<images/matrix-space-23.png, id=1031, 1209.51875pt x 564.1075pt>
+<images/matrix-space-23.png, id=1039, 1209.51875pt x 564.1075pt>
 File: images/matrix-space-23.png Graphic file (type png)
 <use images/matrix-space-23.png>
-Package pdftex.def Info: images/matrix-space-23.png  used on input line 2443.
+Package pdftex.def Info: images/matrix-space-23.png  used on input line 2402.
 (pdftex.def)             Requested size: 124.53897pt x 58.0753pt.
-<images/matrix-space-24.png, id=1032, 1054.94125pt x 800.9925pt>
+<images/matrix-space-24.png, id=1040, 1054.94125pt x 800.9925pt>
 File: images/matrix-space-24.png Graphic file (type png)
 <use images/matrix-space-24.png>
-Package pdftex.def Info: images/matrix-space-24.png  used on input line 2452.
+Package pdftex.def Info: images/matrix-space-24.png  used on input line 2411.
 (pdftex.def)             Requested size: 207.56285pt x 157.59235pt.
  [86 <./images/matrix-space-22.png> <./images/matrix-space-23.png>]
-<images/matrix-space-25.png, id=1042, 1240.635pt x 777.90625pt>
+<images/matrix-space-25.png, id=1050, 1240.635pt x 777.90625pt>
 File: images/matrix-space-25.png Graphic file (type png)
 <use images/matrix-space-25.png>
-Package pdftex.def Info: images/matrix-space-25.png  used on input line 2461.
+Package pdftex.def Info: images/matrix-space-25.png  used on input line 2420.
 (pdftex.def)             Requested size: 207.56285pt x 130.14134pt.
  [87 <./images/matrix-space-24.png> <./images/matrix-space-25.png>] [88]
-<images/matrix-space-26.png, id=1057, 1152.305pt x 770.88pt>
+<images/matrix-space-26.png, id=1065, 1152.305pt x 770.88pt>
 File: images/matrix-space-26.png Graphic file (type png)
 <use images/matrix-space-26.png>
-Package pdftex.def Info: images/matrix-space-26.png  used on input line 2480.
+Package pdftex.def Info: images/matrix-space-26.png  used on input line 2439.
 (pdftex.def)             Requested size: 249.07796pt x 166.62993pt.
-<images/matrix-space-27.png, id=1058, 1359.0775pt x 702.625pt>
+<images/matrix-space-27.png, id=1066, 1359.0775pt x 702.625pt>
 File: images/matrix-space-27.png Graphic file (type png)
 <use images/matrix-space-27.png>
-Package pdftex.def Info: images/matrix-space-27.png  used on input line 2495.
+Package pdftex.def Info: images/matrix-space-27.png  used on input line 2454.
 (pdftex.def)             Requested size: 249.07796pt x 128.76137pt.
-<images/matrix-space-28.png, id=1059, 1348.03625pt x 735.74875pt>
+<images/matrix-space-28.png, id=1067, 1348.03625pt x 735.74875pt>
 File: images/matrix-space-28.png Graphic file (type png)
 <use images/matrix-space-28.png>
-Package pdftex.def Info: images/matrix-space-28.png  used on input line 2507.
+Package pdftex.def Info: images/matrix-space-28.png  used on input line 2466.
 (pdftex.def)             Requested size: 249.07796pt x 135.94298pt.
  [89 <./images/matrix-space-26.png> <./images/matrix-space-27.png>]
-<images/matrix-space-29.png, id=1069, 1360.08125pt x 756.8275pt>
+<images/matrix-space-29.png, id=1077, 1360.08125pt x 756.8275pt>
 File: images/matrix-space-29.png Graphic file (type png)
 <use images/matrix-space-29.png>
-Package pdftex.def Info: images/matrix-space-29.png  used on input line 2518.
+Package pdftex.def Info: images/matrix-space-29.png  used on input line 2477.
 (pdftex.def)             Requested size: 249.07796pt x 138.602pt.
-<images/matrix-space-30.png, id=1070, 1360.08125pt x 773.89125pt>
+<images/matrix-space-30.png, id=1078, 1360.08125pt x 773.89125pt>
 File: images/matrix-space-30.png Graphic file (type png)
 <use images/matrix-space-30.png>
-Package pdftex.def Info: images/matrix-space-30.png  used on input line 2529.
+Package pdftex.def Info: images/matrix-space-30.png  used on input line 2488.
 (pdftex.def)             Requested size: 249.07796pt x 141.72699pt.
  [90 <./images/matrix-space-28.png> <./images/matrix-space-29.png>] [91 <./imag
 es/matrix-space-30.png>]
-<images/matrix-space-31.png, id=1088, 1286.8075pt x 602.25pt>
+<images/matrix-space-31.png, id=1096, 1286.8075pt x 602.25pt>
 File: images/matrix-space-31.png Graphic file (type png)
 <use images/matrix-space-31.png>
-Package pdftex.def Info: images/matrix-space-31.png  used on input line 2546.
+Package pdftex.def Info: images/matrix-space-31.png  used on input line 2505.
 (pdftex.def)             Requested size: 249.07796pt x 116.56985pt.
-<images/matrix-space-32.png, id=1089, 1358.07375pt x 743.77875pt>
+<images/matrix-space-32.png, id=1097, 1358.07375pt x 743.77875pt>
 File: images/matrix-space-32.png Graphic file (type png)
 <use images/matrix-space-32.png>
-Package pdftex.def Info: images/matrix-space-32.png  used on input line 2559.
+Package pdftex.def Info: images/matrix-space-32.png  used on input line 2518.
 (pdftex.def)             Requested size: 249.07796pt x 136.40524pt.
  [92 <./images/matrix-space-31.png> <./images/matrix-space-32.png>]
-<images/matrix-space-33.png, id=1099, 1399.2275pt x 733.74126pt>
+<images/matrix-space-33.png, id=1107, 1399.2275pt x 733.74126pt>
 File: images/matrix-space-33.png Graphic file (type png)
 <use images/matrix-space-33.png>
-Package pdftex.def Info: images/matrix-space-33.png  used on input line 2572.
+Package pdftex.def Info: images/matrix-space-33.png  used on input line 2531.
 (pdftex.def)             Requested size: 249.07796pt x 130.61224pt.
-<images/matrix-space-34.png, id=1100, 1379.1525pt x 735.74875pt>
+<images/matrix-space-34.png, id=1108, 1379.1525pt x 735.74875pt>
 File: images/matrix-space-34.png Graphic file (type png)
 <use images/matrix-space-34.png>
-Package pdftex.def Info: images/matrix-space-34.png  used on input line 2581.
+Package pdftex.def Info: images/matrix-space-34.png  used on input line 2540.
 (pdftex.def)             Requested size: 249.07796pt x 132.87811pt.
-<images/matrix-space-35.png, id=1101, 1304.875pt x 788.9475pt>
+<images/matrix-space-35.png, id=1109, 1304.875pt x 788.9475pt>
 File: images/matrix-space-35.png Graphic file (type png)
 <use images/matrix-space-35.png>
-Package pdftex.def Info: images/matrix-space-35.png  used on input line 2590.
+Package pdftex.def Info: images/matrix-space-35.png  used on input line 2549.
 (pdftex.def)             Requested size: 249.07796pt x 150.58775pt.
  [93 <./images/matrix-space-33.png> <./images/matrix-space-34.png>] 
 AED: lastpage setting LastPage
 [94 <./images/matrix-space-35.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2599.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2599.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2558.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2558.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2599.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2599.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2558.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2558.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 09F7C0A78086A3412234572E58B53F4F;42.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2599.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2558.
  ) 
 Here is how much of TeX's memory you used:
- 15615 strings out of 492982
- 234777 string characters out of 6134895
+ 15630 strings out of 492982
+ 234999 string characters out of 6134895
  641039 words of memory out of 5000000
- 18187 multiletter control sequences out of 15000+600000
+ 18194 multiletter control sequences out of 15000+600000
  74436 words of font info for 254 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,12n,45p,1438b,1931s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2039,10 +2040,10 @@ rw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (94 pages, 27871192 bytes).
+Output written on main.pdf (94 pages, 27872601 bytes).
 PDF statistics:
- 1261 PDF objects out of 1440 (max. 8388607)
- 849 compressed objects within 9 object streams
- 387 named destinations out of 1000 (max. 500000)
+ 1270 PDF objects out of 1440 (max. 8388607)
+ 858 compressed objects within 9 object streams
+ 395 named destinations out of 1000 (max. 500000)
  48375 words of extra memory for PDF output out of 51595 (max. 10000000)
 

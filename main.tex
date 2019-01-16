@@ -1675,89 +1675,69 @@ I know it's a lot to take in, and matrix multiplication is a bit of a weird thin
 
 \subsubsection*{Rank: Concepts, Terms and Applications}
 
-The rank of a matrix is a single number that provides insight into the amount of information that is contained in the matrix. That's different from the dimensionality of the matrix. And in this video I'm going to discuss the ideas and the uses of matrix rank, so you can have a sense of why it's such an important number in linear algebra.
-
-Indeed, the rank of a matrix is something that comes up all the time in applied linear algebra. So this is not just some esoteric, abstract concept that you have to learn in class and never use again. So let's get started.
+\textbf{The rank of a matrix is a single number that provides insight into the amount of information that is contained in the matrix.} That's different from the dimensionality of the matrix. And in this video I'm going to discuss the ideas and the uses of matrix rank, so you can have a sense of why it's such an important number in linear algebra. Indeed, the rank of a matrix is something that comes up all the time in applied linear algebra. So this is not just some esoteric, abstract concept that you have to learn in class and never use again. So let's get started.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.3\linewidth]{images/rank-01.png}
+	\includegraphics[width=0.2\linewidth]{images/rank-01.png}
 	\caption{Rank}
 	\label{fig:rank_01}
 \end{figure}
 
-We'll start with terminology. The rank of a matrix is typically indicated by the lowercase letter $r$. Or sometimes by the word \textbf{rank }and then the matrix in parentheses. The \textbf{rank }is a single number that characterizes the entire matrix. It applies to matrix of any size; the matrix can be square or rectangular.
-
-Even vectors have a rank. Rank is a non-negative integer meaning it can be $0$, $1$, $2$, $3$, and so on. There is no such thing as negative rank, and there is no such thing as a rank of $1.3$. That's because rank is related to the dimensionality of a matrix and in linear algebra we work only with integer dimensions.
+We'll start with terminology. The rank of a matrix is typically indicated by the lowercase letter $r$. Or sometimes by the word \textbf{rank }and then the matrix in parentheses. The \textbf{rank }is a single number that characterizes the entire matrix. It applies to matrix of any size; the matrix can be square or rectangular. Even vectors have a rank. Rank is a non-negative integer meaning it can be $0$, $1$, $2$, $3$, and so on. There is no such thing as negative rank, and there is no such thing as a rank of $1.3$. That's because rank is related to the dimensionality of a matrix and in linear algebra we work only with integer dimensions.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.6\linewidth]{images/rank-02.png}
+	\includegraphics[width=0.4\linewidth]{images/rank-02.png}
 	\caption{Rank}
 	\label{fig:rank_02}
 \end{figure}
 
-Second, the rank of a matrix indicates the number of dimensions of information that are coded inside the matrix. That's not the same thing as the total number of columns or the total number of rows.
+Second, the rank of a matrix indicates the \textbf{number of dimensions of information that are coded inside the matrix}. That's not the same thing as the total number of columns or the total number of rows.
 
-Consider this matrix for example. We can interpret this algebraically or geometrically. Algebraically, it's clear that the columns of this matrix form a linearly dependent set. The subspace that is spanned by the columns, which include all of $\mathbb{R}^2$ with only two independent vectors.
+Consider this matrix for example. We can interpret this algebraically or geometrically. Algebraically, it's clear that the columns of this matrix form a linearly dependent set. The subspace that is spanned by the columns, which include all of $\mathbb{R}^2$ with only two independent vectors. And you can certainly find at least two columns in this matrix that are linearly independent -- that would form a linearly independent set. The rest of the columns don't provide any new information that cannot be obtained by combining the other columns in some way.
 
-And you can certainly find at least two columns in this matrix that are linearly independent -- that would form a linearly independent set. The rest of the columns don't provide any new information that cannot be obtained by combining the other columns in some way.
-
-You can also think of this matrix geometrically. You can think of each column being the endpoint of a vector from the origin. And when plotting these vectors, you can see that they all lie in a plane it's all in $\mathbb{R}^2$.
-
-So again, any two vectors that are distinct can provide unique geometric information but one vector is a line and the second vector makes a plane, and additional vectors in that plane don't provide any new geometric dimensions. So the rank of this matrix is two.
-
-Here's another example.
+You can also think of this matrix geometrically. You can think of each column being the endpoint of a vector from the origin. And when plotting these vectors, you can see that they all lie in a plane it's all in $\mathbb{R}^2$. So again, any two vectors that are distinct can provide unique geometric information but one vector is a line and the second vector makes a plane, and additional vectors in that plane don't provide any new geometric dimensions. So the rank of this matrix is two.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.7\linewidth]{images/rank-03.png}
+	\includegraphics[width=0.5\linewidth]{images/rank-03.png}
 	\caption{Rank}
 	\label{fig:rank_03}
 \end{figure}
 
-This is a two by three matrix. And here are the three vectors that are created by the columns.
+Here's another example. This is a 2 by 3 matrix. And here are the 3 vectors that are created by the columns. So again geometrically, this makes us think that we have a rank 2 matrix because we have two independent vectors that span all of $\mathbb{R}^2$. And then there's a third vector that provides no new geometric dimensional information.
 
-So again geometrically, this makes us think that we have a rank 2 matrix because we have two independent vectors that span all of $\mathbb{R}^2$. And then there's a third vector that provides no new geometric dimensional information.
-
-But I'm just talking about the columns. Maybe you are looking at the rows and you say, well the rows are actually in $\mathbb{R}^3$, So maybe the rank of the rows is three. But by plotting these vectors -- the rows -- you can see that this is only two vectors in $\mathbb{R}^3$, and two vectors in $\mathbb{R}^3$ that are linearly distinct can create a plane, which is a two dimensional subspace.
-
-So in fact, the rank of this matrix is still two, regardless of whether you think about the columns or you think about the rows.
+But I'm just talking about the columns. Maybe you are looking at the rows and you say, well the rows are actually in $\mathbb{R}^3$, So maybe the rank of the rows is three. But by plotting these vectors -- the rows -- you can see that this is only two vectors in $\mathbb{R}^3$, and two vectors in $\mathbb{R}^3$ that are linearly distinct can create a plane, which is a two dimensional subspace. So in fact, the rank of this matrix is still two, regardless of whether you think about the columns or you think about the rows.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.4\linewidth]{images/rank-04.png}
+	\includegraphics[width=0.3\linewidth]{images/rank-04.png}
 	\caption{Rank}
 	\label{fig:rank_04}
 \end{figure}
 
-And in fact this is not just a unique property of this particular matrix; rank is a property of the matrix. It doesn't matter whether you're looking at the columns of the matrix or whether you're looking at the rows of the matrix. There is no such thing as the rank of a column space or the rank of the row space. There is just the rank of the matrix. And that is the third important thing that you need to know about rank.
+And in fact this is not just a unique property of this particular matrix; rank is a property of the matrix. It doesn't matter whether you're looking at the columns of the matrix or whether you're looking at the rows of the matrix. \textbf{There is no such thing as the rank of a column space or the rank of the row space.} There is just the rank of the matrix. And that is the third important thing that you need to know about rank.
 
-The idea is that the rank of the matrix tells you about the number of dimensions of information that are contained in the matrix, which might be a subspace of the total dimensionality of the matrix.
-
-So a 3 by 3 matrix lives in $\mathbb{R}^3$. It's three dimensional. But it might have rank-2 if all the information in the matrix is contained inside a plane, which is a subspace of $\mathbb{R}^3$. Again, here with rank you see the concept of the distinction between the dimensionality of a subspace versus the ambient dimensionality. This is a concept that I introduced in the section on vectors.
+The idea is that the rank of the matrix tells you about the number of dimensions of information that are contained in the matrix, which might be a subspace of the total dimensionality of the matrix. So a 3 by 3 matrix lives in $\mathbb{R}^3$. It's 3-dimensional. But it might have rank 2 if all the information in the matrix is contained inside a plane, which is a subspace of $\mathbb{R}^3$. Again, here with rank you see the concept of the distinction between the dimensionality of a subspace versus the ambient dimensionality. This is a concept that I introduced in the section on vectors.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.5\linewidth]{images/rank-05.png}
+	\includegraphics[width=0.3\linewidth]{images/rank-05.png}
 	\caption{Rank}
 	\label{fig:rank_05}
 \end{figure}
 
-So here's a list so far of important things to know about rank. It's indicated with $r$ sometimes the word \textbf{rank}.
-
-It corresponds to the number of dimensions of information in the matrix, and it's a property of the matrix, it doesn't matter whether you're looking at columns or rows.
+So here's a list so far of important things to know about rank. It's indicated with $r$ sometimes the word \textbf{rank}. It corresponds to the number of dimensions of information in the matrix, and it's a property of the matrix, it doesn't matter whether you're looking at columns or rows.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.3\linewidth]{images/rank-06.png}
+	\includegraphics[width=0.25\linewidth]{images/rank-06.png}
 	\caption{Rank}
 	\label{fig:rank_06}
 \end{figure}
 
-Now let's move on to point four. The fourth important thing to know about the rank of a matrix is that the maximum possible rank for each matrix is the smaller of the number of rows or the number of columns.
-
-So if you have the size of matrix $A$ as $M$ by $N$. Then the rank cannot be bigger than the smaller, the minimum, and $m$ and $n$. Keep in mind that this number -- whatever is the minimum of M or N -- that is a theoretical maximum. You don't necessarily have to get a rank that is this high.
+Now let's move on to point 4. The fourth important thing to know about \textbf{the rank of a matrix is that the maximum possible rank for each matrix is the smaller of the number of rows or the number of columns}. So if you have the size of matrix $A$ as $M$ by $N$. Then the rank cannot be bigger than the smaller, the minimum, and $m$ and $n$. Keep in mind that this number -- whatever is the minimum of $M$ or $N$ -- that is a theoretical maximum. You don't necessarily have to get a rank that is this high.
 
 \begin{figure}[ht]
 	\centering
@@ -1766,9 +1746,7 @@ So if you have the size of matrix $A$ as $M$ by $N$. Then the rank cannot be big
 	\label{fig:rank_07}
 \end{figure}
 
-Consider this matrix (Figure ~\ref{fig:rank_07}), for example.
-
-It's a 10 by 12 matrix, meaning the maximum possible rank is 10. But if you look carefully, you see that all the rows are repeated. So every row in this matrix is a scaled version of a different row in the matrix. So really, all of the information in this entire matrix is just a line, geometrically speaking. I have no idea what that line looks like, but it's still just a line. So the rank of this matrix is one.
+Consider this matrix (Figure ~\ref{fig:rank_07}), for example. It's a 10 by 12 matrix, meaning the maximum possible rank is 10. But if you look carefully, you see that all the rows are repeated. So every row in this matrix is a scaled version of a different row in the matrix. So really, all of the information in this entire matrix is just a line, geometrically speaking. I have no idea what that line looks like, but it's still just a line. So the rank of this matrix is one.
 
 \begin{figure}[ht]
 	\centering
@@ -1779,96 +1757,71 @@ It's a 10 by 12 matrix, meaning the maximum possible rank is 10. But if you look
 
 Now consider this matrix (Figure ~\ref{fig:rank_08}). I changed a few numbers here but still if you look carefully you will see that there isn't a whole lot of information. So most of these rows are still linear combinations of other rows. So the rank of this matrix is still well below 10 or 12. 
 
+\pagebreak
+
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.5\linewidth]{images/rank-09.png}
+	\includegraphics[width=0.4\linewidth]{images/rank-09.png}
 	\caption{Rank}
 	\label{fig:rank_09}
 \end{figure}
 
-So here's a little bit more about terminology and rank. If a matrix is square and it has the maximum possible rank -- so the matrix is $M$ by $M$ and the rank is $M$, then we call this a full-rank matrix.
-
-If the matrix is rectangular, and the rank is equal to the number of columns, so the matrix is $M$ by $N$, where $M$ is greater than N, so there's more rows and columns, but the rank of the matrix is equal to the number of columns in the matrix, then this is called \textbf{full column rank}.
-
-And you can probably guess that the converse -- if the rank is equal to the number of rows for a rectangular matrix -- then it's called a \textbf{full row rank matrix}.
+So here's a little bit more about terminology and rank. If a matrix is square and it has the maximum possible rank -- so the matrix is $M$ by $M$ and the rank is $M$, then we call this a \textbf{full-rank matrix}. If the matrix is rectangular, and the rank is equal to the number of columns, so the matrix is $M$ by $N$, where $M$ is greater than N, so there's more rows and columns, but the rank of the matrix is equal to the number of columns in the matrix, then this is called \textbf{full column rank}. And you can probably guess that the converse -- if the rank is equal to the number of rows for a rectangular matrix -- then it's called a \textbf{full row rank matrix}.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.5\linewidth]{images/rank-10.png}
+	\includegraphics[width=0.3\linewidth]{images/rank-10.png}
 	\caption{Rank}
 	\label{fig:rank_10}
 \end{figure}
 
-If the matrix rank is less than the maximum possible rank, it's given a bunch different names. You can call it \textbf{reduced-rank} or \textbf{rank-deficient} or sometimes called \textbf{degenerate} or \textbf{low rank}.
-
-If it's a square matrix then you can also call it a singular or a non-invertible matrix.
-
-You'll learn in the section on computing the matrix inverse why it's called a singular or a non-invertible
-
-matrix.
-
-And if you're having a bad day and you're not really in a good mood, you can also call a reduced rank matrices a \textbf{loser matrix}, or a \textbf{dummy matrix}, or something like that. But these are the more accepted terms.
+If the matrix rank is less than the maximum possible rank, it's given a bunch different names. You can call it \textbf{reduced-rank} or \textbf{rank-deficient} or sometimes called \textbf{degenerate} or \textbf{low rank}. If it's a \textbf{square matrix} then you can also call it a \textbf{singular} or a \textbf{non-invertible matrix}. You'll learn in the section on computing the matrix inverse why it's called a singular or a non-invertible matrix. And if you're having a bad day and you're not really in a good mood, you can also call a reduced rank matrix a \textbf{loser matrix}, or a \textbf{dummy matrix}, or something like that. But these are the more accepted terms.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.5\linewidth]{images/rank-11.png}
+	\includegraphics[width=0.3\linewidth]{images/rank-11.png}
 	\caption{Rank}
 	\label{fig:rank_11}
 \end{figure}
 
-Now this leads me to the fifth thing to know about matrix rank, which you might have already guessed by now. The rank of a matrix corresponds to the number of linearly independent columns, and that turns out to be exactly the same as the number of linearly independent rows.
-
-And in fact this is one definition of matrix rank. I'd like to stress here that I said "one" definition not "the" definition. There are actually several ways of defining and computing the rank of the matrix. I'll more to say about this issue in a separate video. But for now, at this point in the course, you can think about the rank as a measure of the number of linearly independent columns, or rows, in a matrix.
+Now this leads me to the fifth thing to know about matrix rank, which you might have already guessed by now. \textbf{The rank of a matrix corresponds to the number of linearly independent columns, and that turns out to be exactly the same as the number of linearly independent rows.} And in fact this is one definition of matrix rank. I'd like to stress here that I said "one" definition not "the" definition. There are actually several ways of defining and computing the rank of the matrix. I'll more to say about this issue in a separate video. But for now, at this point in the course, you can think about the rank as a measure of the number of linearly independent columns, or rows, in a matrix. So there you go. There are the 5 important things to know about the rank of a matrix. 
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.5\linewidth]{images/rank-12.png}
+	\includegraphics[width=0.4\linewidth]{images/rank-12.png}
 	\caption{Rank}
 	\label{fig:rank_12}
 \end{figure}
 
-So there you go. There are the 5 important things to know about the rank of a matrix. Matrix rank has several applications:
-
-It's used to test whether a matrix has an inverse, because only full-rank matrices are invertible; rank is used in multivariate data analyses such as principal components analysis or factor analysis, because you start with a big data set and you want to know how much information, or what is the dimensionality
-not of the matrix, but the important information that's contained in the matrix. And that corresponds to rank. Rank is also used in compression, because you can create a so-called low-rank representation of a matrix or of a data set. And I'll talk more about this on the section on eigendecompetition and singular value decomposition. I use rank often in my own research on multivariate brain activity dynamics, because the rank of the data tells me how much noise I'm able to project out of the data, and I use the rank to inform my decisions about the best ways to analyze multivariate data sets.
+Matrix rank has several applications: \textbf{It's used to test whether a matrix has an inverse}, because only full-rank matrices are invertible; rank is used in multivariate data analyses such as principal components analysis or factor analysis, because you start with a big data set and you want to know how much information, or what is the dimensionality not of the matrix, but the important information that's contained in the matrix. And that corresponds to rank.  \textbf{Rank is also used in compression}, because you can create a so-called low-rank representation of a matrix or of a data set. And I'll talk more about this on the section on eigendecompetition and singular value decomposition. I use rank often in my own research on multivariate brain activity dynamics, because the rank of the data tells me how much noise I'm able to project out of the data, and I use the rank to inform my decisions about the best ways to analyze multivariate data sets.
 
 \pagebreak
 
 \subsubsection*{Computing Rank: Theory and Practice}
 
-One of the things that I find so compelling and so insightful about mathematics is when you arrive at the same answer from very different starting points.
+One of the things that I find so compelling and so insightful about mathematics is when you arrive at the same answer from very different starting points. \textbf{Matrix rank} is an example of this phenomenon. I mentioned in the previous video that there are several ways to compute the rank of a matrix.
 
-Matrix rank is an example of this phenomenon. I mentioned in the previous video that there are several ways to compute the rank of a matrix.
-
-Most of the ways to compute the rank of the matrix rely on linear algebra concepts and procedures that you haven't yet learned in this course, although I will cover them in later sections. In this video, I want to introduce you to the concept of different ways of computing the rank of a matrix.
-
-Actually, they might seem like very different methods at first, but you will learn by the end of this course that these different methods are actually quite related to each other.
+Most of the ways to compute the rank of the matrix rely on linear algebra concepts and procedures that you haven't yet learned in this course, although I will cover them in later sections. In this video, I want to introduce you to the concept of different ways of computing the rank of a matrix. Actually, they might seem like very different methods at first, but you will learn by the end of this course that these different methods are actually quite related to each other.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.5\linewidth]{images/rank-13.png}
+	\includegraphics[width=0.4\linewidth]{images/rank-13.png}
 	\caption{Rank}
 	\label{fig:rank_13}
 \end{figure}
 
-So I'll start with the definition of rank that I gave in the previous video, which is that the rank of a matrix corresponds to the number of linearly independent columns.
+So I'll start with the definition of rank that I gave in the previous video, which is that \textbf{the rank of a matrix corresponds to the number of linearly independent columns}. So one way to determine the rank of a matrix is by \textbf{figuring out how many linearly independent columns there are}, or sometimes it's easier to do it row-wise, because of course the rank is a property of the matrix, it doesn't matter whether you're looking at the columns or the rows. That, of course, leads to the natural question of how do you figure out the number of linearly independent columns are in a matrix. 
 
-So one way to determine the rank of a matrix is by \textbf{figuring out how many linearly independent columns there are}, or sometimes it's easier to do it row-wise, because of course the rank is a property of the matrix, it doesn't matter whether you're looking at the columns or the rows. That, of course, leads to the natural question of how do you figure out the number of linearly independent columns are in a matrix. 
-
-Well, for now, at this point in the course, you just have to look at the matrix, do a little bit of arithmetic and a bit of insight and guesswork. That works fine for small matrices with relatively simple entries, like integers or maybe a few simple fractions, but of course this is not really a scalable method. 
-
-Certainly, this is not a technique you would use in practice. Soon in this course, you will learn about solving simultaneous equations using linear methods, and at that point you will learn a more algorithmic approach to determining the number of linearly independent columns.
+Well, for now, at this point in the course, you just have to look at the matrix, do a little bit of arithmetic and a bit of insight and guesswork. That works fine for small matrices with relatively simple entries, like integers or maybe a few simple fractions, but of course this is not really a scalable method.  Certainly, this is not a technique you would use in practice. Soon in this course, you will learn about solving simultaneous equations using linear methods, and at that point you will learn a more algorithmic approach to determining the number of linearly independent columns.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.5\linewidth]{images/rank-14.png}
+	\includegraphics[width=0.4\linewidth]{images/rank-14.png}
 	\caption{Rank}
 	\label{fig:rank_14}
 \end{figure}
 
-Another way to compute the rank of a matrix is to apply something called \textbf{row-reduction} to get the matrix into its so-called \textbf{echelon form}. Then you just count the number of \textbf{pivots}.
-
-I will talk more in a later section about what this means but I just want to introduce you now to the ideas so you can keep it in mind. The problem is that applying a row reduction and in particular reduced row reduction is quite tedious and time consuming. It's basically impossible to do for large matrices or matrices with more difficult entries.
+Another way to compute the rank of a matrix is to apply something called \textbf{row-reduction} to get the matrix into its so-called \textbf{echelon form}. Then you just count the number of \textbf{pivots}. I will talk more in a later section about what this means but I just want to introduce you now to the ideas so you can keep it in mind. The problem is that applying a row reduction and in particular reduced row reduction is quite tedious and time consuming. It's basically impossible to do for large matrices or matrices with more difficult entries.
 
 \begin{figure}[ht]
 	\centering
@@ -1877,15 +1830,13 @@ I will talk more in a later section about what this means but I just want to int
 	\label{fig:rank_15}
 \end{figure}
 
-A third way to compute the rank of a matrix is to apply a decomposition called the \textbf{singular value decomposition}. And then you count the number of nonzero singular values of the matrix. The rank of the matrix then corresponds to the number of nonzero singular values.
-
-This is actually the way that Matlab and many other matrix-computing software programs will compute the rank of a matrix. And when you learn about the SVD, you will understand why the number of nonzero singular values corresponds to the rank.
+A third way to compute the rank of a matrix is to apply a decomposition called the \textbf{singular value decomposition}. And then you count the number of nonzero singular values of the matrix. The rank of the matrix then corresponds to the number of nonzero singular values. This is actually the way that Matlab and many other matrix-computing software programs will compute the rank of a matrix. And when you learn about the SVD, you will understand why the number of nonzero singular values corresponds to the rank.
 
 A complimentary procedure is to compute the eigendecomposition of the matrix. This would work for a square matrix or if it's a rectangular matrix you can compute the eigendecomposition of the matrix times its transpose, and again count the number of non-zero eigenvalues. The number of non-zero eigenvalues corresponds to the rank of the matrix.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.5\linewidth]{images/rank-16.png}
+	\includegraphics[width=0.4\linewidth]{images/rank-16.png}
 	\caption{Rank}
 	\label{fig:rank_16}
 \end{figure}
@@ -1936,46 +1887,44 @@ Before explaining what the rule is and saying something about why it must be tru
 	\label{fig:rank_18}
 \end{figure}
 
-Here I have four sets of matrix equations.
+Here I have four sets of matrix equations. If you're up for a bit of a challenge, and some practice in computing rank, I encourage you to pause the video here and compute the rank of each of these 12 matrices.  It seems like a lot but it's actually not so bad. I think the rank is relatively straightforward to compute by visual inspection and a little bit of guesswork in all 12 of these cases. Now I go through each one of these in turn. 
 
-If you're up for a bit of a challenge, and some practice in computing rank, I encourage you to pause the video here and compute the rank of each of these 12 matrices. 
-
-It seems like a lot but it's actually not so bad. I think the rank is relatively straightforward to compute by visual inspection and a little bit of guesswork in all 12 of these cases.
-
-Now I go through each one of these in turn. 
+\paragraph{Top-left}
 
 So here we have three matrices, all of them have rank 3. So $A$ has rank-3, matrix $B$ has rank 3, and their sum as also rank 3. So these are all full-rank matrices.
 
+\paragraph{Bottom-left}
+
 Here you have an example where this matrix has rank 2. So this is rank deficient. This matrix has rank 1, it's also rank deficient. And yet the two of these matrices added together turns out to be a full rank matrix, so rank 3 matrix. So that's a pretty interesting case. 
 
-In this example, we have this matrix with rank 2, this matrix with rank two -- uhh, sorry, with rank zero -- and the resulting sum has rank 2.
+\paragraph{Top-right}
 
-Finally, we get to the fourth case that I'm illustrating here. Here we start with the matrix of rank 3.
+In this example, we have this matrix with rank 2, this matrix with rank 0 and the resulting sum has rank 2.
 
-So this is a full rank matrix. This is a \textbf{reduced rank matrix} because there is one column of zeros, so this is rank 2, and the resulting matrix has a rank of 1. And that happened because basically these first two columns here are the negatives of each other for these two matrices, so you end up with a reduced rank matrix.
+\paragraph{Bottom-right}
+
+Finally, we get to the fourth case that I'm illustrating here. Here we start with the matrix of rank 3. So this is a full rank matrix. This is a \textbf{reduced rank matrix} because there is one column of zeros, so this is rank 2, and the resulting matrix has a rank of 1. And that happened because basically these first two columns here are the negatives of each other for these two matrices, so you end up with a reduced rank matrix.
 
 So I've illustrated several different possibilities of the rank: Here the rank of the summed matrix is the same as the rank of the two matrices; here, this is a funny case where the rank is actually larger -- the summed matrix has a larger rank than either of the individual matrices, and here you see reduced-rank cases.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.4\linewidth]{images/rank-19.png}
+	\includegraphics[width=0.3\linewidth]{images/rank-19.png}
 	\caption{Rank}
 	\label{fig:rank_19}
 \end{figure}
 
-Now let me tell you the rule about the boundary of the rank of $A$ plus $B$. The rule is that the rank of matrix $A$ plus $B$ cannot be larger than the sum of the individual ranks. So if you know the rank of $A$ and you know the rank of $B$, you add those together, and the rank of $A$ plus $B$ cannot be bigger than this.
+Now let me tell you the \textbf{rule about the boundary of the rank of $A + B$}. The rule is that \textbf{the rank of matrix $A$ plus $B$ cannot be larger than the sum of the individual ranks}. So if you know the rank of $A$ and you know the rank of $B$, you add those together, and the rank of $A$ plus $B$ cannot be bigger than this.
 
-Actually there is an additional bound on top of this, which is that the rank can also not be larger than the smaller of $M$ or $N$, so the smaller of the number of rows or the number of columns. We've already established that rule in a previous video. I didn't mention it explicitly here. 
+Actually there is an additional bound on top of this, which is that \textbf{the rank can also not be larger than the smaller of $M$ or $N$}, so the smaller of the number of rows or the number of columns. We've already established that rule in a previous video. I didn't mention it explicitly here. 
 
-And you can see that in this first case here. So rank 3 and rank 3 is a three by three matrix. But the sum of these two numbers is six. Obviously, a three by three Matrix cannot have a rank of six.
+And you can see that in this first case here. So rank 3 and rank 3 is a 3 by 3 matrix. But the sum of these two numbers is 6. Obviously, a 3 by 3 Matrix cannot have a rank of six. 
 
-One way to think about this rule is that by adding matrices, you are simply linearly pooling information element by element, and by pooling across different stores of information, the total amount of information can increase, because the pooling is linear. It's additive. You cannot create any new information out of thin air. You can only work with what you already have.
+One way to think about this rule is that \textbf{by adding matrices, you are simply linearly pooling information element by element}, and by pooling across different stores of information, the total amount of information can increase, because the pooling is linear. It's additive. You cannot create any new information out of thin air. You can only work with what you already have.
 
-So here I have a little bit of non-overlapping information in these two matrices: this one here and this one here. So the non-overlapping bits will increase the total information in the matrix.
+So here I have a little bit of non-overlapping information in these two matrices: this one here and this one here. So the non-overlapping bits will increase the total information in the matrix. But there's just no way to create new information here in this third column because we're not starting with any information in these original columns. This is the way that I like to think about this role. And needless to say I didn't say this explicitly but of course this rule makes sense only when $A$ and $B$ can be added together, which means that $A$ and $B$ are the same size.
 
-But there's just no way to create new information here in this third column because we're not starting with any information in these original columns. This is the way that I like to think about this role. And needless to say I didn't say this explicitly but of course this rule makes sense only when $A$ and $B$ can be added together, which means that $A$ and $B$ are the same size.
-
-The second thing I'd like to point out here is that scaling a matrix by some scalar, so scalar-matrix multiplication, doesn't change the rank of the matrix. So that means you can multiply $B$ by any arbitrary scalar. You could multiply by a scalar of $-1$ and that would turn this addition and subtraction, and that doesn't change the rule at all.
+The second thing I'd like to point out here is that \textbf{scaling a matrix by some scalar, so scalar-matrix multiplication, doesn't change the rank of the matrix}. So that means you can multiply $B$ by any arbitrary scalar. You could multiply by a scalar of $-1$ and that would turn this addition and subtraction, and that doesn't change the rule at all.
 
 \begin{figure}[ht]
 	\centering
@@ -1984,13 +1933,23 @@ The second thing I'd like to point out here is that scaling a matrix by some sca
 	\label{fig:rank_20}
 \end{figure}
 
-OK so this is about the rank of $A$ plus $B$. Now let's talk about multiplication and the rank of $A$ times $B$. Again, I'll first start by showing a few examples and then I'll explain what the rule is.
+OK so this is about the rank of $A + B$. Now let's talk about multiplication and the rank of $A \times B$. Again, I'll first start by showing a few examples and then I'll explain what the rule is. So here again we have these matrices that we are working with. But now instead of adding these matrices together, I am multiplying them together. And now the resulting rank is a little bit different in some cases, compared to what it was for the addition case.
 
-So here again we have these matrices that we are working with. But now instead of adding these matrices together, I am multiplying them together. And now the resulting rank is a little bit different in some cases, compared to what it was for the addition case.
+\paragraph{Top-left}
 
 In this case, we start off with two full-rank matrices, and we happened to also end up with a full rank matrix, in this case rank 3. That's not necessarily the case, that's just how it happened to work out with these specific numbers.
 
-Here we have our rank 2 and rank 1 matrix. You'll remember, or you can go back a few slides, that when we added these two matrices together, the resulting matrix was full rank. So this was rank 2, this was rank 1. When we added these two matrices together, their result was actually rank 3, because all of these zeros get added with unique, new information. However, here when we do the product, we end up with a rank-1 matrix. In this case, we are multiplying by the zero matrix. The zero matrix has rank zero. And of course any matrix times the zero matrix is the zero matrix. So the product is zero. And in this case we end up with a rank 2 matrix, and one column of zeros.
+\paragraph{Bottom-left}
+
+Here we have our rank 2 and rank 1 matrix. You'll remember, or you can go back a few slides, that when we added these two matrices together, the resulting matrix was full rank. So this was rank 2, this was rank 1. When we added these two matrices together, their result was actually rank 3, because all of these zeros get added with unique, new information. However, here when we do the product, we end up with a rank-1 matrix. 
+
+\paragraph{Top-right}
+
+In this case, we are multiplying by the zero matrix. The zero matrix has rank zero. And of course any matrix times the zero matrix is the zero matrix. So the product is zero. 
+
+\paragraph{Bottom-right}
+
+And in this case we end up with a rank 2 matrix, and one column of zeros.
 
 \begin{figure}[ht]
 	\centering
@@ -1999,9 +1958,9 @@ Here we have our rank 2 and rank 1 matrix. You'll remember, or you can go back a
 	\label{fig:rank_21}
 \end{figure}
 
-So with these examples in mind, here is the rule for matrix multiplication. The rule is that the rank of the product matrix of $A$ times $B$ cannot be any greater than the smaller of the ranks of either matrix individually.
+So with these examples in mind, here is the \textbf{rule for matrix multiplication}. The rule is that \textbf{the rank of the product matrix of $A$ times $B$ cannot be any greater than the smaller of the ranks of either matrix individually}.
 
-So if you know the rank of $A$ and you know the rank of $B$, then whichever rank is smaller sets the maximum possible boundary of the rank of $A$ times $B$. The rank of $A$ times $B$ could actually be smaller than whatever is the minimum of these two, but it couldn't be larger than the minimum of these two. And this rule we can see in these different examples here.
+So if you know the rank of $A$ and you know the rank of $B$, then whichever rank is smaller sets the maximum possible boundary of the rank of $A \times B$. The rank of $A \times B$ could actually be smaller than whatever is the minimum of these two, but it couldn't be larger than the minimum of these two. And this rule we can see in these different examples here.
 
 So here the smallest rank is three. And the resulting product matrix happens to be three. Here the smallest rank is one and the product matrix has rank $1$. $0$ and $0$, and $2$ and $2$.
 
@@ -2028,13 +1987,13 @@ One final point I'd like to make here is that in the examples I shown in this vi
 
 This video follows directly from the previous video, because it involves the rank of a product between two matrices. But the matrices that I'll talk about in this video are special. They are really important in statistics and in data analysis, so I think it's worth having a dedicated video on this topic.
 
-The main take-home message of this video is that the rank of matrix A is the same thing as the rank of matrix $A^TA$, which is the same as the rank of $A^T$, which is the same as the rank of $AA^T$. So all of these ranks are identical.
+The main take-home message of this video is that the rank of matrix $A$ is the same thing as the rank of matrix $A^TA$, which is the same as the rank of $A^T$, which is the same as the rank of $AA^T$. So all of these ranks are identical.
 
 This is a key property that underlies several important proofs in advanced linear algebra, including least squares model fitting and orthogonal eigenvectors. I encourage you to pause the video here and try and figure out why this statement is true based on what you learned in the previous video.
 
 In this video I'm going to provide three explanations of why these equivalences are true. Now, some of these explanations rely on material that I teach later in the course. So if you don't understand everything in this video, don't be concerned. You should just watch the video, try to follow, and you can come back to this video later in the course when you've learned topics including column space, null space, and singular value decomposition.
 
-The first explanation that I'll give is based on the material that you've already learned: matrix-matrix multiplication and matrix-vector multiplication.
+The \textbf{first explanation} that I'll give is based on the material that you've already learned: \textbf{matrix-matrix multiplication and matrix-vector multiplication}.
 
 \begin{figure}[ht]
 	\centering
@@ -2043,11 +2002,11 @@ The first explanation that I'll give is based on the material that you've alread
 	\label{fig:rank_23}
 \end{figure}
 
-So let's start by calling this product matrix, matrix $C$. So we have $A^TA = Cc$.
+So let's start by calling this product matrix, matrix $C$. So we have $A^TA = C$.
 
 Now, if you think about building up matrix $C$ one column at a time, then you can rewrite this equation as $A^T$ times the $j$th column in matrix $A$ gives you the $j$th column of matrix $C$.
 
-So now it is clear that each column of matrix $C$ is some linear weighted combination of the columns of $A^TA$ and that's the same thing as the rows of matrix $A$, so matrix $C$ is formed by combining the rows of $A$, which means that every column in $C$ can be expressed as some linear combination of the columns of $A^T$.
+So now it is clear that each column of matrix $C$ is some linear weighted combination of the columns of $A^T$ and that's the same thing as the rows of matrix $A$, so matrix $C$ is formed by combining the rows of $A$, which means that every column in $C$ can be expressed as some linear combination of the columns of $A^T$.
 
 So that means that the dimensionality of the subspace spanned by the columns of $C$ is the same as the dimensionality of the subspace spanned by the columns of $A^T$. In a later section, I will start calling this the column space of $A$. And if column space of two matrices is equal, then their ranks must be equal.
 
@@ -2058,7 +2017,7 @@ So that means that the dimensionality of the subspace spanned by the columns of 
 	\label{fig:rank_24}
 \end{figure}
 
-The second explanation that I'll give has to do with something called the \textbf{null space} and the dimensionality of the \textbf{null space}. So imagine that vector $x$ is in the null space of matrix $A$. You'll learn more about \textbf{null spaces} in the next section of this course, but basically the \textbf{null space} is exactly this: Some vector subspace such that a vector times the matrix gives the zero vector. So if this statement is true for some vector $x$, then this vector is in the \textbf{null space} of this matrix. 
+The \textbf{second explanation} that I'll give has to do with something called the \textbf{null space} and the dimensionality of the \textbf{null space}. So imagine that vector $x$ is in the null space of matrix $A$. You'll learn more about \textbf{null spaces} in the next section of this course, but basically the \textbf{null space} is exactly this: Some vector subspace such that a vector times the matrix gives the zero vector. So if this statement is true for some vector $x$, then this vector is in the \textbf{null space} of this matrix. 
 
 So what I'm going to do now is left-multiply both sides of this equation by $A^T$, and that gives us $A^TAx = A^T0$, but anything times the zero vector is going to be the zero vector. So this is still a valid equation.
 
@@ -2552,7 +2511,7 @@ The dimensionalities of the column space and row space, and the two null spaces,
 
 First I want to make sure to clarify that dimension is not the same thing as rank. Rank is a property of a matrix, and it's the same regardless of whether you are thinking about the rows or the columns or the null spaces. The dimensionality, on the other hand, can change for the rows versus the columns versus the two null spaces.
 
-So let's work through a simple example: Here's a three by three full-rank square matrix. So the rank of this matrix is three. There are three linearly independent columns, or three rows -- those comprise a set of three linearly independent vectors. The null space is the empty set, which means it has a dimensionality of zero. The column space and also the row space span all of R3, so the dimensionality of the column space, and the dimensionality of the row space are both equal to three.
+So let's work through a simple example: Here's a three by three full-rank square matrix. So the rank of this matrix is three. There are three linearly independent columns, or three rows -- those comprise a set of three linearly independent vectors. The null space is the empty set, which means it has a dimensionality of zero. The column space and also the row space span all of $mathbb{R}^3$, so the dimensionality of the column space, and the dimensionality of the row space are both equal to three.
 
 \begin{figure}[ht]
 	\centering
@@ -2561,7 +2520,7 @@ So let's work through a simple example: Here's a three by three full-rank square
 	\label{fig:matrix_space_32}
 \end{figure}
 
-Let's look at another example. Here is a two by two matrix. This is a rank-1 matrix. The ambient dimensionality is two dimensional, but these two columns span R1 -- just a line. So the column space is one dimensional, even though the ambient dimensionality is two. So what happens to this other dimension here?
+Let's look at another example. Here is a two by two matrix. This is a rank-1 matrix. The ambient dimensionality is two dimensional, but these two columns span $\mathbb{R}^1$ -- just a line. So the column space is one dimensional, even though the ambient dimensionality is two. So what happens to this other dimension here?
 
 Well, one nice basis for this other dimension would be the null space of the rows, which is also called the left null space. So that matrix is 1 2, 1 2. This is the transpose of the matrix. And that allows us to conveniently think about the row space as the column space of the matrix transpose. You can see that the basis for this matrix's null space, which is the left null space of this matrix, is -2 1. That line, that looks like this. That is perpendicular, or orthogonal, to the column space of the matrix.
 
